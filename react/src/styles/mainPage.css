@@ -1,0 +1,22 @@
+#root{
+  width: 100vw;
+  height: 200vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+#main-c{
+  width: 1240px;
+  height: 100vw;
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+ 
+}
+

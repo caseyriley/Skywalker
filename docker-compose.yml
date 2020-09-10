@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+
+  react:
+    build:
+      context: ./react
+    volumes:
+      - './react:/app'
+      - '/app/node_modules'
+    ports:
+      - target: 3000
+        published: 80
+    env_file: .env
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    networks:
+      chatter:
+    depends_on:
+      - "flask"
+ 
+  flask:
+    build:
+      context: ./flask
+    ports:
+      - target: 5000
+        published: 5000
+    env_file: .env
+    networks:
+      chatter:
+    depends_on:
+      - "db"
+    
+  db:
+    image: postgres:12-alpine
+    env_file: .env
+    volumes:
+      - ./seed/01-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./seed/02-users.sql:/docker-entrypoint-initdb.d/02-users.sql
+      - ./seed/03-tweets.sql:/docker-entrypoint-initdb.d/03-tweets.sql
+      - ./seed/04-replies.sql:/docker-entrypoint-initdb.d/04-replies.sql
+      - ./seed/05-follows.sql:/docker-entrypoint-initdb.d/05-follows.sql
+
+    ports:
+      - target: 5432
+        published: 5432
+    networks:
+      chatter:
+        aliases:
+          - "chatter"
+
+volumes:
+  postgres-db:
+
+networks:
+  chatter:
+    driver: bridge

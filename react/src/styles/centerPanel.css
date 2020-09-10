@@ -1,0 +1,214 @@
+#center-panel{
+  width: 600px;
+  height: 100vh;
+  border: 1px solid rgb(233, 232, 232);
+  z-index: 0;
+}
+#center-panel__nav{
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid rgb(233, 232, 232);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+#center-panel__nav span{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 15px;
+}
+.sparkles{
+  width: 25px;
+  height: 25px;
+  fill: rgba(29,161,242,1.00);
+  margin-right: 10px;
+  padding: 7px;
+  border-radius: 999px;
+  transition-property: background-color;
+  transition-duration: .2s;
+}
+.sparkles:hover{
+  background-color:  rgb(226, 242, 253);
+}
+#center-panel__below-nav{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: auto;
+  position: relative;
+}
+.center-panel__below-nav__scroll{
+  height: 750px;
+  width: 100%;
+  overflow: auto;
+  position: relative;
+
+}
+#center-panel__below-nav__profile-bublle-c{
+  width: 90px;
+  height: 100px;
+  position: absolute;
+  transition-property: filter;
+  transition-duration: .3s;
+}
+#center-panel__below-nav__profile-bublle-c:hover{
+  filter: brightness(80%);
+}
+#profile-bubble-2{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+
+  background-image: url(../images/ProfileImages/p7.jpg);
+  background-size: cover;
+  margin: 13px 0px 0px 15px;
+}
+#center-panel__below-nav__content-c{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* border-bottom: 10px solid rgb(229, 236, 238); */
+}
+.below-nav-section{
+  /* height: 50%; */
+  min-height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* background-color: yellowgreen; */
+}
+#tweet-textarea{
+  /* height: 100%; */
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  /* text-align: center; */
+  text-indent: 0px;
+}
+.input-wrap {
+  position: relative;
+}
+.input-wrap .input {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+.width-machine {
+  /*   Sort of a magic number to add extra space for number spinner */
+  padding: 0 1rem;
+}
+
+.textarea {
+  font-family: inherit;
+  font-size: 19px;
+  /* display: block; */
+  width: 490px;
+  /* overflow: hidden; */
+  resize: none;
+  min-height: 30px;
+  line-height: 20px;
+  border: none;
+  outline: none;
+  padding-bottom: 28px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  position: relative;
+  margin: 30px 30px 0px 75px;
+
+}
+
+.textarea[contenteditable]:empty::before {
+  content: "  What's happening?";
+  color: gray;
+}
+
+.below-nav-section-2{
+  width: 100%;
+  display: flex;
+  border-bottom: 10px solid rgb(229, 236, 238);
+  z-index: 1;
+}
+.landscape{
+  height: 23px;
+  fill: rgba(29,161,242,1.00);
+  margin: -10px 0px 10px 70px;
+  padding: 7px;
+  border-radius: 999px;
+  transition: background-color;
+  transition-duration: .2s;
+}
+.landscape:hover{
+  background-color: rgb(226, 242, 253);
+}
+.gifbox{
+  height: 23px;
+  fill: rgba(29,161,242,1.00);
+  margin: -10px 0px 0px 4px;
+  padding: 7px;
+  border-radius: 999px;
+  transition: background-color;
+  transition-duration: .2s;
+}
+.gifbox:hover{
+  background-color: rgb(226, 242, 253);
+}
+.pollbox{
+  height: 23px;
+  fill: rgba(29,161,242,1.00);
+  margin: -10px 0px 0px 4px;
+  padding: 7px;
+  border-radius: 999px;
+  transition: background-color;
+  transition-duration: .2s;
+}
+.pollbox:hover{
+  background-color: rgb(226, 242, 253);
+}
+.smiley-face{
+  height: 23px;
+  fill: rgba(29,161,242,1.00);
+  margin: -10px 0px 0px 4px;
+  padding: 7px;
+  border-radius: 999px;
+  transition: background-color;
+  transition-duration: .2s;
+}
+.smiley-face:hover{
+  background-color: rgb(226, 242, 253);
+}
+.calendar{
+  height: 23px;
+  fill: rgba(29,161,242,1.00);
+  margin: -10px 0px 0px 4px;
+  padding: 7px;
+  border-radius: 999px;
+  transition: background-color;
+  transition-duration: .2s;
+}
+.calendar:hover{
+  background-color: rgb(226, 242, 253);
+}
+/* .all-tweets-c{
+  pointer-events: none;
+}
+.tweet-c{
+  pointer-events: none;
+} */
+.sparkles:hover,
+.smiley-face:hover,
+.landscape:hover,
+.gifbox:hover,
+.pollbox:hover,
+.calendar:hover{
+  cursor: not-allowed;
+}
+
+
+

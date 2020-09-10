@@ -1,0 +1,218 @@
+#main-c__right{
+  width: 380px;
+  height: 100vh;
+  /* border-left: 1px rgb(233, 232, 232); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: scroll;
+  /* border: 1px solid red; */
+}
+#main-c__right__search-bar{
+  width: 350px;
+  height: 42px;
+  border-radius: 999px;
+  background-color: #E6ECF0;
+  margin: 5px 0px 0px 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+.magnifying-glass{
+  height: 22px;
+  margin-left: 15px;
+  fill: rgb(116, 139, 153);
+}
+#search-input{
+  width: 100%;
+  height: 42px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-left: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  font-size: 15px;
+}
+#main-c__right__event-c{
+  width: 350px;
+  height: 500px;
+  margin: 15px 0px 0px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #F5F8FA;
+  border-radius: 18px;
+  display: flex;
+}
+#main-c__right__event-c__top{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  border-bottom: 1px solid rgb(235, 233, 233);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+}
+#main-c__right__event-c__top span{
+  margin-left: 20px;
+}
+.main-c__right__event-c__news{
+  height: 90px;
+  width: 100%;
+  border-bottom: 1px solid rgb(235, 233, 233);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-property: background-color;
+  transition-duration: .2s;
+}
+.main-c__right__event-c__news:hover{
+  background-color: rgb(233, 232, 232);
+}
+.news-feed{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+.news-feed p{
+  margin: 5px 0px 0px 20px;
+  font-size: 15px;
+}
+.news-pic{
+  height: 70px;
+  width: 70px;
+  background-image: url("../images/hemanSpakly.png");
+  background-size: cover;
+  margin-right: 20px;
+  border-radius: 15px;
+}
+#main-c__right__suggestions-c{
+  width: 350px;
+  height: 300px;
+  margin: 15px 0px 0px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #F5F8FA;
+  border-radius: 18px;
+  display: flex;
+}
+#main-c__right__suggestions-c__top{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  border-bottom: 1px solid rgb(235, 233, 233);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  font-weight: 800;
+  font-size: 19px; 
+}
+#main-c__right__suggestions-c__top span{
+  margin-left: 20px;
+}
+.main-c__right__suggestions-c__feed{
+  height: 90px;
+  width: 100%;
+  border-bottom: 1px solid rgb(235, 233, 233);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition-property: background-color;
+  transition-duration: .2s;
+  position: relative;
+}
+.main-c__right__suggestions-c__feed:hover{
+  background-color: rgb(233, 232, 232);
+}
+#main-c__right__user-pic-bublle-c{
+  width: 45px;
+  height: 100px;
+  /* background-color: green; */
+  /* position: absolute; */
+  margin: 25px 0px auto 15px;
+
+}
+.profile-bubble-3{
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-image: url(../images/SheraHeman.jpg);
+  background-size: cover;
+  
+}
+.suggestions-feed{
+  margin: 5px 0px 0px 20px;
+  font-size: 15px;
+}
+.follow-button-suggestions{
+  height: 30px;
+  width: 80px;
+  border-radius: 999px;
+  border: 1px solid rgba(29,161,242,1.00);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: background-color;
+  transition-duration: .2s;
+  position: absolute;
+  margin-left: 70%;
+  transition-property: background-color;
+  transition-duration: .2s;
+}
+.follow-button-suggestions:hover{
+  background-color: rgb(213, 231, 238);
+}
+
+.follow-button-suggestions span{
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  color: rgba(29,161,242,1.00);
+}
+#main-c__right__suggestions-c__disclaimer{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#main-c__right__suggestions-c__disclaimer span{
+  margin: 10px 0px 0px 0px;
+}
+.news-blurb{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+}
+.news-blurb2{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  color: rgb(155, 155, 155);
+}
+.suggestions-feed__name{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  margin-left: -10px;
+}
+.suggestions-feed__atname{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  color: grey;
+  margin-top: -16px;
+  margin-left: -10px;
+}
+.follow-button-suggestions:hover,
+.main-c__right__event-c__news:hover,
+#main-c__right__search-bar:hover,
+#search-input:hover{
+  cursor: not-allowed;
+}

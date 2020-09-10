@@ -1,0 +1,11 @@
+@media screen and (max-width: 988px){
+  #main-c__right{
+    visibility: hidden;
+    width: 90px;
+    width: 7vw;
+    flex-shrink: 10;
+  }
+  /* .hash{
+    display: none;
+  } */
+}

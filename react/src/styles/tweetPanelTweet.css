@@ -1,0 +1,52 @@
+.tweet-p-t-c__user-name__names{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.tweet-p-t-c__user-name__names__top{
+  margin: 12px 0px 0px 0px;
+}
+.tweet-p-t-c__user-name__names__bottom{
+  margin: 5px 0px 0px 0px;
+  font-weight: 400;
+  color: grey;
+}
+.tweet-p-t__comment {
+  font-size: 22px;
+}
+.tweet-p-t-comment-bubble{
+  height: 23px;
+  width: 23px;
+  position: relative;
+  top: 9px;
+  margin-bottom: 12px;
+}
+.tweet-p-t-heart{
+  height: 23px;
+  width: 23px;
+  position: relative;
+  top: 12px;
+  margin-bottom: 12px;
+}
+.tweet-p-t-retweet{
+  height: 23px;
+  width: 23px;
+  position: relative;
+  top: 10px;
+  margin-bottom: 12px;
+}
+.tweet-panel-tweet-like--container div{
+  position: absolute;
+  left: 410px;
+  /* margin-top: -45px; */
+  font-size: 13px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  color: rgb(101, 119, 134);
+}
+.tweet-panel-tweet-like--container span{
+  position: relative;
+  top: -10px;
+  font-size: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  color: rgb(101, 119, 134);
+}

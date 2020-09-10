@@ -1,0 +1,33 @@
+.profile-full-screen-c{
+  display: flex;
+  justify-content: center;
+}
+.profile-full-screen{
+  width: 350px;
+  height: 350px;
+  border-radius: 100%;
+  background-image: url(../images/4a1.png);
+  background-size: cover;
+  position: fixed;
+  top: 125px;
+  margin-left: 25%;
+  z-index: 2;
+}
+.profile-full-screen-background{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #3A2928;
+  z-index: 1;
+  opacity: 80%;
+}
+.visible{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+
+
