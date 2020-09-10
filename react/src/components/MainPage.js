@@ -1,8 +1,16 @@
-import React, {useState} from 'react';
+import React, {useState, BrowserRouter} from 'react';
+import ChecronSkywalker from '../images/ChevronSkywalker';
+import ChevronSkywalkerInverse from '../images/ChevronSkywalkerInverse';
 // import { API_URL } from '../config.js'
 
 const MainPage = () => {
   const [href, setHref] = useState();
+
+  const [bottomNavState, setBottomNavState] = useState(true);
+  const openCloseBottomNav = () => {
+    let nextState = !bottomNavState;
+    setBottomNavState(nextState)
+  }
   // const [user, setUser] = useState({})
   // const [targetUser, setTargetUser] = useState(1);
 
@@ -194,8 +202,19 @@ const MainPage = () => {
     console.log("href",  href)
     return (
       <div id={"main-c"}>
-        <h1>Main Page</h1>
-        <img src={href} ></img>
+        
+        <div  className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed" }`}   >
+          
+          
+          <div className={`main-c__switch-bottom-nav ${bottomNavState ? "flipped" : "" }`} onClick={openCloseBottomNav}>
+            
+              {bottomNavState ? <ChecronSkywalker /> : <ChevronSkywalkerInverse />}
+            
+            
+          </div>
+        </div>
+        <img className={"main-c__img"} src={href} ></img>
+
         
 
       </div>
