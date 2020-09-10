@@ -6,7 +6,7 @@ import MagnifyingGlass from '../images/MagnifyingGlass';
 import People from '../images/People';
 import LoginBubble from '../images/LoginBubble';
 import GithubIcon from '../images/GithubIcon';
-import '../styles/login.css'
+
 
 
 const Login = () => {

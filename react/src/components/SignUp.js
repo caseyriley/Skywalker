@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { API_URL } from "../config";
 import Bird from '../images/Bird';
 import CloseButton from '../images/CloseButton';
-import "../styles/signup.css";
+
 
 const SignUp = props => {
   const [username, setUsername] = useState();
