@@ -1,6 +1,9 @@
 import React, {useState, BrowserRouter} from 'react';
 import ChecronSkywalker from '../images/ChevronSkywalker';
 import ChevronSkywalkerInverse from '../images/ChevronSkywalkerInverse';
+import MagnifyingGlass from '../images/MagnifyingGlass';
+import LeftArrow from '../images/LeftArrow';
+
 // import { API_URL } from '../config.js'
 
 const MainPage = () => {
@@ -204,14 +207,19 @@ const MainPage = () => {
       <div id={"main-c"}>
         
         <div  className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed" }`}   >
-          
-          
-          <div className={`main-c__switch-bottom-nav ${bottomNavState ? "flipped" : "" }`} onClick={openCloseBottomNav}>
-            
+          <div className={`main-c__bottom-nav-switch ${bottomNavState ? "flipped" : "" }`} onClick={openCloseBottomNav}>
               {bottomNavState ? <ChecronSkywalker /> : <ChevronSkywalkerInverse />}
-            
-            
           </div>
+          <div id={"main-c__bottom-nav-top"} >
+            <div id={"main-c__bottom-nav-top__Searchbar"} >
+              <MagnifyingGlass/>
+              <input></input>
+              <div id={"main-c__bottom-nav-top__Searchbar__button"}>
+                <LeftArrow/>
+              </div>
+            </div>
+          </div>
+          
         </div>
         <img className={"main-c__img"} src={href} ></img>
 
