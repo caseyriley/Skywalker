@@ -1,0 +1,97 @@
+.search-menu-nav {
+  position: absolute;
+  right: 100px;
+  top: 100px;
+	width: 160px;
+
+	height: 160px;
+
+	background-color: rgb(206, 206, 206);
+	border-radius: 20px;
+  font-size: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding: 10px 0px 10px 0px; */
+  /* border: 2px solid green; */
+}
+.search-menu-nav div {
+	/* line-height: 50px; */
+  height: 30px;
+  min-width: 120px;
+	font-size: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+  cursor: pointer;
+  margin-left: 20px;
+  /* border: 1px solid green; */
+}
+.search-menu-nav div span{
+  width: 300px;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 500;
+  line-height: 1.15;
+  font-size: 14px;
+  /* color: grey; */
+}
+.search-menu-nav .animation {
+	position: absolute;
+	height: 30px;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 999px;
+}
+.search-menu-nav__a:nth-child(1) {
+  width: 100px;
+  /* border: 2px solid yellow; */
+}
+.search-menu-nav__a:nth-child(2) {
+  width: 100px;
+  /* border: 2px solid red; */
+}
+.search-menu-nav__a:nth-child(3) {
+	width: 100px;
+}
+.search-menu-nav__a:nth-child(4) {
+	width: 100px;
+}
+.search-menu-nav__a:nth-child(5) {
+	width: 100px;
+}
+.search-menu-nav .start-home, .search-menu-nav__a:nth-child(1):hover~.animation {
+	width: 100%;
+  top: 5px;
+  left: -20px;
+	background-color: #5c43b6;
+}
+.search-menu-nav .start-about, .search-menu-nav__a:nth-child(2):hover~.animation {
+	width: 100%;
+  top: 35px;
+  left: -20px;
+	background-color: #313899;
+}
+.search-menu-nav .start-blog, .search-menu-nav__a:nth-child(3):hover~.animation {
+	width: 100%;
+  top: 65px;
+  left: -20px;
+	background-color: #227db9;
+}
+.search-menu-nav .start-portefolio, .search-menu-nav__a:nth-child(4):hover~.animation {
+	width: 100%;
+  top: 95px;
+  left: -20px;
+	background-color: #59b659;
+}
+.search-menu-nav .start-contact, .search-menu-nav__a:nth-child(5):hover~.animation {
+	width: 100%;
+  top: 125px;
+  left: -20px;
+	background-color: #ece24c;
+}

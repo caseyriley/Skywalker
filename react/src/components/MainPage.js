@@ -6,6 +6,8 @@ import LeftArrow from '../images/LeftArrow';
 import POTDSearch from './POTDSearch';
 import Results from './Results';
 import NASAImageSearch from './NASAImageSearch'
+import SearchMenu from './SearchMenu';
+import SearchSwitch from './SearchSwitch';
 
 // import { API_URL } from '../config.js'
 
@@ -18,6 +20,8 @@ const MainPage = () => {
   }
 
   const [imageSizeState, setImageSizeState] = useState(2);
+
+  const [searchMenuState, setSearchMenuState] = useState("imageSearch")
 
 
 
@@ -306,13 +310,11 @@ const MainPage = () => {
                   <span className={`size-switch__switch__span-1 ${imageSizeState === 1 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(1)} >sml</span>  <span className={`size-switch__switch__span-2 ${imageSizeState === 2 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(2)} >med</span> <span className={`size-switch__switch__span-3 ${imageSizeState === 3 ? "invisible" : "visible"}`} onClick={()=>setImageSizeState(3)} >lrg</span>
                 </div>
               </div>
-              
-                
-                <NASAImageSearch setSearch={setSearch} setQuery={setQuery} search={search}/>
-              
+              <SearchSwitch searchMenuState={searchMenuState} setSearch={setSearch} setQuery={setQuery} search={search} setResults={setResults} />
+              {/* <NASAImageSearch setSearch={setSearch} setQuery={setQuery} search={search}/>  */}
             </div>
-            <POTDSearch setResults={setResults}/>
-                 
+            {/* <POTDSearch setResults={setResults}/> */}
+            <SearchMenu setSearchMenuState={setSearchMenuState} />
           </div>
           <Results results={results} imageSizeState={imageSizeState} />
         </div>
