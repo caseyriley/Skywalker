@@ -17,6 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
   background-color: black;
 }
 
@@ -123,13 +124,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: all;
 }
 .left-arrow{
   transform: rotate(180deg);
   height: 25px;
   fill: rgb(233, 233, 233);
 }
-
+.searchbutton{
+  pointer-events: all;
+}
+.search-array-image{
+  height: 100px;
+  background-image: url("http://images-assets.nasa.gov/image/EARTH_DAY_2019_WEB/EARTH_DAY_2019_WEB~orig.jpg");
+}
 
 
 

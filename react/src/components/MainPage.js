@@ -1,4 +1,4 @@
-import React, {useState, BrowserRouter} from 'react';
+import React, {useState, BrowserRouter, useEffect} from 'react';
 import ChecronSkywalker from '../images/ChevronSkywalker';
 import ChevronSkywalkerInverse from '../images/ChevronSkywalkerInverse';
 import MagnifyingGlass from '../images/MagnifyingGlass';
@@ -7,13 +7,26 @@ import LeftArrow from '../images/LeftArrow';
 // import { API_URL } from '../config.js'
 
 const MainPage = () => {
-  const [href, setHref] = useState();
-
+  const [hrefState, setHrefState] = useState("");
+  
   const [bottomNavState, setBottomNavState] = useState(true);
   const openCloseBottomNav = () => {
     let nextState = !bottomNavState;
     setBottomNavState(nextState)
   }
+
+
+
+
+  // const [searchStringState, setSearchStringState] = useState("venus");
+
+  // const searchFunction = (e) => {
+  //   e.preventDefault();
+  //   const search = document.getElementsByName("main-c__bottom-nav-top__Searchbar__input").innerText;
+  //   setSearchStringState(search)
+  //   document.getElementsByName("main-c__bottom-nav-top__Searchbar__input")[0].value = "";
+  // }
+  //------------------------------------------------------------
   // const [user, setUser] = useState({})
   // const [targetUser, setTargetUser] = useState(1);
 
@@ -36,26 +49,26 @@ const MainPage = () => {
   // }, [targetUser])
 
 
-  const API_KEY = 'DEMO_KEY'
-  const API_URL = `https://api.nasa.gov/insight_weather/?api_key=${API_KEY}&feedtype=json&ver=1.0`
+  // const API_KEY = 'DEMO_KEY'
+  // const API_URL = `https://api.nasa.gov/insight_weather/?api_key=${API_KEY}&feedtype=json&ver=1.0`
 
-  const previousWeatherToggle = document.querySelector('.show-previous-weather');
-  const previousWeather = document.querySelector('.previous-weather')
+  // const previousWeatherToggle = document.querySelector('.show-previous-weather');
+  // const previousWeather = document.querySelector('.previous-weather')
 
-  const currentSolElement = document.querySelector('[data-current-sol]')
-  const currentDateElement = document.querySelector('[data-current-date]')
-  const currentTempHighElement = document.querySelector('[data-current-temp-high]')
-  const currentTempLowElement = document.querySelector('[data-current-temp-low]')
-  const windSpeedElement = document.querySelector('[data-wind-speed]')
-  const windDirectionText = document.querySelector('[data-wind-direction-text]')
-  const windDirectionArrow = document.querySelector('[data-wind-direction-arrow]')
+  // const currentSolElement = document.querySelector('[data-current-sol]')
+  // const currentDateElement = document.querySelector('[data-current-date]')
+  // const currentTempHighElement = document.querySelector('[data-current-temp-high]')
+  // const currentTempLowElement = document.querySelector('[data-current-temp-low]')
+  // const windSpeedElement = document.querySelector('[data-wind-speed]')
+  // const windDirectionText = document.querySelector('[data-wind-direction-text]')
+  // const windDirectionArrow = document.querySelector('[data-wind-direction-arrow]')
 
-  const previousSolTemplate = document.querySelector('[data-previous-sol-template]')
-  const previousSolContainer = document.querySelector('[data-previous-sols]')
+  // const previousSolTemplate = document.querySelector('[data-previous-sol-template]')
+  // const previousSolContainer = document.querySelector('[data-previous-sols]')
 
-  const unitToggle = document.querySelector('[data-unit-toggle]')
-  const metricRadio = document.getElementById('cel')
-  const imperialRadio = document.getElementById('fah')
+  // const unitToggle = document.querySelector('[data-unit-toggle]')
+  // const metricRadio = document.getElementById('cel')
+  // const imperialRadio = document.getElementById('fah')
 
   // previousWeatherToggle.addEventListener('click', () => {
   //   previousWeather.classList.toggle('show-weather')
@@ -182,27 +195,65 @@ const MainPage = () => {
   // function isMetric() {
   //   return metricRadio.checked
   // }
-  let searchString = 'stars'
+  
+ 
+ //---------------------------------------------
+//   async function sendApiRequest(){
+//     let API_KEY = "HBW5c8xowLyU4NYh8rLUQY47Rth5rmaK5o7fQyWK"
+//     // let response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${API_KEY}`);
+//     // let response = await fetch(`https://images-api.nasa.gov/search?q={moon}&api_key=${API_KEY}`);
+//     let response = await fetch(`https://images-api.nasa.gov/search?q=${searchStringState}`);
+//     // https://images-api.nasa.gov/search?q=apollo%2011&description=moon%20landing&media_type=image"
+// //     console.log(response)
+//     let data = await response.json()
+//     console.log("data", data.collection.items[0].data[0].description)
+//     setHrefState(data.collection.items[0].links[0].href)
+//     console.log("href", hrefState)
+//     console.log("searchstring", searchStringState)
+//   }
+
+//   useEffect(() => {
+//     sendApiRequest();
+//   }, [searchStringState])
   
 
-  async function sendApiRequest(href){
-    let API_KEY = "HBW5c8xowLyU4NYh8rLUQY47Rth5rmaK5o7fQyWK"
-    // let response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${API_KEY}`);
-    // let response = await fetch(`https://images-api.nasa.gov/search?q={moon}&api_key=${API_KEY}`);
-    let response = await fetch(`https://images-api.nasa.gov/search?q=${searchString}`);
-    // https://images-api.nasa.gov/search?q=apollo%2011&description=moon%20landing&media_type=image"
-//     console.log(response)
-    let data = await response.json()
-    console.log("data", data.collection.items[0].data[0].description)
-    setHref(data.collection.items[0].links[0].href)
-    console.log(href)
+  const [search, setSearch] = useState('');
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState();
 
+  
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          `https://images-api.nasa.gov/search?q=${query}`
+        );
+        const json = await response.json();
+        console.log({json});
+        console.log("000",json.collection.items)
+        setResults(
+          //data.collection.items[0].links[0].href
+              json.collection.items.map(item => {
+              return item.links.map(link => {
+                return link.href;
+              })
+            })    
+          )
+      } catch (error) {}
+    }
+  
+    if (query !== "") {
+      fetchData();
+    }
+  },[query])
+
+  function onSubmit(e) {
+    e.preventDefault();
+    setQuery(search);
+    console.log("the search --->", search);
   }
   
-  sendApiRequest();
-
-
-    console.log("href",  href)
     return (
       <div id={"main-c"}>
         
@@ -213,16 +264,37 @@ const MainPage = () => {
           <div id={"main-c__bottom-nav-top"} >
             <div id={"main-c__bottom-nav-top__Searchbar"} >
               <MagnifyingGlass/>
-              <input></input>
-              <div id={"main-c__bottom-nav-top__Searchbar__button"}>
+              <form 
+                onSubmit={e => {
+                  e.preventDefault();
+                  setQuery(search);
+                }}>
+                <input 
+                  value={search}
+                  onChange={e => setSearch(e.target.value)}
+                  placeholder={"search"}
+                >
+                </input>
+                <button className={"searchbutton"} type={"submit"}>Search</button>
+              </form>
+              
+              {/* <input name={"main-c__bottom-nav-top__Searchbar__input"}  placeholder={"search"}
+               onChange={e => setSearchStringState(e.target.value)} 
+               ></input> */}
+              {/* <div id={"main-c__bottom-nav-top__Searchbar__button"} onClick={searchFunction}>
                 <LeftArrow/>
-              </div>
+              </div> */}
             </div>
           </div>
           
         </div>
-        <img className={"main-c__img"} src={href} ></img>
-
+        <img className={"main-c__img"} src={`${hrefState ? hrefState : ''}`} ></img>
+        {/* {results ? results.map(item => (
+          <img className={"search-array-image"} src={`${item.data.links}`} alt={""} key={`${item.href.links, Math.random() * 1000 }`}></img> 
+        )) : <h3>nothing</h3>} */}
+        {results ? results.map(src => (
+          <img className={"search-array-image"} src={`${src}`} alt={""} key={`${src, Math.random() * 1000 }`}></img> 
+        )) : <h3>nothing</h3>}
         
 
       </div>
