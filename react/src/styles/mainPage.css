@@ -108,6 +108,7 @@
   line-height: 1.15;
   font-size: 15px;
   color: grey;
+  transition: opacity .2s;
 
   
   
@@ -128,12 +129,12 @@
 }
 .size-switch__switch__span-3{
   position: absolute;
-  left: 125px;
+  left: 122px;
   padding: 3px;
   pointer-events: all;
 }
 .invisible{
-  visibility: hidden;
+  opacity: 0%;
 }
 
 #main-c__bottom-nav-top__image-size-switch{
@@ -150,6 +151,15 @@
   width: 15px;
   border-radius: 100%;
   background-color: rgb(177, 177, 177);
+  position: relative;
+  transition: all .2s ease-out;
+  
+}
+.sml{
+  margin-left: -70px;
+}
+.lrg{
+  margin-right: -70px;
 }
 #main-c__bottom-nav-top__Searchbar{
   width: 400px;
@@ -210,9 +220,46 @@
 }
 
 .search-array-image{
-  height: 100px;
-  background-image: url("http://images-assets.nasa.gov/image/EARTH_DAY_2019_WEB/EARTH_DAY_2019_WEB~orig.jpg");
-}
+  height: 40vh;
+  object-fit: cover;
+  vertical-align: bottom;
+  margin: 6px;
+  flex-shrink: 10;
+  
 
+ 
+  
+  
+}
+.main-c__image-ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0px;
+  width: 100vw;
+  margin: auto;
+  margin-top: 0px;
+  overflow: hidden; 
+  margin-bottom: 0px;
+}
+.main-c__image-li {
+  /* height: 40vh;  */
+  flex-grow: 1;
+  margin: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+}
+.sml-image{
+  height: 20vh;
+}
+.lrg-image{
+  height: auto;
+  width: 100vw;
+}
+.potd-img{
+  width: 100vw;
+}
 
 

@@ -3,6 +3,8 @@ import ChecronSkywalker from '../images/ChevronSkywalker';
 import ChevronSkywalkerInverse from '../images/ChevronSkywalkerInverse';
 import MagnifyingGlass from '../images/MagnifyingGlass';
 import LeftArrow from '../images/LeftArrow';
+import POTDSearch from './POTDSearch';
+import Results from './Results';
 
 // import { API_URL } from '../config.js'
 
@@ -223,6 +225,7 @@ const MainPage = () => {
   const [results, setResults] = useState();
 
   
+  let API_KEY = "HBW5c8xowLyU4NYh8rLUQY47Rth5rmaK5o7fQyWK"
 
   useEffect(() => {
     async function fetchData() {
@@ -254,6 +257,37 @@ const MainPage = () => {
     setQuery(search);
     console.log("the search --->", search);
   }
+//---------------------------pic of the day-----------------------------
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const response = await fetch(
+  //         `https://api.nasa.gov/planetary/apod&api_key=${API_KEY}`
+
+  //       );
+  //       const json = await response.json();
+  //       console.log({ json });
+  //       // console.log("000", json.collection.items)
+  //       // setResults(
+  //       //   json.collection.items.map(item => {
+  //       //     return item.links.map(link => {
+  //       //       return link.href;
+  //       //     })
+  //       //   })
+  //       // )
+  //     } catch (error) { }
+  //   }
+
+  //   if (query !== "") {
+  //     fetchData();
+  //   }
+  // })
+
+  // function onSubmit(e) {
+  //   e.preventDefault();
+  //   setQuery(search);
+  //   console.log("the search --->", search);
+  // }
   
     return (
       <div id={"main-c"}>
@@ -267,7 +301,7 @@ const MainPage = () => {
               <div id={"main-c__bottom-nav-top__switch-c"}>
                 <span id={"image-size-span"}>Image Size</span>
                 <div id={"main-c__bottom-nav-top__image-size-switch"}>
-                  <div id={"image-size-switch__switch"}></div>
+                  <div className={`${imageSizeState === 1 ? "sml" : "a"} ${imageSizeState === 3 ? "lrg" : "b"}`} id={`image-size-switch__switch`}></div>
                   <span className={`size-switch__switch__span-1 ${imageSizeState === 1 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(1)} >sml</span>  <span className={`size-switch__switch__span-2 ${imageSizeState === 2 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(2)} >med</span> <span className={`size-switch__switch__span-3 ${imageSizeState === 3 ? "invisible" : "visible"}`} onClick={()=>setImageSizeState(3)} >lrg</span>
                 </div>
               </div>
@@ -290,12 +324,10 @@ const MainPage = () => {
                  
                 </div>
             </div>
+            <POTDSearch setResults={setResults}/>
                  
           </div>
-          {/* <img className={"main-c__img"} src={`${hrefState ? hrefState : ''}`} ></img> */}
-          {results ? results.map(src => (
-            <img className={"search-array-image"} src={`${src}`} alt={""} key={`${src, Math.random() * 1000 }`}></img> 
-          )) : <h3>nothing</h3>}
+          <Results results={results} imageSizeState={imageSizeState} />
         </div>
 
       </div>
