@@ -5,6 +5,7 @@ import MagnifyingGlass from '../images/MagnifyingGlass';
 import LeftArrow from '../images/LeftArrow';
 import POTDSearch from './POTDSearch';
 import Results from './Results';
+import NASAImageSearch from './NASAImageSearch'
 
 // import { API_URL } from '../config.js'
 
@@ -305,24 +306,10 @@ const MainPage = () => {
                   <span className={`size-switch__switch__span-1 ${imageSizeState === 1 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(1)} >sml</span>  <span className={`size-switch__switch__span-2 ${imageSizeState === 2 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(2)} >med</span> <span className={`size-switch__switch__span-3 ${imageSizeState === 3 ? "invisible" : "visible"}`} onClick={()=>setImageSizeState(3)} >lrg</span>
                 </div>
               </div>
-              <div id={"main-c__bottom-nav-top__Searchbar"} >
-                <MagnifyingGlass/>
+              
                 
-                <form id={"main-c__bottom-nav-top__Searchbar__form"}
-                  onSubmit={e => {
-                    e.preventDefault();
-                    setQuery(search);
-                }}>
-                  <input name={"main-c__bottom-nav-top__Searchbar__input"} value={search}  placeholder={"search"}
-                    onChange={e => setSearch(e.target.value)} 
-                  ></input>
-                  <button id={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>
-                    <LeftArrow/>
-                  </button>
-                </form>
-
-                 
-                </div>
+                <NASAImageSearch setSearch={setSearch} setQuery={setQuery} search={search}/>
+              
             </div>
             <POTDSearch setResults={setResults}/>
                  

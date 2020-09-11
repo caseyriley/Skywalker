@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import LeftArrow from '../images/LeftArrow';
+import MagnifyingGlass from '../images/MagnifyingGlass';
 
 
 const POTDSearch = (props) => {
@@ -40,19 +41,21 @@ const POTDSearch = (props) => {
 
   
   return (
-
-    <form id={"main-c__bottom-nav-top__Searchbar__form"}
-      onSubmit={e => {
-        e.preventDefault();
-        setQuery(search);
-      }}>
-      <input name={"main-c__bottom-nav-top__Searchbar__input"} value={search} placeholder={"YYYY-MM-DD"}
-        onChange={e => setSearch(e.target.value)}
-      ></input>
-      <button id={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>
-        <LeftArrow />
-      </button>
-    </form>
+    <div id={"main-c__bottom-nav-top__Searchbar"} >
+      <MagnifyingGlass />
+      <form className={"main-c__bottom-nav-top__Searchbar__form"}
+        onSubmit={e => {
+          e.preventDefault();
+          setQuery(search);
+        }}>
+        <input name={"main-c__bottom-nav-top__Searchbar__input"} value={search} placeholder={"YYYY-MM-DD"}
+          onChange={e => setSearch(e.target.value)}
+        ></input>
+        <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>
+          <LeftArrow />
+        </button>
+      </form>
+    </div>
   )
 }
 
