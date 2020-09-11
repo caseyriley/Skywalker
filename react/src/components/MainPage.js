@@ -7,13 +7,14 @@ import LeftArrow from '../images/LeftArrow';
 // import { API_URL } from '../config.js'
 
 const MainPage = () => {
-  const [hrefState, setHrefState] = useState("");
   
   const [bottomNavState, setBottomNavState] = useState(true);
   const openCloseBottomNav = () => {
     let nextState = !bottomNavState;
     setBottomNavState(nextState)
   }
+
+  const [imageSizeState, setImageSizeState] = useState(2);
 
 
 
@@ -256,46 +257,46 @@ const MainPage = () => {
   
     return (
       <div id={"main-c"}>
-        
-        <div  className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed" }`}   >
-          <div className={`main-c__bottom-nav-switch ${bottomNavState ? "flipped" : "" }`} onClick={openCloseBottomNav}>
-              {bottomNavState ? <ChecronSkywalker /> : <ChevronSkywalkerInverse />}
-          </div>
-          <div id={"main-c__bottom-nav-top"} >
-            <div id={"main-c__bottom-nav-top__Searchbar"} >
-              <MagnifyingGlass/>
-              <form 
-                onSubmit={e => {
-                  e.preventDefault();
-                  setQuery(search);
-                }}>
-                <input 
-                  value={search}
-                  onChange={e => setSearch(e.target.value)}
-                  placeholder={"search"}
-                >
-                </input>
-                <button className={"searchbutton"} type={"submit"}>Search</button>
-              </form>
-              
-              {/* <input name={"main-c__bottom-nav-top__Searchbar__input"}  placeholder={"search"}
-               onChange={e => setSearchStringState(e.target.value)} 
-               ></input> */}
-              {/* <div id={"main-c__bottom-nav-top__Searchbar__button"} onClick={searchFunction}>
-                <LeftArrow/>
-              </div> */}
+        <div id={"main-c__scroll"}>
+          <div  className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed" }`}   >
+            <div className={`main-c__bottom-nav-switch ${bottomNavState ? "flipped" : "" }`} onClick={openCloseBottomNav}>
+                {bottomNavState ? <ChecronSkywalker /> : <ChevronSkywalkerInverse />}
             </div>
+            <div id={"main-c__bottom-nav-top"} >
+              
+              <div id={"main-c__bottom-nav-top__switch-c"}>
+                <span id={"image-size-span"}>Image Size</span>
+                <div id={"main-c__bottom-nav-top__image-size-switch"}>
+                  <div id={"image-size-switch__switch"}></div>
+                  <span className={`size-switch__switch__span-1 ${imageSizeState === 1 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(1)} >sml</span>  <span className={`size-switch__switch__span-2 ${imageSizeState === 2 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(2)} >med</span> <span className={`size-switch__switch__span-3 ${imageSizeState === 3 ? "invisible" : "visible"}`} onClick={()=>setImageSizeState(3)} >lrg</span>
+                </div>
+              </div>
+              <div id={"main-c__bottom-nav-top__Searchbar"} >
+                <MagnifyingGlass/>
+                
+                <form id={"main-c__bottom-nav-top__Searchbar__form"}
+                  onSubmit={e => {
+                    e.preventDefault();
+                    setQuery(search);
+                }}>
+                  <input name={"main-c__bottom-nav-top__Searchbar__input"} value={search}  placeholder={"search"}
+                    onChange={e => setSearch(e.target.value)} 
+                  ></input>
+                  <button id={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>
+                    <LeftArrow/>
+                  </button>
+                </form>
+
+                 
+                </div>
+            </div>
+                 
           </div>
-          
+          {/* <img className={"main-c__img"} src={`${hrefState ? hrefState : ''}`} ></img> */}
+          {results ? results.map(src => (
+            <img className={"search-array-image"} src={`${src}`} alt={""} key={`${src, Math.random() * 1000 }`}></img> 
+          )) : <h3>nothing</h3>}
         </div>
-        <img className={"main-c__img"} src={`${hrefState ? hrefState : ''}`} ></img>
-        {/* {results ? results.map(item => (
-          <img className={"search-array-image"} src={`${item.data.links}`} alt={""} key={`${item.href.links, Math.random() * 1000 }`}></img> 
-        )) : <h3>nothing</h3>} */}
-        {results ? results.map(src => (
-          <img className={"search-array-image"} src={`${src}`} alt={""} key={`${src, Math.random() * 1000 }`}></img> 
-        )) : <h3>nothing</h3>}
-        
 
       </div>
     )

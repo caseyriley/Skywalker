@@ -19,8 +19,13 @@
   align-items: flex-start;
   flex-wrap: wrap;
   background-color: black;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
-
+#main-c__scroll{
+  height: auto;
+  width: 100vw;
+}
 .main-c__img{
   width: 100%;
   /* height: 100%; */
@@ -84,6 +89,68 @@
   justify-content: space-evenly;
   align-items: center;
 }
+#main-c__bottom-nav-top__switch-c{
+  width: 200px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 100px;
+}
+#image-size-span{
+  margin-bottom: 7px;
+}
+#main-c__bottom-nav-top__switch-c span {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+  font-size: 15px;
+  color: grey;
+
+  
+  
+  /* margin-bottom: 5px;
+  margin-top: 5px; */
+}
+.size-switch__switch__span-1{
+  position: absolute;
+  left: 57px;
+  padding: 3px;
+  pointer-events: all;
+}
+.size-switch__switch__span-2{
+  position: absolute;
+  left: 87px;
+  padding: 3px;
+  pointer-events: all;
+}
+.size-switch__switch__span-3{
+  position: absolute;
+  left: 125px;
+  padding: 3px;
+  pointer-events: all;
+}
+.invisible{
+  visibility: hidden;
+}
+
+#main-c__bottom-nav-top__image-size-switch{
+  width: 100px;
+  height: 24px;
+  border-radius: 999px;
+  background-color: rgb(233, 233, 233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#image-size-switch__switch{
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  background-color: rgb(177, 177, 177);
+}
 #main-c__bottom-nav-top__Searchbar{
   width: 400px;
   height: 40px;
@@ -115,6 +182,13 @@
   margin-left: 10px;
 
 }
+#main-c__bottom-nav-top__Searchbar__form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #main-c__bottom-nav-top__Searchbar__button{
   height: 20px;
   min-width: 30px;
@@ -125,15 +199,16 @@
   justify-content: center;
   align-items: center;
   pointer-events: all;
+  border: none;
+  outline: none;
 }
+
 .left-arrow{
   transform: rotate(180deg);
   height: 25px;
   fill: rgb(233, 233, 233);
 }
-.searchbutton{
-  pointer-events: all;
-}
+
 .search-array-image{
   height: 100px;
   background-image: url("http://images-assets.nasa.gov/image/EARTH_DAY_2019_WEB/EARTH_DAY_2019_WEB~orig.jpg");
