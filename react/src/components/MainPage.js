@@ -1,11 +1,7 @@
-import React, {useState, BrowserRouter, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import ChecronSkywalker from '../images/ChevronSkywalker';
 import ChevronSkywalkerInverse from '../images/ChevronSkywalkerInverse';
-import MagnifyingGlass from '../images/MagnifyingGlass';
-import LeftArrow from '../images/LeftArrow';
-import POTDSearch from './POTDSearch';
 import Results from './Results';
-import NASAImageSearch from './NASAImageSearch'
 import SearchMenu from './SearchMenu';
 import SearchSwitch from './SearchSwitch';
 
@@ -22,6 +18,9 @@ const MainPage = () => {
   const [imageSizeState, setImageSizeState] = useState(2);
 
   const [searchMenuState, setSearchMenuState] = useState("imageSearch")
+
+  const [results, setResults] = useState();
+  
 
 
 
@@ -225,43 +224,9 @@ const MainPage = () => {
 //   }, [searchStringState])
   
 
-  const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState();
+ 
 
-  
-  let API_KEY = "HBW5c8xowLyU4NYh8rLUQY47Rth5rmaK5o7fQyWK"
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(
-          `https://images-api.nasa.gov/search?q=${query}`
-        );
-        const json = await response.json();
-        console.log({json});
-        console.log("000",json.collection.items)
-        setResults(
-          //data.collection.items[0].links[0].href
-              json.collection.items.map(item => {
-              return item.links.map(link => {
-                return link.href;
-              })
-            })    
-          )
-      } catch (error) {}
-    }
-  
-    if (query !== "") {
-      fetchData();
-    }
-  },[query])
-
-  function onSubmit(e) {
-    e.preventDefault();
-    setQuery(search);
-    console.log("the search --->", search);
-  }
 //---------------------------pic of the day-----------------------------
   // useEffect(() => {
   //   async function fetchData() {
@@ -310,11 +275,11 @@ const MainPage = () => {
                   <span className={`size-switch__switch__span-1 ${imageSizeState === 1 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(1)} >sml</span>  <span className={`size-switch__switch__span-2 ${imageSizeState === 2 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(2)} >med</span> <span className={`size-switch__switch__span-3 ${imageSizeState === 3 ? "invisible" : "visible"}`} onClick={()=>setImageSizeState(3)} >lrg</span>
                 </div>
               </div>
-              <SearchSwitch searchMenuState={searchMenuState} setSearch={setSearch} setQuery={setQuery} search={search} setResults={setResults} />
+              <SearchSwitch searchMenuState={searchMenuState} setResults={setResults} results={results} />
               {/* <NASAImageSearch setSearch={setSearch} setQuery={setQuery} search={search}/>  */}
             </div>
             {/* <POTDSearch setResults={setResults}/> */}
-            <SearchMenu setSearchMenuState={setSearchMenuState} />
+            <SearchMenu searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} />
           </div>
           <Results results={results} imageSizeState={imageSizeState} />
         </div>

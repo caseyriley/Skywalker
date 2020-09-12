@@ -178,7 +178,7 @@ const Login = () => {
                     <span>Casey Riley</span>
                     <div className="login-footer__creditBox--links">
                         <a href="mailto:innerforest7@gmail.com">
-                            <img src="https://img.icons8.com/doodle/48/000000/new-post.png"/>
+                            <img alt={""} src="https://img.icons8.com/doodle/48/000000/new-post.png"/>
                         </a>
                         <a href="https://github.com/caseyriley">
                             <GithubIcon/>

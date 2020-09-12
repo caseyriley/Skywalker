@@ -36,7 +36,7 @@ const POTDSearch = (props) => {
   function onSubmit(e) {
     e.preventDefault();
     setQuery(search);
-    console.log("the search --->", search);
+    // console.log("the search --->", search);
   }
 
   

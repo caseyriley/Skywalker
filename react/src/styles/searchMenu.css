@@ -95,3 +95,15 @@
   left: -20px;
 	background-color: #ece24c;
 }
+.menu-item-2~.animation{
+  width: 100%;
+  top: 35px;
+  left: -20px;
+	background-color: #313899;
+}
+.menu-item-3~.animation{
+  width: 100%;
+  top: 65px;
+  left: -20px;
+	background-color: #227db9;
+}
