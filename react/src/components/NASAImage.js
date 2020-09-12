@@ -7,84 +7,83 @@ const NASAImage = (props) => {
 
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('');
-  
-  const [queState, setQueState] = useState([])
+  const [pageOne, setPageOne] = useState([]);
+  const [pageTwo, setPageTwo] = useState([]);
+  const [pageThree, setPageThree] = useState([]);
   
   let API_KEY = "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"
-  // let href = `https://images-api.nasa.gov/search?q=${query}`
 
-
-  
-
-  // useEffect(() => {
-  //   async function fetchData(href){
-  //     try {
-  //       const response = await fetch(
-  //         href
-  //       );
-  //       const json = await response.json();
-  //       return json
-  //     } catch (error) {}
-  //   }
-
-  //   // let que = [];
-
-    
-
-  //   if (query !== "") {
-  //     fetchData();
-  //   }
-
- 
-
-    
-  //   let href = `https://images-api.nasa.gov/search?q=${query}`
-  //   fetchData(href)
-  //     .then(json=>setQueState(json))
-      
-    
-  
-
-  //   if (query !== "") {
-  //     fetchData();
-  //   }
-  // }, [query])
-
+  //--------------------fetch-page-one----------------------------
   useEffect(() => {
-    const limitPerPage = 20;
-    const apiUrl = `https://images-api.nasa.gov/search?q=${query}`;
-
-    const getUsers = async function (pageNo = 2) {
-
-      let actualUrl = apiUrl + `?page=${pageNo}`;
-      var apiResults = await fetch(actualUrl)
-        .then(resp => {
-          return resp.json();
-        });
-
-      return apiResults;
-
+    async function fetchPageOne() {
+      console.log('insideQueryTop', query)
+      try {
+        const response = await fetch(
+          `https://images-api.nasa.gov/search?q=${query}&page=${1}`
+        );
+        const json = await response.json();
+        setPageOne(
+          json.collection.items.map(item => {
+            return item.links.map(link => {
+              return link.href;
+            })
+          })
+        )
+      } catch (error) { }
+    }
+//----------------------fetch-page-two-------------------------------------
+    async function fetchPageTwo() {
+      try {
+        const response = await fetch(
+          `https://images-api.nasa.gov/search?q=${query}&page=${3}`
+        );
+        const json = await response.json();
+        setPageTwo( 
+          json.collection.items.map(item => {
+            return item.links.map(link => {
+              return link.href;
+            })
+          })
+        )
+      } catch (error) { }
+    }
+//----------------------fetch-page-three-------------------------------------
+    async function fetchPageThree() {
+      try {
+        const response = await fetch(
+          `https://images-api.nasa.gov/search?q=${query}&page=${3}`
+        );
+        const json = await response.json();
+        setPageThree( 
+          json.collection.items.map(item => {
+            return item.links.map(link => {
+              return link.href;
+            })
+          })
+        )
+      } catch (error) { }
     }
 
-    const getEntireUserList = async function (pageNo = 2) {
-      const results = await getUsers(pageNo);
-      console.log("Retreiving data from API for page : " + pageNo);
-      if (results.length > 0) {
-        return results.concat(await getEntireUserList(pageNo + 1));
-      } else {
-        return results;
-      }
-    };
 
 
-    (async () => {
+    if (query !== "") {
+      fetchPageOne()
+      fetchPageTwo() 
+      fetchPageThree() 
+     
+      
+    }
+    console.log('insideQueryBottom', query)
+    
+  }, [query])
 
-      const entireList = await getEntireUserList();
-      console.log(entireList);
-      props.setResults(entireList)
-
-    })();
-  },[query])
+  useEffect(()=>{
+    console.log('pageOne', pageOne)
+    console.log('pageTwo', pageTwo)
+    console.log('pageThree', pageThree)
+    props.setResults([...pageOne, ...pageTwo, ...pageThree])
+    console.log('results===>', props.results)
+  }, [pageOne, pageTwo, pageThree])
 
   return (
     <div id={"main-c__bottom-nav-top__Searchbar"} >
