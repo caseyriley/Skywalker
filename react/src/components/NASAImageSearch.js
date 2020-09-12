@@ -15,7 +15,7 @@ const NASAImageSearch = (props) => {
     async function fetchData() {
       try {
         const response = await fetch(
-          `https://images-api.nasa.gov/search?q=${query}`
+          `https://images-api.nasa.gov/search?q=${query}&page=2`
         );
         const json = await response.json();
         // console.log({json});
@@ -34,6 +34,7 @@ const NASAImageSearch = (props) => {
     if (query !== "") {
       fetchData();
     }
+    
   }, [query])
 
 

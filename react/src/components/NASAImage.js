@@ -7,75 +7,84 @@ const NASAImage = (props) => {
 
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('');
-  const initQue = {list: []}
-  const [queState, setQueState] = useState(initQue)
-  console.log('queState', queState)
+  
+  const [queState, setQueState] = useState([])
   
   let API_KEY = "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"
+  // let href = `https://images-api.nasa.gov/search?q=${query}`
 
 
   
+
+  // useEffect(() => {
+  //   async function fetchData(href){
+  //     try {
+  //       const response = await fetch(
+  //         href
+  //       );
+  //       const json = await response.json();
+  //       return json
+  //     } catch (error) {}
+  //   }
+
+  //   // let que = [];
+
+    
+
+  //   if (query !== "") {
+  //     fetchData();
+  //   }
+
+ 
+
+    
+  //   let href = `https://images-api.nasa.gov/search?q=${query}`
+  //   fetchData(href)
+  //     .then(json=>setQueState(json))
+      
+    
+  
+
+  //   if (query !== "") {
+  //     fetchData();
+  //   }
+  // }, [query])
 
   useEffect(() => {
-    async function fetchData(href){
-      try {
-        const response = await fetch(
-          href
-        );
-        const json = await response.json();
-        return json
-      } catch (error) {}
+    const limitPerPage = 20;
+    const apiUrl = `https://images-api.nasa.gov/search?q=${query}`;
+
+    const getUsers = async function (pageNo = 2) {
+
+      let actualUrl = apiUrl + `?page=${pageNo}`;
+      var apiResults = await fetch(actualUrl)
+        .then(resp => {
+          return resp.json();
+        });
+
+      return apiResults;
+
     }
 
-    // let que = [];
-
-    let href = `https://images-api.nasa.gov/search?q=${query}`
-
-    // function getPage() {
-    //   let currentPage = que.pop();
-    //   if (currentPage) {
-    //     console.log("it does!")
-    //   }
-    // }
-
-
-// .collection.links[0].href
+    const getEntireUserList = async function (pageNo = 2) {
+      const results = await getUsers(pageNo);
+      console.log("Retreiving data from API for page : " + pageNo);
+      if (results.length > 0) {
+        return results.concat(await getEntireUserList(pageNo + 1));
+      } else {
+        return results;
+      }
+    };
 
 
-    fetchData(href)
-      .then((json) => setQueState(queState.list.concat(json)))
-      .then(()=> console.log("que", queState))
-    // .then(()=>console.log(que))
-    // .then(()=> {
-    //   getPage()
-    // })
-  
+    (async () => {
 
-    // function getPage(){
-    //   let currentPage = que.pop();
-    //     if (currentPage.collection.links[0].href){
-    //       console.log("it does!")
-        // let nextHref = currentPage.collection.links[0].href
-            // async function fetchNextPage() {
-            //   try {
-            //     const res =  await fetch(
-            //       `${nextHref}`
-            //     );
-            //     let nextJson = await response.json();
-            //     console.log("nextJson", nextJson)
-            //   } catch (error) {}
-            // }
-            // if (query !== ""){
-            //   fetchNextPage();
-            // }
-          // }
-        // }
-        // getPage()
+      const entireList = await getEntireUserList();
+      console.log(entireList);
+      props.setResults(entireList)
 
-    // if (query !== "") {
-    //   fetchData();
-    // }
-  }, [query])
+    })();
+  },[query])
 
   return (
     <div id={"main-c__bottom-nav-top__Searchbar"} >
