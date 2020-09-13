@@ -8,12 +8,12 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-color: black;
 
 }
 #main-c{
   width: 100vw;
-  height: 100vw;
-  /* border: 1px solid blue; */
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -21,6 +21,7 @@
   background-color: black;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  z-index: 10;
 }
 #main-c__scroll{
   height: auto;
@@ -204,6 +205,11 @@
 }
 .potd-img{
   width: 100vw;
+}
+/* --------code along---------- */
+.loading{
+  color: white;
+  margin: 10px 0px 20px 60px;
 }
 
 

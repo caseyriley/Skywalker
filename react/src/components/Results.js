@@ -6,8 +6,8 @@ const Results = (props) => {
 
   return(
     <>
-      {Array.isArray(props.results) ? 
-        <NASAImageGallery imageSizeState={props.imageSizeState} results={props.results} /> :
+      {Array.isArray(props.allResults) ? 
+        <NASAImageGallery error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> :
         <POTDImg results={props.results} />
       }
 

@@ -93,7 +93,7 @@ const NASAImage = (props) => {
           e.preventDefault();
           setQuery(search);
         }}>
-        <input name={"main-c__bottom-nav-top__Searchbar__input"} value={search} placeholder={"new search"}
+        <input name={"main-c__bottom-nav-top__Searchbar__input"} value={search} placeholder={"3 page search"}
           onChange={e => setSearch(e.target.value)}
         ></input>
         <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>

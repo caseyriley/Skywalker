@@ -2,6 +2,7 @@ import React from 'react';
 import NASAImage from './NASAImage';
 import NASAImageSearch from './NASAImageSearch';
 import POTDSearch from './POTDSearch';
+import NASAInfiniteScroll from './NasaInfiniteScroll';
 
 const SearchSwitch = (props) => {
   
@@ -15,6 +16,8 @@ const SearchSwitch = (props) => {
             return <POTDSearch setResults={props.setResults} />
           case "nasaImage":
             return <NASAImage setResults={props.setResults} results={props.results} />
+          case "ininiteScroll":
+            return <NASAInfiniteScroll query={props.query} handleSearch={props.handleSearch} setResults={props.setResults} results={props.results} />
         }
       })()}
     </>
