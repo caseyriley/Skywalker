@@ -43,22 +43,14 @@ const NASAInfiniteScroll = (props) => {
   return (
     <div id={"main-c__bottom-nav-top__Searchbar"} >
       <MagnifyingGlass />
-      {/* <form className={"main-c__bottom-nav-top__Searchbar__form"}
-        onSubmit={e => {
-          e.preventDefault();
-          setQuery(search);
-          setPageNumber(1);
-        }}> */}
         <input type={"text"} 
-        // name={"main-c__bottom-nav-top__Searchbar__input"}
-          value={props.query}
+          value={props.searchValue}
           placeholder={"Infinite Scroll"}
-          onChange={props.handleSearch}
+          onChange={props.updateSearchValue}
         ></input>
-        {/* <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>
+      <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"} onClick={props.handleSearch}>
           <LeftArrow />
-        </button> */}
-      {/* </form> */}
+        </button>
     </div>
   )
 }

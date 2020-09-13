@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef, useCallback} from 'react';
 import ChevronSkywalker from '../images/ChevronSkywalker';
 import ChevronSkywalkerInverse from '../images/ChevronSkywalkerInverse';
+import ImageSizeSelect from './ImageSizeSelect';
 import Results from './Results';
 import SearchMenu from './SearchMenu';
 import SearchSwitch from './SearchSwitch';
@@ -51,9 +52,16 @@ const MainPage = () => {
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
 
+
+  const [searchValue, setSearchValue] = useState();
+  function updateSearchValue(e) {
+    setSearchValue(e.target.value)
+  }
+
   function handleSearch(e) {
-    setQuery(e.target.value)
+    setQuery(searchValue)
     setPageNumber(1)
+    console.log("handle it")
   }
   
     return (
@@ -64,18 +72,9 @@ const MainPage = () => {
                 {bottomNavState ? <ChevronSkywalker /> : <ChevronSkywalkerInverse />}
             </div>
             <div id={"main-c__bottom-nav-top"} >
-              
-              <div id={"main-c__bottom-nav-top__switch-c"}>
-                <span id={"image-size-span"}>Image Size</span>
-                <div id={"main-c__bottom-nav-top__image-size-switch"}>
-                  <div className={`${imageSizeState === 1 ? "sml" : "a"} ${imageSizeState === 3 ? "lrg" : "b"}`} id={`image-size-switch__switch`}></div>
-                  <span className={`size-switch__switch__span-1 ${imageSizeState === 1 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(1)} >sml</span>  <span className={`size-switch__switch__span-2 ${imageSizeState === 2 ? "invisible" : "visible"}`} onClick={() => setImageSizeState(2)} >med</span> <span className={`size-switch__switch__span-3 ${imageSizeState === 3 ? "invisible" : "visible"}`} onClick={()=>setImageSizeState(3)} >lrg</span>
-                </div>
-              </div>
-              <SearchSwitch query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
-              {/* <NASAImageSearch setSearch={setSearch} setQuery={setQuery} search={search}/>  */}
+              <ImageSizeSelect imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} />
+              <SearchSwitch searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
             </div>
-            {/* <POTDSearch setResults={setResults}/> */}
             <SearchMenu searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} />
           </div>
           <Results  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
