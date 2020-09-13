@@ -48,7 +48,7 @@ const NASAInfiniteScroll = (props) => {
           placeholder={"Infinite Scroll"}
           onChange={props.updateSearchValue}
         ></input>
-      <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"} onClick={props.handleSearch}>
+      <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"} onClick={() => {props.handleSearch(); props.closeBottomNav()}}>
           <LeftArrow />
         </button>
     </div>

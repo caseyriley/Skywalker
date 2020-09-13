@@ -16,6 +16,9 @@ const MainPage = () => {
     let nextState = !bottomNavState;
     setBottomNavState(nextState)
   }
+  const closeBottomNav = () => {
+    setBottomNavState(false)
+  }
 // ----------------set-image-size-------------------------------
   const [imageSizeState, setImageSizeState] = useState(2);
   // ---------------------------------------------------------------
@@ -73,7 +76,7 @@ const MainPage = () => {
             </div>
             <div id={"main-c__bottom-nav-top"} >
               <ImageSizeSelect imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} />
-              <SearchSwitch searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
+              <SearchSwitch closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
             </div>
             <SearchMenu searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} />
           </div>
