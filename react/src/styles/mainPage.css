@@ -149,5 +149,25 @@
   color: white;
   margin: 10px 0px 20px 60px;
 }
+.search-array-image__data{
+  height: auto;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0px 30px 0px;
+}
+.search-array-image__data__descirption{
+  color: white;
+  margin: auto;
+  text-align: center;
+}
+.href{
+  margin: 20px 0px 0px 0px;
+  color: white;
+  /* margin: auto; */
+  text-align: center;
+  border: 1px solid royalblue;
+}
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageDataGallery from './ImageDataGallery';
 import NASAImageGallery from './NASAImageGallery';
 import POTDImage from './POTDImage';
 
@@ -10,7 +11,7 @@ const ImageSwitch = (props) => {
       {(() => {
         switch (props.searchMenuState ? props.searchMenuState : "imageSearch") {
           case "imageSearch":
-            return <NASAImageGallery error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
+            return <ImageDataGallery error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
           case "picOfTheDay":
             return <POTDImage potdResult={props.potdResult} results={props.results} /> 
           case "nasaImage":

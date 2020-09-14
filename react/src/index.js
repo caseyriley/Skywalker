@@ -5,7 +5,9 @@ import './styles/NASAImageSearch.css';
 import './styles/POTDSearch.css';
 import './styles/imageSizeSelect.css'
 import './styles/searchMenu.css';
+import './styles/searchFilter.css';
 import App from './App';
+
 
 ReactDOM.render(
   // <React.StrictMode>

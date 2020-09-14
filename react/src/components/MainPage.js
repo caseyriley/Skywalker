@@ -7,6 +7,8 @@ import SearchSwitch from './SearchSwitch';
 import useSearchFunction from './useSearchFunction';
 import usePotdFunction from './usePotdFunction';
 import ImageSwitch from './ImageSwitch';
+import SearchFilter from './SearchFilter';
+import DatePicker from 'react-datepicker';
 
 // import { API_URL } from '../config.js'
 
@@ -97,6 +99,9 @@ const MainPage = () => {
               <ImageSizeSelect imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} />
               <SearchSwitch setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
             </div>
+            <div >
+            </div>
+            {/* <SearchFilter /> */}
             <SearchMenu searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} />
           </div>
           <ImageSwitch searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
