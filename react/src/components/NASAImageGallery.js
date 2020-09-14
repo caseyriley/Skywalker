@@ -8,7 +8,7 @@ const NASAImageGallery = (props) => {
           if (props.allResults.length === index +1) {
             return <img ref={props.lastSearchElementRef} className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 3 ? "lrg-image" : "b"}`} src={`${src}`} alt={""} loading="lazy" key={src}></img>
           } else {
-            return <img className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={`${src}`} alt={""} loading="lazy" key={src}></img>
+            return <img className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={`${src}`} alt="" loading="lazy" key={src}></img>
           }
         }) : <h1>Bad Data</h1>}
       </li>

@@ -23,19 +23,7 @@ export default function useSearchFunction(query, pageNumber) {
       params: { q: query, page: pageNumber, media_type: "image" },
       cancelToken: new axios.CancelToken(c => cancel = c)
     })
-    // .then(res => {
-    //   setAllResults(prevResults => {
-    //     return [...new Set([...prevResults, ...res.data.collection.items.map(item => item.href)])]
-    //   })
-    // }).then(()=> {
-    //   console.log("allResults", allResults)
-    // })
-    // .then((res)=> console.log("NewCodeResults",res.data.collection.items[0].href))
-    // .then((res) => 
-    //   setAllResults(res.data.collection.items.map(item => item.links.map(link => link.href)))
-    // )
     .then(res => {
-      // console.log(res.data.collection.links[0].prompt)
       setAllResults(prevResults => {
         return [...new Set([...prevResults, ...res.data.collection.items.map(item => item.links.map(link => link.href))])]
       })
@@ -46,7 +34,10 @@ export default function useSearchFunction(query, pageNumber) {
       setError(true)
     })
     return () => cancel()
-  }, [query, pageNumber])
+  }
+  // ,[]
+  , [query, pageNumber]
+  )
 
   return { loading, error, allResults, hasMore }
 }

@@ -2,10 +2,11 @@ import React, {useState, useEffect, useRef, useCallback} from 'react';
 import ChevronSkywalker from '../images/ChevronSkywalker';
 import ChevronSkywalkerInverse from '../images/ChevronSkywalkerInverse';
 import ImageSizeSelect from './ImageSizeSelect';
-import Results from './Results';
 import SearchMenu from './SearchMenu';
 import SearchSwitch from './SearchSwitch';
 import useSearchFunction from './useSearchFunction';
+import usePotdFunction from './usePotdFunction';
+import ImageSwitch from './ImageSwitch';
 
 // import { API_URL } from '../config.js'
 
@@ -29,7 +30,7 @@ const MainPage = () => {
   const [results, setResults] = useState();
   // ---------------------------------------------------------------
 
-
+// ------------------NASA-Image-Search-----------------------------------
   const [query, setQuery] = useState('')
   const [pageNumber, setPageNumber] = useState(1)
 
@@ -43,7 +44,7 @@ const MainPage = () => {
   const observer = useRef()
 
   const lastSearchElementRef = useCallback(node => {
-    console.log(node)
+    // console.log(node)
     if (loading) return
     if (observer.current) observer.current.disconnect()
     observer.current = new IntersectionObserver(entries => {
@@ -64,9 +65,27 @@ const MainPage = () => {
   function handleSearch(e) {
     setQuery(searchValue)
     setPageNumber(1)
-    console.log("handle it")
   }
-  
+// ------------------------------------------------------
+
+
+//----------------POTD-Search---------------------------
+  const [potdQuery, setPotdQuery] = useState('');
+  // const [potdSearchValue, setPotdSearchValue] = useState();
+  const {
+    potdResult,
+    // hasMore,
+    // loading,
+    potdError
+  } = usePotdFunction(potdQuery)
+
+  // function updatePotdSearchValue(e){
+  //   setPotdSearchValue(e.target.value)
+  // }
+  // function handlePotdSearch(e) {
+  //   setPotdQuery(potdSearchValue)
+  // }
+  //----------------------------------------------------
     return (
       <div id={"main-c"}>
         <div id={"main-c__scroll"}>
@@ -76,11 +95,12 @@ const MainPage = () => {
             </div>
             <div id={"main-c__bottom-nav-top"} >
               <ImageSizeSelect imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} />
-              <SearchSwitch closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
+              <SearchSwitch setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
             </div>
             <SearchMenu searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} />
           </div>
-          <Results  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
+          <ImageSwitch searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
+          {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}
         </div>
 
       </div>

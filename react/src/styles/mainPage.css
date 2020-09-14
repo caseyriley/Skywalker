@@ -140,8 +140,11 @@
 }
 .potd-img{
   width: 100vw;
+  z-index: 2;
+  /* position: fixed; */
+  /* top: 0px; */
 }
-/* --------code along---------- */
+
 .loading{
   color: white;
   margin: 10px 0px 20px 60px;

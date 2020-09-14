@@ -13,10 +13,10 @@ const SearchSwitch = (props) => {
           case "imageSearch":
             return <NASAImageSearch setResults={props.setResults} results={props.results} /> 
           case "picOfTheDay":
-            return <POTDSearch setResults={props.setResults} />
+            return <POTDSearch setPotdQuery={props.setPotdQuery}  potdQuery={props.potdQuery} closeBottomNav={props.closeBottomNav} updateSearchValue={props.updateSearchValue}  handleSearch={props.handleSearch} setResults={props.setResults} results={props.results}  />
           case "nasaImage":
             return <NASAImage setResults={props.setResults} results={props.results} />
-          case "ininiteScroll":
+          case "infiniteScroll":
             return <NASAInfiniteScroll closeBottomNav={props.closeBottomNav} updateSearchValue={props.updateSearchValue} searchValue={props.searchValue} query={props.query} handleSearch={props.handleSearch} setResults={props.setResults} results={props.results} />
         }
       })()}
