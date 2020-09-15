@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, useCallback} from 'react';
+import React, {useState, useRef, useCallback} from 'react';
 import ChevronSkywalker from '../images/ChevronSkywalker';
 import ChevronSkywalkerInverse from '../images/ChevronSkywalkerInverse';
 import ImageSizeSelect from './ImageSizeSelect';
@@ -7,13 +7,16 @@ import SearchSwitch from './SearchSwitch';
 import useSearchFunction from './useSearchFunction';
 import usePotdFunction from './usePotdFunction';
 import ImageSwitch from './ImageSwitch';
-import SearchFilter from './SearchFilter';
-import DatePicker from 'react-datepicker';
+import FilterStartDate from './FilterStartDate';
+import FilterEndDate from './FilterEndDate';
 
 // import { API_URL } from '../config.js'
 
 const MainPage = () => {
   
+  const [startDateFilterState, setStartDateFilterState] = useState(false);
+  const [endDateFilterState, setEndDateFilterState] = useState(false);
+
   const [bottomNavState, setBottomNavState] = useState(true);
   const openCloseBottomNav = () => {
     let nextState = !bottomNavState;
@@ -41,7 +44,7 @@ const MainPage = () => {
     hasMore,
     loading,
     error
-  } = useSearchFunction(query, pageNumber)
+  } = useSearchFunction(query, pageNumber, startDateFilterState, endDateFilterState)
 
   const observer = useRef()
 
@@ -89,25 +92,26 @@ const MainPage = () => {
   // }
   //----------------------------------------------------
     return (
-      <div id={"main-c"}>
-        <div id={"main-c__scroll"}>
-          <div  className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed" }`}   >
-            <div className={`main-c__bottom-nav-switch ${bottomNavState ? "flipped" : "" }`} onClick={openCloseBottomNav}>
-                {bottomNavState ? <ChevronSkywalker /> : <ChevronSkywalkerInverse />}
+        <div id={"main-c"}>
+          <div id={"main-c__scroll"}>
+            <div  className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed" }`}   >
+              <div className={`main-c__bottom-nav-switch ${bottomNavState ? "flipped" : "" }`} onClick={openCloseBottomNav}>
+                  {bottomNavState ? <ChevronSkywalker /> : <ChevronSkywalkerInverse />}
+              </div>
+              <div id={"main-c__bottom-nav-top"} >
+                <ImageSizeSelect imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} />
+                <SearchSwitch setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
+              </div>
+              <div >
+              </div>
+              {/* <SearchFilter /> */}
+              <FilterEndDate setEndDateFilterState={setEndDateFilterState} />
+              <FilterStartDate setStartDateFilterState={setStartDateFilterState}/>
+              <SearchMenu searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} />
             </div>
-            <div id={"main-c__bottom-nav-top"} >
-              <ImageSizeSelect imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} />
-              <SearchSwitch setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
-            </div>
-            <div >
-            </div>
-            {/* <SearchFilter /> */}
-            <SearchMenu searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} />
+            <ImageSwitch searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
+            {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}
           </div>
-          <ImageSwitch searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
-          {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}
-        </div>
-
       </div>
     )
 

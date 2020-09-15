@@ -6,6 +6,8 @@ import './styles/POTDSearch.css';
 import './styles/imageSizeSelect.css'
 import './styles/searchMenu.css';
 import './styles/searchFilter.css';
+import './styles/filterStartDate.css';
+import './styles/filterEndDate.css';
 import App from './App';
 
 

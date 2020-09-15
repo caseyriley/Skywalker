@@ -1,14 +1,17 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios';
 
-export default function useSearchFunction(query, pageNumber) {
+export default function useSearchFunction(query, pageNumber, startDateFilterState, endDateFilterState) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
   const [allResults, setAllResults] = useState([]);
   const [hasMore, setHasMore] = useState(false)
 
-  let year = `2020`
-  let yearStart = `, year_start: ${year}`
+  
+  let yearStart = startDateFilterState !== false ? `?year_start=${startDateFilterState}` : '';
+  let yearEnd = endDateFilterState !== false ? `?year_end=${endDateFilterState}` : '';
+
+
   useEffect(() => {
       setAllResults([])
     }, [query])
@@ -19,7 +22,7 @@ export default function useSearchFunction(query, pageNumber) {
     let cancel
     axios({
       method: 'GET',
-      url: 'https://images-api.nasa.gov/search',
+      url: `https://images-api.nasa.gov/search${yearStart}${yearEnd}`,
       params: { q: query, page: pageNumber, media_type: "image" },
       cancelToken: new axios.CancelToken(c => cancel = c)
     })
