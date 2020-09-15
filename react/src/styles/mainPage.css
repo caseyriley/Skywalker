@@ -174,6 +174,7 @@
   justify-content: flex-start;
   align-items: center;
   overflow-y: scroll;
+  /* pointer-events: none; */
 }
 #image-modal-c__scroll{
   width: 100%;
@@ -196,6 +197,11 @@
 }
 #image-modal-c__description-c p{
   color: white;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  line-height: 2;
+  font-size: 20px;
+
 }
 
 

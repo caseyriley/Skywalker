@@ -3,20 +3,26 @@ import React, {useState} from 'react';
 
 const ImageDataGallery = (props) => {
 const [imageModalState, setImageModalState] = useState(false);
+const [openCloseState, setOpenCloseState] = useState(false);
 
-
+    function setModalStateFalse(){
+      setOpenCloseState(false)
+    }
 
    function setupModalInfo(e){
      let description = e.target.nextSibling.innerHTML;
      let hrf = e.target.src
      setImageModalState({ hrf: hrf, description: description })
    }
+
   return (
     <>
-    {imageModalState !== undefined ? 
-    <div id={"image-modal-c"}>
+      {openCloseState ? 
+        <div id={"image-modal-c"}
+          onClick={()=>setOpenCloseState(false)} 
+         >
         <div id={"image-modal-c__scroll"}>
-        <img id={"image-modal-c__image"} src={imageModalState.hrf} alt={""} />
+        <img id={"image-modal-c__image"} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />
         <div id={"image-modal-c__description-c"}>
           <p>{imageModalState.description}</p>
         </div>
@@ -30,7 +36,7 @@ const [imageModalState, setImageModalState] = useState(false);
             return <img ref={props.lastSearchElementRef} className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt={""} loading="lazy" key={`${item.links[0].href}${Math.floor(Math.random() * Math.floor(1000))}`}></img>
           } else {
             return (
-              <div onClick={e => setupModalInfo(e)} key={`${item.links[0].href}${Math.floor(Math.random() * Math.floor(1000))}`}>
+              <div onClick={e => { setupModalInfo(e); setOpenCloseState(true)}} key={`${item.links[0].href}${Math.floor(Math.random() * Math.floor(1000))}`}>
                 <img 
                   className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt="" loading="lazy" >
                 </img>
