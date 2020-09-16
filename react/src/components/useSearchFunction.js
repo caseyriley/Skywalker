@@ -8,8 +8,8 @@ export default function useSearchFunction(query, pageNumber, startDateFilterStat
   const [hasMore, setHasMore] = useState(false)
 
   
-  let yearStart = startDateFilterState !== false ? `?year_start=${startDateFilterState}` : '';
-  let yearEnd = endDateFilterState !== false ? `?year_end=${endDateFilterState}` : '';
+  let yearStart = startDateFilterState !== false ? `?year_start=${startDateFilterState}` : '?year_start=1920';
+  let yearEnd = endDateFilterState !== false ? `&year_end=${endDateFilterState}` : '&year_end=2050';
 
 
   useEffect(() => {

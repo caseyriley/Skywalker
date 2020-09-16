@@ -36,7 +36,7 @@ const [openCloseState, setOpenCloseState] = useState(false);
             return <img ref={props.lastSearchElementRef} className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt={""} loading="lazy" key={`${item.links[0].href}${Math.floor(Math.random() * Math.floor(1000))}`}></img>
           } else {
             return (
-              <div onClick={e => { setupModalInfo(e); setOpenCloseState(true)}} key={`${item.links[0].href} boop ${Math.floor(Math.random() * Math.floor(1000))}`}>
+              <div onClick={e => { setupModalInfo(e); setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
                 <img 
                   className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt="" loading="lazy" >
                 </img>

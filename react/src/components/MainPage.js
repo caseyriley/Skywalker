@@ -6,6 +6,7 @@ import SearchMenu from './SearchMenu';
 import SearchSwitch from './SearchSwitch';
 import useSearchFunction from './useSearchFunction';
 import usePotdFunction from './usePotdFunction';
+import useEpicFunction from './useEpicFunction';
 import ImageSwitch from './ImageSwitch';
 import FilterStartDate from './FilterStartDate';
 import FilterEndDate from './FilterEndDate';
@@ -14,9 +15,8 @@ import FilterEndDate from './FilterEndDate';
 
 const MainPage = () => {
   
-  const [startDateFilterState, setStartDateFilterState] = useState(false);
-  const [endDateFilterState, setEndDateFilterState] = useState(false);
 
+//-------------------Bottom-Nav-Sate
   const [bottomNavState, setBottomNavState] = useState(true);
   const openCloseBottomNav = () => {
     let nextState = !bottomNavState;
@@ -25,7 +25,8 @@ const MainPage = () => {
   const closeBottomNav = () => {
     setBottomNavState(false)
   }
-// ----------------set-image-size-------------------------------
+  //---------------------------------------------------------------
+// -----------------SET-NASA-image-size-------------------------------
   const [imageSizeState, setImageSizeState] = useState(2);
   // ---------------------------------------------------------------
   //--------------set-menu-position----------------------------------
@@ -34,6 +35,9 @@ const MainPage = () => {
   // ------------original--search--results--go--here------------
   const [results, setResults] = useState();
   // ---------------------------------------------------------------
+//------------------NAS-Imgage-Date-Filters
+  const [startDateFilterState, setStartDateFilterState] = useState(false);
+  const [endDateFilterState, setEndDateFilterState] = useState(false);
 
 // ------------------NASA-Image-Search-----------------------------------
   const [query, setQuery] = useState('')
@@ -72,25 +76,26 @@ const MainPage = () => {
     setPageNumber(1)
   }
 // ------------------------------------------------------
-
-
+  // https://epic.gsfc.nasa.gov/archive/enhanced/2015/10/31/png/epic_RGB_20151031003633.png
+  // https://epic.gsfc.nasa.gov/archive/natural/2015/10/31/png/epic_1b_20151031074844.png
 //----------------POTD-Search---------------------------
   const [potdQuery, setPotdQuery] = useState('');
-  // const [potdSearchValue, setPotdSearchValue] = useState();
   const {
     potdResult,
     // hasMore,
     // loading,
     potdError
   } = usePotdFunction(potdQuery)
-
-  // function updatePotdSearchValue(e){
-  //   setPotdSearchValue(e.target.value)
-  // }
-  // function handlePotdSearch(e) {
-  //   setPotdQuery(potdSearchValue)
-  // }
   //----------------------------------------------------
+  //---------------EPIC---------------------------------
+  const [epicQuery, setEpicQuery] =useState('');
+  const {
+    epicResult,
+    epicError
+  } = useEpicFunction(epicQuery)
+
+
+  //-----------------------------------------------------
     return (
         <div id={"main-c"}>
           <div id={"main-c__scroll"}>
@@ -100,7 +105,7 @@ const MainPage = () => {
               </div>
               <div id={"main-c__bottom-nav-top"} >
                 <ImageSizeSelect imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} />
-                <SearchSwitch setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
+                <SearchSwitch epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
               </div>
               <div >
               </div>
