@@ -203,8 +203,29 @@
   font-size: 20px;
 
 }
-p{
-  color: white;
+.epic-img-c {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.epic-img-c__img { 
+  margin: auto;
+  height: 100vh;
+}
+#chevron-right{
+  position: fixed;
+  top: 50px;
+  right: 30px;
+  height: 40px;
+  width: 40px;
+  filter: invert(100%);
+  /* border: 10px solid blue; */
+  /* opacity: 50%; */
+  background-image: url("../images/spaceArrow.png");
+  background-position: center;
+  background-size: cover;
 }
 
 
