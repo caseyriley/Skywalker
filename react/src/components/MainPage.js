@@ -114,7 +114,7 @@ const MainPage = () => {
               <FilterStartDate setStartDateFilterState={setStartDateFilterState}/>
               <SearchMenu searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} />
             </div>
-            <ImageSwitch searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
+              <ImageSwitch epicResult={epicResult} searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
             {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}
           </div>
       </div>

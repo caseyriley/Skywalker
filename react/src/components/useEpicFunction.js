@@ -31,7 +31,7 @@ export default function useEpicFunction(epicQuery) {
     // fetch(`https://api.nasa.gov/EPIC/api/natural/date/2019-05-30?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
     
 
-
+    
     fetch(`https://api.nasa.gov/EPIC/api/natural/date/2019-05-30?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
     // fetch(`https://api.nasa.gov/EPIC/api/natural/all?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
     // fetch(`https://epic.gsfc.nasa.gov/api/images.php?enhanced/date/2020-06-08?api_key="DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"`
@@ -40,6 +40,11 @@ export default function useEpicFunction(epicQuery) {
     // .then(res => res.json)
       .then(res => res.json())
       .then(data => setEpicResult(data))
+      .catch(e => {
+        console.log("error", e)
+        // if (axios.isCancel(e)) return
+        // setEpicError(true)
+      })
     // return () => cancel()
   }, [epicQuery])
 
