@@ -216,16 +216,26 @@
 }
 #chevron-right{
   position: fixed;
-  top: 50px;
+  top: calc(50vh - 80px);
   right: 30px;
-  height: 40px;
-  width: 40px;
+  height: 80px;
+  width: 80px;
+  transform: rotate(180deg);
   filter: invert(100%);
-  /* border: 10px solid blue; */
-  /* opacity: 50%; */
-  background-image: url("../images/spaceArrow.png");
   background-position: center;
   background-size: cover;
+  opacity: 80%;
+}
+#chevron-left{
+  position: fixed;
+  top: calc(50vh - 80px);
+  left: 30px;
+  height: 80px;
+  width: 80px;
+  filter: invert(100%);
+  background-position: center;
+  background-size: cover;
+  opacity: 80%;
 }
 
 

@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import JWTManager, create_access_token
 import bcrypt
 
-from models import db, User
+from .models import db, User
 
 auth = Blueprint('auth', __name__)
 
@@ -46,13 +46,15 @@ def login():
             auth_token = create_access_token(identity={"email": user.email})
         return jsonify(auth_token=auth_token), 200
 
-    except Exception:
-        return jsonify(message='Login Failed'), 408
+    except Exception as e:
+        print(e)
+        return jsonify(message='Login Failed'), 400
 
 
 @auth.route('/signup', methods=['POST'])
 def signup():
     data = request.get_json()
+    print("data", data)
 
     try:
         username = data['username']

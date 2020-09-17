@@ -67,9 +67,7 @@ const SignUp = props => {
     <div className="signup-pop--container">
       <div className="signup-head--container">
         <div className="signup-head--topElements">
-          <div className="signup-head__logo">
-            <Bird />
-          </div>
+       
           <div
             className="signup__closeButton--container"
             onClick={props.handleClose}>

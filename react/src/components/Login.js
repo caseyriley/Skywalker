@@ -91,11 +91,11 @@ const Login = () => {
     return (
         <div className='login-container'>
             <div className="login-main--container">
-                <div className="login-main__left">
-                    <div className="login-birdSVG--background">
+                {/* <div className="login-main__left"> */}
+                    {/* <div className="login-birdSVG--background">
                         <Bird/>
-                    </div>
-                    <div className="login-main__left--text">
+                    </div> */}
+                    {/* <div className="login-main__left--text">
                         <div>
                             <MagnifyingGlass/>
                             <span>Follow your interests.</span>
@@ -108,8 +108,8 @@ const Login = () => {
                             <LoginBubble/>
                             <span>Join the conversation.</span>
                         </div>
-                    </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
                 <div className="login-main__right">
                     <div className="login-bar">
                         <div className="login-bar__form">
@@ -142,14 +142,14 @@ const Login = () => {
                     </div>
                     <div
                         className={antiModal}>
-                        <div className="login-block__logo">
+                        {/* <div className="login-block__logo">
                             <Bird/>
-                        </div>
-                        <div className="login-block__h2">
+                        </div> */}
+                        {/* <div className="login-block__h2">
                             <span>See what's happing in the world right now</span>
-                        </div>
+                        </div> */}
                         <div className="login-block__h5">
-                            <span>Join Chatter today.</span>
+                            <span>Welcome to Skywalker</span>
                         </div>
                         <div
                             className="login-block__signup--container"
@@ -171,7 +171,7 @@ const Login = () => {
             </div>
             <div className="login-footer">
                 <div className="login-footer__text">
-                    <span>This Twitter Clone was made by the development team:</span>
+                    {/* <span>This Twitter Clone was made by the development team:</span> */}
                     <span></span>
                 </div>
                 <div className="login-footer__creditBox">
@@ -191,58 +191,7 @@ const Login = () => {
                         </a>
                     </div>
                 </div>
-                <div className="login-footer__creditBox">
-                    <span>Warren Gifford</span>
-                    <div className="login-footer__creditBox--links">
-                        <a href="mailto:warrenbruceg@gmail.com">
-                            <img src="https://img.icons8.com/doodle/48/000000/new-post.png"/>
-                        </a>
-                        <a href="https://github.com/DaedalusG">
-                            <GithubIcon/>
-                        </a>
-                        <a href="https://www.linkedin.com/in/warren-gifford-b1141a1b4/">
-                            <img src="https://img.icons8.com/fluent/48/000000/linkedin.png"/>
-                        </a>
-                        <a href="https://angel.co/u/warren-gifford">
-                            <img src="https://img.icons8.com/color/48/000000/angelist.png"/>
-                        </a>
-                    </div>
-                </div>
-                <div className="login-footer__creditBox">
-
-                    <span>Deepak Ponnuswamy</span>
-                    <div className="login-footer__creditBox--links">
-                        <a href="mailto:deepak.ponnuswamy@gmail.com">
-                            <img src="https://img.icons8.com/doodle/48/000000/new-post.png"/>
-                        </a>
-                        <a href="https://github.com/deepak-po?tab=overview&from=2020-05-01&to=2020-05-10">
-                            <GithubIcon/>
-                        </a>
-                        <a href="https://www.linkedin.com/in/deepak-ponnuswamy-b0067a146/">
-                            <img src="https://img.icons8.com/fluent/48/000000/linkedin.png"/>
-                        </a>
-                        <a href="https://angel.co/u/deepak-po">
-                            <img src="https://img.icons8.com/color/48/000000/angelist.png"/>
-                        </a>
-                    </div>
-                </div>
-                <div className="login-footer__creditBox">
-                    <span>Nolan Crenshaw</span>
-                    <div className="login-footer__creditBox--links">
-                        <a href="mailto:nolan.crenshaw@gmail.com">
-                            <img src="https://img.icons8.com/doodle/48/000000/new-post.png"/>
-                        </a>
-                        <a href="https://github.com/NolanCrenshaw">
-                            <GithubIcon/>
-                        </a>
-                        <a href="https://www.linkedin.com/in/nolan-crenshaw-a10b381a0/">
-                            <img src="https://img.icons8.com/fluent/48/000000/linkedin.png"/>
-                        </a>
-                        <a href="https://angel.co/u/nolan-crenshaw">
-                            <img src="https://img.icons8.com/color/48/000000/angelist.png"/>
-                        </a>
-                    </div>
-                </div>
+                
             </div>
         </div>
     )

@@ -8,6 +8,8 @@ import './styles/searchMenu.css';
 import './styles/searchFilter.css';
 import './styles/filterStartDate.css';
 import './styles/filterEndDate.css';
+import './styles/login.css';
+import './styles/signup.css';
 import App from './App';
 
 

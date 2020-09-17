@@ -9,14 +9,14 @@ from flask_jwt_extended import (
 from flask_cors import CORS
 
 
-from config import Config
-from models import db
-from users import user
-from seed import seed
-from tweets import tweets
-from likes import likes
-from auth import auth
-from replies import replies
+from .config import Config
+from .models import db
+from .users import user
+from .seed import seed
+from .tweets import tweets
+from .likes import likes
+from .auth import auth
+from .replies import replies
 
 
 app = Flask(__name__)
