@@ -30,8 +30,12 @@
 }
 .signup__closeButton--container {
   position: relative;
-  left: -30px;
+  left: 540px;
   z-index: 1;
+  /* border: 5px solid green; */
+  width: 30px;
+  fill: rgb(134, 134, 134);
+
 }
 .signup-head__text p {
   font-size: 24px;

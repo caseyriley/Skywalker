@@ -91,107 +91,45 @@ const Login = () => {
     return (
         <div className='login-container'>
             <div className="login-main--container">
-                {/* <div className="login-main__left"> */}
-                    {/* <div className="login-birdSVG--background">
-                        <Bird/>
-                    </div> */}
-                    {/* <div className="login-main__left--text">
-                        <div>
-                            <MagnifyingGlass/>
-                            <span>Follow your interests.</span>
-                        </div>
-                        <div>
-                            <People/>
-                            <span>Hear what people are talking about.</span>
-                        </div>
-                        <div>
-                            <LoginBubble/>
-                            <span>Join the conversation.</span>
-                        </div>
-                    </div> */}
-                {/* </div> */}
                 <div className="login-main__right">
-                    <div className="login-bar">
-                        <div className="login-bar__form">
-                            <input
-                                className="login-input-field"
-                                type="text"
-                                placeholder="Email"
-                                value={email}
-                                onChange={updateEmail} />
-                            <input
-                                className="login-input-field"
-                                type="password"
-                                placeholder="Password"
-                                value={password}
-                                onChange={updatePassword} />
-                                <SignUpModal
-                                    show={signUpModal}
-                                    handleClose={hideSignUpModal} />
-                            <div
-                                className="login-bar__button--container"
-                                onClick={handleSubmit}>
-                                <div className="login-bar__button">
-                                    <span>Log in</span>
-                                </div>
-                            </div>
-                        </div>
+                    <input className="login-input-1" type="text" placeholder="Email" value={email} onChange={updateEmail} />
+                    <input className="login-input-2" type="password" placeholder="Password" value={password} onChange={updatePassword} /> <SignUpModal show={signUpModal} handleClose={hideSignUpModal} />
+                    <div className="login-bar__button--container" onClick={handleSubmit}>
+                        <span>Log in</span>
+                        <img className={"rocket-pointer"} src="https://staticdelivery.nexusmods.com/mods/3037/images/thumbnails/42/42-1575412019-472511860.png" title="" alt="" ></img>
                     </div>
-                    <div className="login-subBar__span--container">
-                        {/* <span>Forgot password?</span> */}
-                    </div>
-                    <div
-                        className={antiModal}>
-                        {/* <div className="login-block__logo">
-                            <Bird/>
-                        </div> */}
-                        {/* <div className="login-block__h2">
-                            <span>See what's happing in the world right now</span>
-                        </div> */}
-                        <div className="login-block__h5">
-                            <span>Welcome to Skywalker</span>
-                        </div>
-                        <div
-                            className="login-block__signup--container"
-                            onClick={showSignUpModal}>
-                            <div
-                                className="login-block__signup--button">
-                                <span>Sign up</span>
-                            </div>
-                        </div>
-                        <div
-                            className="login-block__demo--container"
-                            onClick={loginDemoUser}>
-                            <div className="login-block__demo--button">
-                                <span>Log in as Demo User</span>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div className="login-block__h5">
+                    <span>Welcome to Skywalker</span>
+                </div>
+                <div className="login-block__signup--button" onClick={showSignUpModal}>
+                    <span>Sign up</span>
+                </div>
+                <div className="login-block__demo--container" onClick={loginDemoUser}>
+                    <span>Log in as Demo User</span>
                 </div>
             </div>
             <div className="login-footer">
                 <div className="login-footer__text">
-                    {/* <span>This Twitter Clone was made by the development team:</span> */}
                     <span></span>
                 </div>
                 <div className="login-footer__creditBox">
                     <span>Casey Riley</span>
                     <div className="login-footer__creditBox--links">
                         <a href="mailto:innerforest7@gmail.com">
-                            <img alt={""} src="https://img.icons8.com/doodle/48/000000/new-post.png"/>
+                            <img alt={""} src="https://img.icons8.com/doodle/48/000000/new-post.png" />
                         </a>
                         <a href="https://github.com/caseyriley">
-                            <GithubIcon/>
+                            <GithubIcon />
                         </a>
                         <a href="https://www.linkedin.com/in/casey-riley-3396231a1/">
-                            <img src="https://img.icons8.com/fluent/48/000000/linkedin.png"/>
+                            <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" />
                         </a>
                         <a href="https://angel.co/u/casey-riley-1">
-                            <img src="https://img.icons8.com/color/48/000000/angelist.png"/>
+                            <img src="https://img.icons8.com/color/48/000000/angelist.png" />
                         </a>
                     </div>
                 </div>
-                
             </div>
         </div>
     )
