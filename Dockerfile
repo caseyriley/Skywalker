@@ -28,3 +28,8 @@ EXPOSE 8000
 
 # Run flask environment
 CMD gunicorn skywalkerBackend:app
+
+
+
+#   public key:
+# SHA256:0RFhGB06bbgYPb8Z94cDEGqGC0DaCChhvW1SqycTHMA
