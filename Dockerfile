@@ -10,7 +10,8 @@ RUN ["pip", "install", "-r", "requirements.txt"]
 # Build our React App
 RUN ["npm", "install", "--prefix", "react"]
 #heroku url
-ENV REACT_APP_BASE_URL=https://flask-react-aa.herokuapp.com
+ENV REACT_APP_BASE_URL=https://https://skywalker3.herokuapp.com
+# ENV REACT_APP_BASE_URL=https://flask-react-aa.herokuapp.com
 RUN ["npm", "run", "build", "--prefix", "react"]
 
 # Move our react build for Flask to serve
