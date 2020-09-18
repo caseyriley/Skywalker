@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import doubleChevron from '../images/doubleChevron.png';
 // import spaceArrow from '../images/SpaceArrow';
 
@@ -8,13 +8,14 @@ const EPICimage = (props) => {
     // console.log(identifier.image))
     `https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/${identifier.image}.png?api_key=${API_KEY}`)
      
-  let picNum = 0;
+  
+  const [picNumState, setPicNumState] = useState(0);
 
   function picRotateRight(){
-    picNum ++;
-    console.log(picNum);
-    if (picNum > resultArray.length  -1){
-      picNum = 0;
+    setPicNumState(picNumState + 1);
+    console.log(picNumState);
+    if (picNumState > resultArray.length  -1){
+      setPicNumState(0);
     }
   }
   return (
@@ -25,11 +26,11 @@ const EPICimage = (props) => {
       {props.epicResult !== undefined ?
       <div className={"epic-img-c"}>
         {}
-          <img className={"epic-img-c__img"} src={resultArray[picNum]} alt={""}></img>
+          <img className={"epic-img-c__img"} src={resultArray[picNumState]} alt={""}></img>
         {/* `https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/${props.epicResult[0].image}.png?api_key=DEMO_KEY` */}
       </div>
         :
-        <img className={"potd-img"} src={''} alt={""}></img>
+        <img className={"epic-img-img"} src={''} alt={""}></img>
         
 
       }

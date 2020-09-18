@@ -8,7 +8,7 @@ function UsersList (props) {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(API_URL + '/users/');
+            const response = await fetch(API_URL + '/api/users/');
             const responseData = await response.json();
             setUsers(responseData.users);
         }

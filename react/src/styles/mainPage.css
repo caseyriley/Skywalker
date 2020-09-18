@@ -36,7 +36,10 @@
   bottom: 0px;
   height: 40%;
   width: 100%;
-  border-top: 1px solid grey;
+  /* border-top: 1px solid rgb(208, 208, 208); */
+  -moz-box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
+  -webkit-box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
+  box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
   background-color: white;
   transition: height 1s;
   z-index: 1;

@@ -6,6 +6,7 @@ import MagnifyingGlass from '../images/MagnifyingGlass';
 import People from '../images/People';
 import LoginBubble from '../images/LoginBubble';
 import GithubIcon from '../images/GithubIcon';
+import astronaut from '../images/astronaut.png';
 
 
 
@@ -28,7 +29,7 @@ const Login = () => {
     const updatePassword = (e) => setPassword(e.target.value);
 
     const handleSubmit = async () => {
-        const response = await fetch(`${API_URL}/auth/login`, {
+        const response = await fetch(`${API_URL}/api/auth/login`, {
             method: "POST",
             mode: "cors",
             headers: { "Content-Type": "application/json" },
@@ -72,7 +73,7 @@ const Login = () => {
         ghostWriteEmail();
         setTimeout(ghostWritePassword, speed*demoEmail.length);
         const demoLogin = async () => {
-            const response = await fetch(`${API_URL}/auth/login`, {
+            const response = await fetch(`${API_URL}/api/auth/login`, {
                 method: "POST",
                 mode: "cors",
                 headers: { "Content-Type": "application/json" },
@@ -92,6 +93,8 @@ const Login = () => {
         <div className='login-container'>
             <div className="login-main--container">
                 <div className="login-main__right">
+                    <div className={"astronaut"}></div>
+                    <img className={"astronaut"} src={astronaut} alt={""} ></img>
                     <input className="login-input-1" type="text" placeholder="Email" value={email} onChange={updateEmail} />
                     <input className="login-input-2" type="password" placeholder="Password" value={password} onChange={updatePassword} /> <SignUpModal show={signUpModal} handleClose={hideSignUpModal} />
                     <div className="login-bar__button--container" onClick={handleSubmit}>
@@ -113,6 +116,7 @@ const Login = () => {
                 <div className="login-footer__text">
                     <span></span>
                 </div>
+                
                 <div className="login-footer__creditBox">
                     <span>Casey Riley</span>
                     <div className="login-footer__creditBox--links">

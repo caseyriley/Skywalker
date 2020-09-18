@@ -33,22 +33,27 @@ def login():
         elif not password:
             return jsonify(message='Password Required'), 400
 
-        user = User.query.filter_by(email=email).first()
-        if not user:
-            return jsonify(message='Email Required'), 400
+    #     user = User.query.filter_by(email=email).first()
+    #     if not user:
+    #         return jsonify(message='Email Required'), 400
 
-        verified = verify_password(password, user.hashed_password)
+    #     verified = verify_password(password, user.hashed_password)
 
-        if not verified:
-            # Error needs handling decision
-            return jsonify(message='Password verify failed'), 403
-        else:
-            auth_token = create_access_token(identity={"email": user.email})
-        return jsonify(auth_token=auth_token), 200
+    #     if not verified:
+    #         # Error needs handling decision
+    #         return jsonify(message='Password verify failed'), 403
+    #     else:
+    #         auth_token = create_access_token(identity={"email": user.email})
+    #     return jsonify(auth_token=auth_token), 200
+
+
+    # return ('the data', data)
+    # return jsonify(auth_token=auth_token), 200
+
 
     except Exception as e:
-        print(e)
-        return jsonify(message='Login Failed'), 400
+         print(e)
+         return jsonify(message='Login Failed'), 400 #
 
 
 @auth.route('/signup', methods=['POST'])

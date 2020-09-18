@@ -22,7 +22,7 @@ services:
  
   flask:
     build:
-      context: ./flask
+      context: ./skywalkerBackend
     ports:
       - target: 5000
         published: 5000

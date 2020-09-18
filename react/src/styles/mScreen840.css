@@ -1,0 +1,43 @@
+@media screen and ( max-width: 1100px){
+  .login-input-1{
+    position: static;
+    margin-top: 130px;
+  }
+  .login-input-2{
+    position: static;
+    margin-top: 30px;
+  }
+  .login-bar__button--container{
+    position: static;
+    margin-top: 30px;
+  }
+  .login-block__demo--container{
+    left: auto;
+  }
+  .login-block__signup--button{
+    left: auto;
+  }
+  .login-footer__creditBox{
+    right: 30px;
+    bottom: 30px;
+  }
+  .login-footer__creditBox ,.login-footer__creditBox--links{
+    height: 160px;
+    flex-direction: column;
+    width: 50px;
+  }
+  .login-footer__creditBox span{
+    display: none;
+  }
+  .login-block__h5 {
+    position: absolute;
+    top: 55px;
+    font-size: 5vw;
+    font-family: 'Kanit', 'Cabin', sans-serif;
+    color: rgb(192, 189, 189);
+    font-weight: 800;
+
+  }
+
+
+}

@@ -19,7 +19,7 @@ from .auth import auth
 from .replies import replies
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 app.config.from_object(Config)
 CORS(app)
 
@@ -34,9 +34,10 @@ db.init_app(app)
 jwt = JWTManager(app)
 
 
-@app.route('/')
-def slash():
-    return jsonify(Notice='Please use /api route to access the api'), 200
+@app.route('/', defaults={'path': ''})
+@app.route('/<path>')
+def react_root(path):
+    return app.send_static_file('index.html')
 
 
 @app.route('/api', methods=['GET'])

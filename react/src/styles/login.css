@@ -167,10 +167,10 @@
 .login-block__h5 {
     position: absolute;
     top: 55px;
-    font-size: 30px;
-    font-family: 'Cabin', sans-serif;
+    font-size: 3.5vw;
+    font-family: 'Kanit', 'Cabin', sans-serif;
     color: rgb(192, 189, 189);
-
+    font-weight: 800;
 }
 
 
@@ -211,7 +211,10 @@
     /* flex-direction: column; */
     justify-content: space-evenly;
     align-items: center;
-    box-shadow: inset 5px 4px 6px -4px rgba(255, 255, 255, 0.75);
+    box-shadow: 
+        inset 5px 4px 6px -4px rgba(255, 255, 255, 0.9), 
+        inset -5px -4px 3px -4px rgba(255, 255, 255, 0.9);
+    cursor: pointer;
 }
 .login-footer__creditBox span {
     color: gray;
@@ -245,17 +248,20 @@
     margin-right: 15px;
     color: gray;
     font-weight: 700;
-    font-size: 14px;
-    background-color: #000000;
+    font-size: 17px;
+    background-color: transparent;
     outline: none;
     border-radius: 20px;
-    /* border: 1px solid rgb(140, 140, 140); */
-    box-shadow: inset 5px 4px 6px -4px rgba(255, 255, 255, 0.75);
+    box-shadow: 
+        inset 5px 4px 6px -4px rgba(255, 255, 255, 0.9), 
+        inset -5px -4px 3px -4px rgba(255, 255, 255, 0.9);
     text-align: center;
-
-    
+    /* background-image: url("https://www.uokpl.rs/fpng/f/548-5483738_astronaut-aesthetic-png.png"); */
+    background-size: cover;
+    background-position: -55px 0px;
     
 }
+
 .login-input-2 {
     position: fixed;
     left: 70px;
@@ -265,17 +271,29 @@
     margin-right: 15px;
     color: gray;
     font-weight: 700;
-    font-size: 14px;
-    background-color: #000000;
+    font-size: 17px;
+    background-color: transparent;
     outline: none;
     border-radius: 20px;
-    /* border: 1px solid rgb(140, 140, 140); */
-    box-shadow: inset 5px 4px 6px -4px rgba(255, 255, 255, 0.75);
+    box-shadow: 
+        inset 5px 4px 6px -4px rgba(255, 255, 255, 0.9), 
+        inset -5px -4px 3px -4px rgba(255, 255, 255, 0.9);
     text-align: center;
+    /* background-image: url("https://www.uokpl.rs/fpng/f/548-5483738_astronaut-aesthetic-png.png"); */
+    background-size: cover;
+    background-position: -55px -105px;
+    /* <img src="https://i.dlpng.com/static/png/7452330_thumb.png" alt="Drawing Astronaut Illustration PNG, Clipart, Arts, Astronaut Kids ..." title="Drawing Astronaut Illustration PNG, Clipart, Arts, Astronaut Kids ..." class="card-img-top"> */
 }
+/* .login-input-1:focus {
+    background-color: black;
+} */
+/* input:-internal-autofill-selected { 
+    background-color: black !important;
+} */
 
 .login-bar__button--container {
     color: gray;
+    text-shadow: 2px 1px 1px rgb(0, 0, 0, .7);
     position: fixed;
     top: 225px;
     left: 70px;
@@ -293,14 +311,16 @@
     align-items: center;
     /* -webkit-box-shadow: inset 3px 3px 4px -3px rgba(128, 128, 128, 0.75);
     -moz-box-shadow: inset 3px 3px 4px -3px rgba(128, 128, 128, 0.75); */
-    box-shadow: inset 5px 4px 6px -4px rgba(255, 255, 255, 0.75);
-
+    box-shadow: 
+        inset 5px 4px 6px -4px rgba(255, 255, 255, 0.9), 
+        inset -5px -4px 3px -4px rgba(255, 255, 255, 0.9);
 }
 .login-bar__button--container:hover {
     background-color: #2a4357;
 }
 .login-block__demo--container {
-    color: gray;
+    color: rgb(155, 155, 155);
+    text-shadow: 2px 1px 1px rgb(0, 0, 0, .7);
     width: 250px;
     height: 40px;
     border-radius: 999px;
@@ -311,14 +331,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: inset 5px 4px 6px -4px rgba(255, 255, 255, 0.75);
-    
+    box-shadow: 
+        inset 5px 4px 6px -4px rgba(255, 255, 255, 0.9), 
+        inset -5px -4px 3px -4px rgba(255, 255, 255, 0.9);
+    cursor: pointer;
 }
 
-
-
 .login-block__signup--button{
-    color: gray;
+    color: rgb(181, 181, 181);
     width: 250px;
     height: 40px;
     border-radius: 999px;
@@ -329,5 +349,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: inset 5px 4px 6px -4px rgba(255, 255, 255, 0.75);
+    box-shadow: 
+        inset 5px 4px 6px -4px rgba(255, 255, 255, 0.9), 
+        inset -5px -4px 3px -4px rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+}
+.astronaut{
+    height: 20vw;
+    /* width: 200px; */
+    position: fixed;
+    right: 0px;
+    top: 70px;
+    /* background-image: url("https://www.uokpl.rs/fpng/f/548-5483738_astronaut-aesthetic-png.png"); */
+    background-size: cover;
 }

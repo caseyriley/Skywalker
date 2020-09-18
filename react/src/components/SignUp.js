@@ -39,7 +39,7 @@ const SignUp = props => {
     }
 
 
-    const response = await fetch(`${API_URL}/auth/signup`, {
+    const response = await fetch(`${API_URL}/api/auth/signup`, {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
