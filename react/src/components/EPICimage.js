@@ -3,11 +3,20 @@ import doubleChevron from '../images/doubleChevron.png';
 // import spaceArrow from '../images/SpaceArrow';
 
 const EPICimage = (props) => {
-  const API_KEY = "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"
-  let httpStart = `https://api.nasa.gov/EPIC/archive/natural/${'2019-05-30'}`
+  console.log("props EPIC", props.epicQuery)
+  const API_KEY = "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz";
+  const slashQuery = props.epicQuery.replace("-", "/").replace("-", "/");
+  let httpStart = `https://api.nasa.gov/EPIC/archive/natural/${slashQuery}`;
   let resultArray = props.epicResult.map(identifier => 
     // console.log(identifier.image))
     `${httpStart}/png/${identifier.image}.png?api_key=${API_KEY}`)
+     //https://api.nasa.gov/EPIC/archive/natural/2019-05-30/png/epic_1b_20190530011359.png?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz
+     //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz
+     //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api_key=DEMO_KEY
+     //https://api.nasa.gov/EPIC/archive/natural/2019-05-30/png/epic_1b_20190530011359.png?api_key=DEMO_KEY                  
+     //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api_key=DEMO_KEY
+                                                                                      
+    //'https://api.nasa.gov/EPIC/archive/natural/2019-05-30/png/epic_1b_20190530011359.png?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz'
    //  https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?
   //   https://api.nasa.gov/EPIC/archive/natural/2019-05-30/png/epic_1b_20190530011359.png?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz
   
@@ -16,15 +25,16 @@ const EPICimage = (props) => {
   function picRotateRight(){
     setPicNumState(picNumState + 1);
     console.log(picNumState);
-    if (picNumState > resultArray.length  -1){
+    if (picNumState > resultArray.length  -2){
       setPicNumState(0);
     }
   }
 
   function picRotateLeft(){
-    setPicNumState(picNumState - 1);
-    if (picNumState < 0){
-      setPicNumState(resultArray.length);
+    if (picNumState < 1){
+      setPicNumState(resultArray.length -2);
+    } else {
+      setPicNumState(picNumState -1)
     }
     
   }
