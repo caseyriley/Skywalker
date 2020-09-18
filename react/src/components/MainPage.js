@@ -88,7 +88,7 @@ const MainPage = () => {
   } = usePotdFunction(potdQuery)
   //----------------------------------------------------
   //---------------EPIC---------------------------------
-  const [epicQuery, setEpicQuery] = useState('2020-03-03');
+  const [epicQuery, setEpicQuery] = useState("2020-09-16");
   
   const {
     epicResult,
