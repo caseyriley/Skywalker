@@ -240,5 +240,13 @@
   background-size: cover;
   opacity: 80%;
 }
+.epic-img-c__date-not-available{
+  height: 100%;
+  width: 100%;
+  color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 

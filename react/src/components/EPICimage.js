@@ -38,23 +38,24 @@ const EPICimage = (props) => {
     }
     
   }
-
+  console.log(props.epicResult)
 
   return (
     <>
       <img id={"chevron-right"} src={doubleChevron} alt={"not here"} onClick={picRotateRight}></img>
       <img id={"chevron-left"} src={doubleChevron} alt={"not here"} onClick={picRotateLeft} ></img>
       {/* <div id={"chevron-right"} ></div> */}
-      {props.epicResult !== undefined ?
+      {props.epicResult.length !== 0?
       <div className={"epic-img-c"}>
         {}
           <img className={"epic-img-c__img"} src={resultArray[picNumState]} alt={""}></img>
         {/* `https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/${props.epicResult[0].image}.png?api_key=DEMO_KEY` */}
       </div>
         :
-        <img className={"epic-img-img"} src={''} alt={""}></img>
-        
-
+        <div className={"epic-img-c__date-not-available"}> 
+          <h1>Date Not Available</h1>
+          <h1>Please Try Again</h1>
+        </div>
       }
     </>
   )
