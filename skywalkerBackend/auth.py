@@ -46,12 +46,6 @@ def login():
             auth_token = create_access_token(identity={"email": user.email})
         return jsonify(auth_token=auth_token), 200
 
-#-----------------------------------------------------
-    # return ('the data', data)
-    # return jsonify(auth_token=auth_token), 200
-#--------------------------------------------------
-
-
     except Exception as e:
          print(e)
          return jsonify(message='Login Failed'), 400 #

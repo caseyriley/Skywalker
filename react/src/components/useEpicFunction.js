@@ -7,7 +7,7 @@ export default function useEpicFunction(epicQuery) {
   const [epicResult, setEpicResult] = useState([]);
 
   let API_KEY = "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"
-  let date = `2020-08-08`
+ 
   useEffect(() => {
     setEpicResult([])
   }, [epicQuery])
