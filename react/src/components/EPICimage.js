@@ -4,10 +4,11 @@ import doubleChevron from '../images/doubleChevron.png';
 
 const EPICimage = (props) => {
   const API_KEY = "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"
+  let httpStart = `https://api.nasa.gov/EPIC/archive/natural/${props.epicQuery}`
   let resultArray = props.epicResult.map(identifier => 
     // console.log(identifier.image))
-    `https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/${identifier.image}.png?api_key=${API_KEY}`)
-     
+    `${httpStart}/png/${identifier.image}.png?api_key=${API_KEY}`)
+   //  https://api.nasa.gov/EPIC/archive/natural/2020-03-03/png/epic_1b_20190530011359.png?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz
   
   const [picNumState, setPicNumState] = useState(0);
 

@@ -88,7 +88,8 @@ const MainPage = () => {
   } = usePotdFunction(potdQuery)
   //----------------------------------------------------
   //---------------EPIC---------------------------------
-  const [epicQuery, setEpicQuery] =useState('');
+  const [epicQuery, setEpicQuery] = useState('2020-03-03');
+  
   const {
     epicResult,
     epicError
@@ -114,7 +115,7 @@ const MainPage = () => {
               <FilterStartDate setStartDateFilterState={setStartDateFilterState}/>
               <SearchMenu searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} />
             </div>
-              <ImageSwitch epicResult={epicResult} searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
+              <ImageSwitch epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
             {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}
           </div>
       </div>

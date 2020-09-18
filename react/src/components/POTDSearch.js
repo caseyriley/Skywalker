@@ -6,6 +6,7 @@ const POTDSearch = (props) => {
   const [potdSearchValue, setPotdSearchValue] = useState();
   function updatePotdSearchValue(e) {
     setPotdSearchValue(e.target.value)
+    console.log(potdSearchValue)
   }
   return (
     <div id={"main-c__bottom-nav-top__Searchbar"} >
