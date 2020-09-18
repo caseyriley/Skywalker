@@ -8,6 +8,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 
+        inset 0px 4px 4px -4px rgba(125, 125, 125, 0.5),
+        inset 0px -4px 5px -3px rgba(125, 125, 125, 0.5);
 }
 #main-c__bottom-nav-top__Searchbar input{
   outline: none;

@@ -18,10 +18,20 @@ const EPICimage = (props) => {
       setPicNumState(0);
     }
   }
+
+  function picRotateLeft(){
+    setPicNumState(picNumState - 1);
+    if (picNumState < 0){
+      setPicNumState(resultArray.length);
+    }
+    
+  }
+
+
   return (
     <>
       <img id={"chevron-right"} src={doubleChevron} alt={"not here"} onClick={picRotateRight}></img>
-      <img id={"chevron-left"} src={doubleChevron} alt={"not here"}></img>
+      <img id={"chevron-left"} src={doubleChevron} alt={"not here"} onClick={picRotateLeft} ></img>
       {/* <div id={"chevron-right"} ></div> */}
       {props.epicResult !== undefined ?
       <div className={"epic-img-c"}>

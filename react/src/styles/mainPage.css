@@ -40,7 +40,7 @@
   -moz-box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
   -webkit-box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
   box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
-  background-color: white;
+  background-color: hsl(0, 0%, 100%, .95);
   transition: height 1s;
   z-index: 1;
 }

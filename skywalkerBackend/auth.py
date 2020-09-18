@@ -33,9 +33,9 @@ def login():
         elif not password:
             return jsonify(message='Password Required'), 400
 
-    #     user = User.query.filter_by(email=email).first()
-    #     if not user:
-    #         return jsonify(message='Email Required'), 400
+        user = User.query.filter_by(email=email).first()
+        if not user:
+            return jsonify(message='Email Required'), 400
 
     #     verified = verify_password(password, user.hashed_password)
 

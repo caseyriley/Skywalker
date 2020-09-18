@@ -6,6 +6,7 @@
   flex-direction: column;
   right: 350px;
   margin-top: -40px;
+  
 }
 #filter-date-c span { 
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -20,10 +21,12 @@
   height: 40px;
   border-radius: 999px;
   background-color: rgb(233, 233, 233);
-  
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 
+        inset 0px 4px 4px -4px rgba(125, 125, 125, 0.5),
+        inset 0px -4px 5px -3px rgba(125, 125, 125, 0.5);
 }
 #filter-date input{
   outline: none;
