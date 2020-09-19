@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 
-export default function useEpicFunction(epicQuery) {
+export default function useEpicFunction(epicQuery, epicEnhancedState) {
   const [loading, setLoading] = useState(true)
   const [epicError, setEpicError] = useState(false)
   const [epicResult, setEpicResult] = useState([]);
@@ -34,7 +34,7 @@ export default function useEpicFunction(epicQuery) {
 
     
     
-    fetch(`https://api.nasa.gov/EPIC/api/natural/date/${epicQuery}?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
+    fetch(`https://api.nasa.gov/EPIC/api/${epicEnhancedState ? "natural" : "enhanced"}/date/${epicQuery}?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
 
     // fetch(`https://api.nasa.gov/EPIC/api/natural/all?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
     // fetch(`https://epic.gsfc.nasa.gov/api/images.php?enhanced/date/2020-06-08?api_key="DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"`

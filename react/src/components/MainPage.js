@@ -90,13 +90,18 @@ const MainPage = () => {
   //----------------------------------------------------
   //---------------EPIC---------------------------------
   const [epicQuery, setEpicQuery] = useState("2019-05-30");
+
+  const [epicEnhancedState, setEpicEnhancedState] = useState(true)
   
   const {
     epicResult,
     epicError
-  } = useEpicFunction(epicQuery)
+  } = useEpicFunction(epicQuery, epicEnhancedState)
 
-  const [epicEnhancedState, setEpicEnhancedState] = useState(false)
+  function toggleEnhancedState(){
+    let nextState = !epicEnhancedState;
+    setEpicEnhancedState(nextState)
+  }
 
 
   //-----------------------------------------------------
@@ -113,9 +118,9 @@ const MainPage = () => {
               </div>
               <div >
               </div>
-              <BottomNavControls searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState}/>
+              <BottomNavControls epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState}  searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState}/>
             </div>
-              <ImageSwitch epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
+              <ImageSwitch epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
             {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}
           </div>
       </div>

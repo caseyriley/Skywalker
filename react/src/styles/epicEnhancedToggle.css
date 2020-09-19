@@ -1,0 +1,51 @@
+#enhanced-toggle{
+  position: absolute;
+  right: 300px;
+  top: 100px;
+  height: 160px;
+  width: 50px;
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 999px;
+  box-shadow: 
+        inset 0px 6px 4px -4px rgba(125, 125, 125, 0.6),
+        inset 0px -6px 5px -2px rgba(125, 125, 125, 0.6);
+  background-color: rgb(233, 233, 233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#enhanced-toggle__switch{
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  border-radius: 100%;
+  background-color: rgb(177, 177, 177);
+  transition: all .3s ease-out;
+  box-shadow: 
+        inset 0px 4px 4px -2px rgba(125, 125, 125, 0.8),
+        inset 0px -4px 5px -0px rgba(125, 125, 125, 0.8);
+}
+#enhanced-toggle__enhanced{
+  color: rgb(0, 140, 255);
+  font-size: 25px;
+  position: absolute;
+  top: 15px;
+  left: -130px;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 500;
+}
+#enhanced-toggle__natural{
+  color: rgb(0, 140, 255);
+  font-size: 25px;
+  position: absolute;
+  bottom: 15px;
+  left: -114px;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 500;
+}
+.enhaced-state{
+  margin-top: -100px;
+}
+.natural-state{
+  margin-bottom: -100px;
+}

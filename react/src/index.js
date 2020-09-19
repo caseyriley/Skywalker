@@ -10,7 +10,9 @@ import './styles/filterStartDate.css';
 import './styles/filterEndDate.css';
 import './styles/login.css';
 import './styles/signup.css';
+import './styles/epicEnhancedToggle.css'
 import './styles/mScreen840.css';
+
 import App from './App';
 
 
