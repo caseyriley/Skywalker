@@ -15,9 +15,11 @@ const ImageSwitch = (props) => {
             return <ImageDataGallery error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
           case "picOfTheDay":
             return <POTDImage potdResult={props.potdResult} results={props.results} /> 
-          case "nasaImage":
+          case "epic":
             return <EPICimage epicQuery={props.epicQuery} epicResult={props.epicResult} error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
           case "infiniteScroll":
+            return <NASAImageGallery error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
+          case "mars-weather":
             return <NASAImageGallery error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
         }
       })()}

@@ -10,6 +10,7 @@ import useEpicFunction from './useEpicFunction';
 import ImageSwitch from './ImageSwitch';
 import FilterStartDate from './FilterStartDate';
 import FilterEndDate from './FilterEndDate';
+import BottomNavControls from './BottomNavControls';
 
 // import { API_URL } from '../config.js'
 
@@ -95,6 +96,8 @@ const MainPage = () => {
     epicError
   } = useEpicFunction(epicQuery)
 
+  const [epicEnhancedState, setEpicEnhancedState] = useState(false)
+
 
   //-----------------------------------------------------
     return (
@@ -110,10 +113,7 @@ const MainPage = () => {
               </div>
               <div >
               </div>
-              {/* <SearchFilter /> */}
-              <FilterEndDate setEndDateFilterState={setEndDateFilterState} />
-              <FilterStartDate setStartDateFilterState={setStartDateFilterState}/>
-              <SearchMenu searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} />
+              <BottomNavControls searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState}/>
             </div>
               <ImageSwitch epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
             {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}

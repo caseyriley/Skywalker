@@ -14,6 +14,7 @@ export default function useEpicFunction(epicQuery) {
 
   useEffect(() => {
     console.log("about to get")
+    console.log(epicQuery)
     setLoading(true)
     setEpicError(false)
     let cancel
@@ -44,7 +45,7 @@ export default function useEpicFunction(epicQuery) {
       // .then(data => console.log(data))
       .then(data => setEpicResult(data))
       .catch(e => {
-        console.log("error", e)
+        console.log("error")
         // if (axios.isCancel(e)) return
         // setEpicError(true)
       })
