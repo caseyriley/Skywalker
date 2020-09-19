@@ -39,7 +39,7 @@
   /* border-top: 1px solid rgb(208, 208, 208); */
   -moz-box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
   -webkit-box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
-  box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
+  box-shadow: 0px -3px 6px 2px rgba(48, 48, 48, 0.2);
   background-color: hsl(0, 0%, 100%, .95);
   transition: height 1s;
   z-index: 1;
@@ -62,7 +62,6 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  
 }
 .flipped{
   transform: rotate(180deg);
@@ -70,18 +69,22 @@
 }
 #chevron-skywalker{
   width: 60px;
-  fill: white;
+  fill: hsl(0, 0%, 100%, .95);
   position: relative;
   top: 29px;
   filter: drop-shadow(0px -1px 4px rgb(158, 158, 158));
+  /* box-shadow: 0px -3px 6px 2px rgba(48, 48, 48, 0.2); */
+  /* background-color: hsl(0, 0%, 100%, .95); */
   
 }
 #chevron-skywalker-inverse{
   width: 60px;
-  fill: white;
+  fill: hsl(0, 0%, 100%, .95);
   transform: rotate(180deg);
   position: relative;
   top: -21px;
+  filter: drop-shadow(0px 5px 6px rgba(48, 48, 48, .19));
+  /* background-color: hsl(0, 0%, 100%, .95); */
 }
 #main-c__bottom-nav-top{
   width: 100vw;
