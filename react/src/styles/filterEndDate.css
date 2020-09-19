@@ -5,7 +5,8 @@
   position: absolute;
   flex-direction: column;
   right: 350px;
-  margin-top: 45px;
+  /* margin-top: 45px; */
+  top: 190px;
   
  
 }

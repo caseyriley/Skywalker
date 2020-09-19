@@ -34,6 +34,8 @@
   cursor: pointer;
   margin-left: 20px;
   /* border: 1px solid green; */
+  display: flex;
+  justify-content: center;
 }
 .search-menu-nav div span{
   width: 300px;
@@ -41,6 +43,8 @@
   font-weight: 500;
   line-height: 1.15;
   font-size: 14px;
+
+  text-align: center;
   /* color: grey; */
 }
 .search-menu-nav .animation {
@@ -69,56 +73,67 @@
 	width: 100px;
 }
 .search-menu-nav .start-home, .search-menu-nav__a:nth-child(1):hover~.animation {
-	width: 100%;
+	width: 90%;
   top: 5px;
-  left: -20px;
-	background-color: #5c43b6;
+  left: -7%;
+	background-color: #8242cc;
 }
 .search-menu-nav .start-about, .search-menu-nav__a:nth-child(2):hover~.animation {
-	width: 100%;
+	width: 90%;
   top: 35px;
-  left: -20px;
+  left: -7%;
 	background-color: #313899;
 }
 .search-menu-nav .start-blog, .search-menu-nav__a:nth-child(3):hover~.animation {
-	width: 100%;
+	width: 90%;
   top: 65px;
-  left: -20px;
-	background-color: #227db9;
+  left: -7%;
+	background-color: #2ca5eb;
 }
 .search-menu-nav .start-portefolio, .search-menu-nav__a:nth-child(4):hover~.animation {
-	width: 100%;
+	width: 90%;
   top: 95px;
-  left: -20px;
-	background-color: #59b659;
+  left: -7%;
+	background-color: #36b831;
 }
 .search-menu-nav .start-contact, .search-menu-nav__a:nth-child(5):hover~.animation {
-	width: 100%;
+	width: 90%;
   top: 125px;
-  left: -20px;
-	background-color: #ece24c;
+  left: -7%;
+	background-color: #f0a720;
+}
+.menu-item-1~.animation{
+  width: 90%;
+  top: 5px;
+  left: -7%;
+	background-color: #a272c9;
 }
 .menu-item-2~.animation{
-  width: 100%;
+  width: 90%;
   top: 35px;
-  left: -20px;
-	background-color: #313899;
+  left: -7%;
+	background-color: #646de7;
 }
+
 .menu-item-3~.animation{
-  width: 100%;
+  width: 90%;
   top: 65px;
-  left: -20px;
-	background-color: #227db9;
+  left: -7%;
+	background-color: #50b0e7;
 }
 .menu-item-4~.animation{
-  width: 100%;
+  width: 90%;
   top: 95px;
-  left: -20px;
-	background-color: #59b659;
+  left: -7%;
+	background-color: #78d475;
 }
 .menu-item-5~.animation{
-  width: 100%;
+  width: 90%;
   top: 125px;
-  left: -20px;
-	background-color: #59b659;
+  left: -7%;
+	background-color: #f5b53f;
 }
+/* .menu-item-2~.animation{ */
+  /* width: 90% !important;
+  margin-left: 27px; */
+/* } */

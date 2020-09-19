@@ -5,7 +5,7 @@
   position: absolute;
   flex-direction: column;
   right: 350px;
-  margin-top: -40px;
+  top: 100px;
   
 }
 #filter-date-c span { 

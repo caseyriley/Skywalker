@@ -7,7 +7,7 @@ const FilterEndDate = (props) => {
 
   return (
     <div id={"filter-end-date-c"}>
-      <span>End end-</span>
+      <span>End Date</span>
       <div id={"filter-end-date"} >
         <MagnifyingGlass />
         <input type={"text"}

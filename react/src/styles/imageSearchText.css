@@ -1,0 +1,18 @@
+#image-search-text{
+  height: 25vh;
+  width: 40%;
+  margin: 25px 0px 20px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+  top: -80px;
+  font-size: 20px;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 500;
+  color: grey;
+}
+#image-search-text p{
+  margin: 10px 0px 0px 0px;;
+}
