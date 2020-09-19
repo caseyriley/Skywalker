@@ -8,6 +8,7 @@
   position: absolute;
   left: 100px;
   
+  
 }
 
 #image-size-span{
@@ -15,57 +16,68 @@
 }
 
 #main-c__bottom-nav-top__image-size-switch{
-  width: 200px;
-  height: 24px;
+  width: 400px;
+  height: 40px;
   border-radius: 999px;
   background-color: rgb(233, 233, 233);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   position: relative;
   box-shadow: 
         inset 0px 4px 4px -4px rgba(125, 125, 125, 0.5),
         inset 0px -4px 5px -3px rgba(125, 125, 125, 0.5);
+  position: absolute;
+  left: 100px;
+}
+#main-c__bottom-nav-top__image-size-switch span{
+  font-size: 20px;
+  color: grey;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  transition: opacity .3s;
 }
 
 #image-size-switch__switch{
-  height: 15px;
-  width: 15px;
+  height: 25px;
+  width: 25px;
   border-radius: 100%;
   background-color: rgb(177, 177, 177);
   position: absolute;
   transition: all .3s ease-out;
-  
+  box-shadow: 
+        inset 0px 4px 4px -2px rgba(125, 125, 125, 0.8),
+        inset 0px -4px 5px -0px rgba(125, 125, 125, 0.8),
+        0px 4px 6px 0px rgba(125, 125, 125, 0.7);
 }
 
-#main-c__bottom-nav-top__switch-c span {
-  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+/* #main-c__bottom-nav-top__switch-c span {
+  font-family: Whitney, Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: 400;
   line-height: 1.15;
-  font-size: 15px;
+  font-size: 15=px;
   color: grey;
   transition: opacity .3s;
-}
+} */
 .size-switch__switch__span-1{
-  position: absolute;
-  left: 10px;
+  /* position: absolute; */
+  left: 20px;
   padding: 3px;
   pointer-events: all;
 }
 .size-switch__switch__span-2{
-  position: absolute;
-  left: 62px;
+  /* position: absolute; */
+  left: 100px;
   padding: 3px;
   pointer-events: all;
 }
 .size-switch__switch__span-3{
-  position: absolute;
-  right: 62px;
+  /* position: absolute; */
+  right: 200px;
   padding: 3px;
   pointer-events: all;
 }
 .size-switch__switch__span-4{
-  position: absolute;
+  /* position: absolute; */
   right: 10px;
   padding: 3px;
   pointer-events: all;
@@ -75,15 +87,15 @@
 }
 
 .sml{
-  left: 17px;
+  left: 40px;
 }
 .med{
-  left: 72px;
+  left: 130px;
 
 }
 .lrg{
-  left: 121px;
+  left: 230px;
 }
 .full{
-  left: 165px;
+  left: 335px;
 }

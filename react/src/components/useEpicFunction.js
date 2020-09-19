@@ -53,6 +53,6 @@ export default function useEpicFunction(epicQuery, epicEnhancedState) {
     // return () => cancel()
   }, [epicQuery])
 
-  return { loading, epicError, epicResult }
+  return { loading, epicError, epicResult}
 }
 

@@ -33,7 +33,14 @@ const [openCloseState, setOpenCloseState] = useState(false);
       <li className={"main-c__image-li"}>
         {props.allResults ? props.allResults.map((item, index) => {
           if (props.allResults.length === index + 1) {
-            return <img ref={props.lastSearchElementRef} className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt={""} loading="lazy" key={`${item.links[0].href}${Math.floor(Math.random() * Math.floor(1000))}`}></img>
+            return (
+              <>
+              <div onClick={e => { setupModalInfo(e); setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
+                <img ref={props.lastSearchElementRef} className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt={""} loading="lazy" key={`${item.links[0].href}${Math.floor(Math.random() * Math.floor(1000))}`}></img>
+                <p className={"search-array-image__data__descirption"} loading="lazy">{item.data[0].description}</p>
+              </div>
+            </>
+            )
           } else {
             return (
               <div onClick={e => { setupModalInfo(e); setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>

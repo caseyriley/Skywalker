@@ -22,8 +22,9 @@
   background-color: rgb(177, 177, 177);
   transition: all .3s ease-out;
   box-shadow: 
-        inset 0px 4px 4px -2px rgba(125, 125, 125, 0.8),
-        inset 0px -4px 5px -0px rgba(125, 125, 125, 0.8);
+        inset 0px 2px 4px -1px rgba(125, 125, 125, 0.8),
+        inset 0px -2px 5px -0px rgba(125, 125, 125, 0.8),
+        0px 4px 6px 0px rgba(125, 125, 125, 0.7);
 }
 #enhanced-toggle__enhanced{
   color: rgb(0, 140, 255);
