@@ -251,5 +251,23 @@
   justify-content: center;
   align-items: center;
 }
-
+#logout-button{
+  height: 40px;
+  width: 100px;
+  border: 1px solid rgb(131, 131, 131);
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto',sans-serif;
+  font-size: 20px;
+  color: grey;
+  box-shadow: 
+        inset 0px 2px 4px -1px rgba(125, 125, 125, 0.8),
+        inset 0px -2px 5px -0px rgba(125, 125, 125, 0.8),
+        0px 4px 6px 0px rgba(125, 125, 125, 0.7);
+}
 

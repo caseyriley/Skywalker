@@ -12,6 +12,7 @@ import './styles/login.css';
 import './styles/signup.css';
 import './styles/epicEnhancedToggle.css';
 import './styles/imageSearchText.css';
+import './styles/mScreenH855.css';
 import './styles/mScreen840.css';
 
 import App from './App';
