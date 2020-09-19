@@ -91,7 +91,7 @@ const MainPage = () => {
   //---------------EPIC---------------------------------
   const [epicQuery, setEpicQuery] = useState("2019-05-30");
 
-  const [epicEnhancedState, setEpicEnhancedState] = useState(true)
+  const [epicEnhancedState, setEpicEnhancedState] = useState("natural")
   
   const {
     epicResult,
@@ -99,8 +99,11 @@ const MainPage = () => {
   } = useEpicFunction(epicQuery, epicEnhancedState)
 
   function toggleEnhancedState(){
-    let nextState = !epicEnhancedState;
-    setEpicEnhancedState(nextState)
+    if (epicEnhancedState === "natural"){
+      setEpicEnhancedState("enhanced")
+    } else {
+      setEpicEnhancedState("natural")
+    }
   }
 
 

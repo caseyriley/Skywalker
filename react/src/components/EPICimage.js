@@ -6,7 +6,7 @@ const EPICimage = (props) => {
   console.log("props EPIC", props.epicQuery)
   const API_KEY = "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz";
   const slashQuery = props.epicQuery.replace("-", "/").replace("-", "/");
-  let httpStart = `https://api.nasa.gov/EPIC/archive/${props.epicEnhancedState ? "natural" : "enhanced"}/${slashQuery}`;
+  let httpStart = `https://api.nasa.gov/EPIC/archive/${props.epicEnhancedState}/${slashQuery}`;
   let resultArray = props.epicResult.map(identifier => 
     // console.log(identifier.image))
     `${httpStart}/png/${identifier.image}.png?api_key=${API_KEY}`)

@@ -5,7 +5,7 @@ const EpicEnhancedToggle = (props) => {
     <div id={"enhanced-toggle"} onClick={props.toggleEnhancedState}>
       <span id={"enhanced-toggle__enhanced"}>Enhanced</span>
       <span id={"enhanced-toggle__natural"}>Natural</span>
-      <div id={"enhanced-toggle__switch"} className={props.epicEnhancedState ? "enhaced-state" : "natural-state"} ></div>
+      <div id={"enhanced-toggle__switch"} className={props.epicEnhancedState} ></div>
     </div>
   )
 }
