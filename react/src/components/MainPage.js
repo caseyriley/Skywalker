@@ -84,17 +84,105 @@ const MainPage = () => {
     setPageNumber(1)
   }
 // ------------------------------------------------------
-  // https://epic.gsfc.nasa.gov/archive/enhanced/2015/10/31/png/epic_RGB_20151031003633.png
-  // https://epic.gsfc.nasa.gov/archive/natural/2015/10/31/png/epic_1b_20151031074844.png
 //----------------POTD-Search---------------------------
-  const [potdQuery, setPotdQuery] = useState('');
+  const [potdQuery, setPotdQuery] = useState('2020-08-01');
   const [potdImageSizeState, setPotdImageSizeState] = useState(4)
+
   const {
     potdResult,
-    // hasMore,
-    // loading,
     potdError
   } = usePotdFunction(potdQuery)
+
+  function potdNextDay(){
+    let year = potdQuery.slice(0, 4);
+    let month = potdQuery.slice(5, 7);
+    let day = potdQuery.slice(8, 10)
+    
+    if (day < 28){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 1 && day < 31){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 2){
+      setPotdQuery(`${year}-${parseInt(month) + 1}-01`)
+    } else if (month == 3 && day < 31){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 4 && day < 30){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 5 && day < 31){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 6 && day < 30){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 7 && day < 31){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 8 && day < 31){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 9 && day < 30){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 10 && day < 31){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 11 && day < 30){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 12 && day < 31){
+      setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
+    } else if (month == 1 && day > 30) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 2 && day == 28) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 3 && day == 31) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 4 && day == 30) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 5 && day == 31) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 6 && day == 30) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 7 && day == 31) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 8 && day == 31) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 9 && day == 30) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 10 && day == 31) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 11 && day == 30) {
+      setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
+    } else if (month == 12 && day == 31) {
+      setPotdQuery(`${parseInt(year) + 1}-01-01`)
+    }
+  }
+  function potdPrevDay(){
+    let year = potdQuery.slice(0, 4);
+    let month = potdQuery.slice(5, 7);
+    let day = potdQuery.slice(8, 10);
+
+    if (day > 1){
+      setPotdQuery(`${year}-${month}-${parseInt(day) - 1}`)
+    } else if (month == 1){
+      setPotdQuery(`${parseInt(year) - 1}-12-31`)
+    } else if (month == 2){
+      setPotdQuery(`${year}-01-31`)
+    } else if (month == 3) {
+      setPotdQuery(`${year}-02-28`)
+    } else if (month == 4) {
+      setPotdQuery(`${year}-03-31`)
+    } else if (month == 5) {
+      setPotdQuery(`${year}-04-30`)
+    } else if (month == 6) {
+      setPotdQuery(`${year}-05-31`)
+    } else if (month == 7) {
+      setPotdQuery(`${year}-06-30`)
+    } else if (month == 8) {
+      setPotdQuery(`${year}-07-31`)
+    } else if (month == 9) {
+      setPotdQuery(`${year}-08-31`)
+    } else if (month == 10) {
+      setPotdQuery(`${year}-09-30`)
+    } else if (month == 11) {
+      setPotdQuery(`${year}-010-30`)
+    } else if (month == 12) {
+      setPotdQuery(`${year}-11-30`)
+    } 
+  }
   //----------------------------------------------------
   //---------------EPIC---------------------------------
   const [epicQuery, setEpicQuery] = useState("2019-05-30");
@@ -128,7 +216,7 @@ const MainPage = () => {
               </div>
               <div >
               </div>
-              <BottomNavControls setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState}  searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState}/>
+              <BottomNavControls potdPrevDay={potdPrevDay} potdNextDay={potdNextDay} setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState}  searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState}/>
               <LogoutButton bottomNavState={bottomNavState} />
             </div>
           <ImageSwitch modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />

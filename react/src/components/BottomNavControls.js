@@ -3,6 +3,7 @@ import EpicEnhancedToggle from './EpicEnhancedToggle';
 import FilterEndDate from './FilterEndDate';
 import FilterStartDate from './FilterStartDate';
 import ImageSearchText from './ImageSearchText';
+import POTDnextAndPrev from './POTDnextAndPrev';
 import POTDSearchText from './POTDsearchText';
 import SearchMenu from './SearchMenu';
 
@@ -26,6 +27,7 @@ const BottomNavControls = (props) => {
             return (
               <>
               <POTDSearchText  />
+              <POTDnextAndPrev potdPrevDay={props.potdPrevDay} potdNextDay={props.potdNextDay}/>
               <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
               </>
             )

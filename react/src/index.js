@@ -13,6 +13,7 @@ import './styles/signup.css';
 import './styles/epicEnhancedToggle.css';
 import './styles/imageSearchText.css';
 import './styles/potdImageSizeSelect.css';
+import './styles/potdNextAndPrev.css'
 import './styles/mScreenH855.css';
 import './styles/mScreen840.css';
 
