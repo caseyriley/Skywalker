@@ -1,11 +1,3 @@
-@media screen and (max-width: 1120px;) {
-    .login-main__left {
-        visibility: hidden;
-    }
-    .login-main__right {
-        width: 100%;
-    }
-}
 .login-container {
     width: 100vw;
     height: 100vh;
@@ -17,7 +9,12 @@
     background-image: url('../images/Saturn1.jpg');
     background-size: cover;
     background-position: center;
-   
+    overflow: scroll;
+}
+.login-container__scroll{
+    width: 100vw;
+    height: auto;
+    position: relative;
 }
 .login-main--container {
     width: 100%;
@@ -166,7 +163,7 @@
     /* padding: 5px; */
 }
 .login-block__h5 {
-    position: absolute;
+    position: fixed;
     top: 55px;
     font-size: 3.5vw;
     font-family: 'Kanit', 'Cabin', sans-serif;
@@ -363,4 +360,10 @@
     top: 70px;
     /* background-image: url("https://www.uokpl.rs/fpng/f/548-5483738_astronaut-aesthetic-png.png"); */
     background-size: cover;
+}
+.login-show-hide{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
 }

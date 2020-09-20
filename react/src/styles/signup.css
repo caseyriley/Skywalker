@@ -2,11 +2,11 @@
   display: flex;
   justify-items: center;
   flex-direction: column;
-  margin: 40px 0px 0px 0px;
+  margin: 40px 70px 0px 0px;
   background-color: rgb(105, 105, 105, .5);
   border-radius: 20px;
   width: 250px;
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 70px;
 }
