@@ -14,7 +14,7 @@ const ImageSwitch = (props) => {
           case "imageSearch":
             return <ImageDataGallery error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
           case "picOfTheDay":
-            return <POTDImage potdResult={props.potdResult} results={props.results} /> 
+            return <POTDImage setPotdImageSizeState={props.setPotdImageSizeState} potdImageSizeState={props.potdImageSizeState} potdResult={props.potdResult} results={props.results} /> 
           case "epic":
             return <EPICimage epicEnhancedState={props.epicEnhancedState} epicQuery={props.epicQuery} epicResult={props.epicResult} error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
           case "infiniteScroll":
