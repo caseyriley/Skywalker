@@ -12,7 +12,7 @@ const ImageSwitch = (props) => {
       {(() => {
         switch (props.searchMenuState ? props.searchMenuState : "imageSearch") {
           case "imageSearch":
-            return <ImageDataGallery error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
+            return <ImageDataGallery modalImageSizeState={props.modalImageSizeState} openCloseState={props.openCloseState} setOpenCloseState={props.setOpenCloseState} error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
           case "picOfTheDay":
             return <POTDImage setPotdImageSizeState={props.setPotdImageSizeState} potdImageSizeState={props.potdImageSizeState} potdResult={props.potdResult} results={props.results} /> 
           case "epic":

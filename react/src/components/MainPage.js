@@ -28,7 +28,13 @@ const MainPage = () => {
     setBottomNavState(false)
   }
   //---------------------------------------------------------------
-// -----------------Set-NASA-image-size-------------------------------
+  //------------Image-Data-Gallery-Modal-Open-Close---------------
+  const [openCloseState, setOpenCloseState] = useState(false);
+  //--------------------------------------------------------------
+  //------------Image-Data-Gallery-Modal-Image-Size---------------
+  const [modalImageSizeState, setModalImageSizeState] = useState(3);
+  // ----------------------------------------------------------------
+// -------------Set-Image-Data-Gallery--image-size-------------------------------
   const [imageSizeState, setImageSizeState] = useState(2);
   // ---------------------------------------------------------------
   //--------------set-menu-position----------------------------------
@@ -118,14 +124,14 @@ const MainPage = () => {
                   {bottomNavState ? <ChevronSkywalker /> : <ChevronSkywalkerInverse />}
               </div>
               <div id={"main-c__bottom-nav-top"} >
-                <SearchSwitch imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
+              <SearchSwitch modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
               </div>
               <div >
               </div>
               <BottomNavControls setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState}  searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState}/>
               <LogoutButton bottomNavState={bottomNavState} />
             </div>
-          <ImageSwitch epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
+          <ImageSwitch modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
             {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}
           </div>
       </div>

@@ -3,10 +3,10 @@ import React, {useState} from 'react';
 
 const ImageDataGallery = (props) => {
 const [imageModalState, setImageModalState] = useState(false);
-const [openCloseState, setOpenCloseState] = useState(false);
+// const [props.openCloseState, setOpenCloseState] = useState(false);
 
     function setModalStateFalse(){
-      setOpenCloseState(false)
+      props.setOpenCloseState(false)
     }
 
    function setupModalInfo(e){
@@ -17,12 +17,12 @@ const [openCloseState, setOpenCloseState] = useState(false);
 
   return (
     <>
-      {openCloseState ? 
+      {props.openCloseState ? 
         <div id={"image-modal-c"}
-          onClick={()=>setOpenCloseState(false)} 
+          onClick={() => props.setOpenCloseState(false)} 
          >
         <div id={"image-modal-c__scroll"}>
-        <img id={"image-modal-c__image"} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />
+            <img id={"image-modal-c__image"} className={`${props.modalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.modalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />
         <div id={"image-modal-c__description-c"}>
           <p>{imageModalState.description}</p>
         </div>
@@ -35,7 +35,7 @@ const [openCloseState, setOpenCloseState] = useState(false);
           if (props.allResults.length === index + 1) {
             return (
               <>
-              <div onClick={e => { setupModalInfo(e); setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
+              <div onClick={e => { setupModalInfo(e); props.setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
                 <img ref={props.lastSearchElementRef} className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt={""} loading="lazy" key={`${item.links[0].href}${Math.floor(Math.random() * Math.floor(1000))}`}></img>
                 <p className={"search-array-image__data__descirption"} loading="lazy">{item.data[0].description}</p>
               </div>
@@ -43,7 +43,7 @@ const [openCloseState, setOpenCloseState] = useState(false);
             )
           } else {
             return (
-              <div onClick={e => { setupModalInfo(e); setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
+              <div onClick={e => { setupModalInfo(e); props.setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
                 <img 
                   className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt="" loading="lazy" >
                 </img>

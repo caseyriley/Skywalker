@@ -19,7 +19,7 @@ const SearchSwitch = (props) => {
           case "imageSearch":
             return (
                 <>
-                <ImageSizeSelect imageSizeState={props.imageSizeState} setImageSizeState={props.setImageSizeState} />
+                <ImageSizeSelect modalImageSizeState={props.modalImageSizeState} setModalImageSizeState={props.setModalImageSizeState} openCloseState={props.openCloseState} imageSizeState={props.imageSizeState} setImageSizeState={props.setImageSizeState} />
                 <ImageDataSearch closeBottomNav={props.closeBottomNav} updateSearchValue={props.updateSearchValue} searchValue={props.searchValue} query={props.query} handleSearch={props.handleSearch} setResults={props.setResults} results={props.results} />
                 </>
               )

@@ -203,7 +203,7 @@
 }
 #image-modal-c__image{
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   height: auto;
 }
 #image-modal-c__description-c{
