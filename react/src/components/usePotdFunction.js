@@ -29,7 +29,8 @@ export default function usePotdFunction(potdQuery) {
       cancelToken: new axios.CancelToken(c => cancel = c)
     })
       .then(res => {
-        setPotdResult(res.data.hdurl)
+        setPotdResult(res.data)
+        // setPotdResult(res.data.hdurl)
       })
       // .then(res => console.log("potdResult---->", res.data.hdurl))
 

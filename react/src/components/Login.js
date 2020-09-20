@@ -92,25 +92,27 @@ const Login = () => {
     return (
         <div className='login-container'>
             <div className="login-main--container">
-                <div className="login-main__right">
-                    <div className={"astronaut"}></div>
                     <img className={"astronaut"} src={astronaut} alt={""} ></img>
+                <div className={`${!signUpModal ? "modal-showing" : "modal-hiding"}`}>
                     <input className="login-input-1" type="text" placeholder="Email" value={email} onChange={updateEmail} />
-                    <input className="login-input-2" type="password" placeholder="Password" value={password} onChange={updatePassword} /> <SignUpModal show={signUpModal} handleClose={hideSignUpModal} />
+                    <input className="login-input-2" type="password" placeholder="Password" value={password} onChange={updatePassword} /> 
                     <div className="login-bar__button--container" onClick={handleSubmit}>
                         <span>Log in</span>
                         <img className={"rocket-pointer"} src="https://staticdelivery.nexusmods.com/mods/3037/images/thumbnails/42/42-1575412019-472511860.png" title="" alt="" ></img>
+                    <div className="login-block__demo--container" onClick={loginDemoUser}>
+                        <span>Log in as Demo User</span>
+                    </div>
+                    </div>
+                    <div className="login-block__signup--button" onClick={showSignUpModal}>
+                        <span>Sign up</span>
                     </div>
                 </div>
+                <SignUpModal show={signUpModal} handleClose={hideSignUpModal} />
                 <div className="login-block__h5">
                     <span>Welcome to Skywalker</span>
                 </div>
-                <div className="login-block__signup--button" onClick={showSignUpModal}>
-                    <span>Sign up</span>
-                </div>
-                <div className="login-block__demo--container" onClick={loginDemoUser}>
-                    <span>Log in as Demo User</span>
-                </div>
+                
+                
             </div>
             <div className="login-footer">
                 <div className="login-footer__text">

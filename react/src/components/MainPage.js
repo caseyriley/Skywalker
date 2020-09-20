@@ -123,7 +123,7 @@ const MainPage = () => {
               <div >
               </div>
               <BottomNavControls setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState}  searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState}/>
-              <LogoutButton />
+              <LogoutButton bottomNavState={bottomNavState} />
             </div>
               <ImageSwitch epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
             {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}

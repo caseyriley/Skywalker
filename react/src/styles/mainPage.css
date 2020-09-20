@@ -151,6 +151,16 @@
   /* position: fixed; */
   /* top: 0px; */
 }
+#potd-description{
+  width: 80%;
+  color: white;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  line-height: 2;
+  font-size: 20px;
+  margin: 30px auto 30px auto;
+
+}
 
 .loading{
   color: white;
@@ -251,10 +261,10 @@
   justify-content: center;
   align-items: center;
 }
-#logout-button{
+.logout-button{
   height: 40px;
   width: 100px;
-  border: 1px solid rgb(131, 131, 131);
+  /* border: 1px solid rgb(131, 131, 131); */
   position: fixed;
   bottom: 30px;
   left: 30px;
@@ -266,8 +276,17 @@
   font-size: 20px;
   color: grey;
   box-shadow: 
-        inset 0px 2px 4px -1px rgba(125, 125, 125, 0.8),
-        inset 0px -2px 5px -0px rgba(125, 125, 125, 0.8),
-        0px 4px 6px 0px rgba(125, 125, 125, 0.7);
+        inset 0px 2px 4px -1px rgba(125, 125, 125, 0.6),
+        inset 0px -2px 5px -0px rgba(125, 125, 125, 0.6),
+        0px 4px 6px 0px rgba(125, 125, 125, 0.6);
+  transition-property: opacity;
+  transition-delay: .4s;
+  transition-duration: .6s; 
+  opacity: 100%;
+}
+.none{
+  opacity: 0%;
+  pointer-events: none;
+  visibility: hidden;
 }
 

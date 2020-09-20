@@ -2,13 +2,13 @@
   display: flex;
   justify-items: center;
   flex-direction: column;
-  margin: 10px;
-  background-color: #073c5f;
+  margin: 40px 0px 0px 0px;
+  background-color: rgb(105, 105, 105, .5);
   border-radius: 20px;
-  width: 600px;
+  width: 250px;
   position: fixed;
   top: 0px;
-  right: 25vw;
+  left: 70px;
 }
 .signup-head--container {
   display: flex;
@@ -21,16 +21,17 @@
   justify-items: center;
   align-content: center;
   width: 100%;
-  margin: 10px;
+  margin: 0px;
 }
 .signup-head__logo {
   width: 45px;
   height: 45px;
-  margin: auto;
+  /* margin: auto; */
 }
 .signup__closeButton--container {
   position: relative;
-  left: 540px;
+  top: 15px;
+  left: 200px;
   z-index: 1;
   /* border: 5px solid green; */
   width: 30px;
@@ -38,8 +39,11 @@
 
 }
 .signup-head__text p {
-  font-size: 24px;
-  margin-left: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px 0px 0px;
+
 }
 .signup-form--container div {
   display: flex;
@@ -48,22 +52,37 @@
   margin: 20px;
 }
 .signup-form__text {
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-form__text P{
+  text-align: center;
+  margin: 0px 0px 0px 0px;
+
 }
 .signup-form--container input {
   margin-bottom: 5px;
   color: black;
   height: 40px;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
+  outline: none;
+  background-color: rgb(196, 196, 196);
+
 }
 .signup-form__submitButton--container {
-  width: 93%;
+  width: 84%;
   height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #0383df;
+  border: 1px solid rgb(143, 143, 143);
   border-radius: 10px;
-  background-color: #0383df;
+  background-color: #2e2e2e;
   cursor: pointer;
 }
 .modal-hiding {

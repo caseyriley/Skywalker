@@ -3,6 +3,7 @@ import EpicEnhancedToggle from './EpicEnhancedToggle';
 import FilterEndDate from './FilterEndDate';
 import FilterStartDate from './FilterStartDate';
 import ImageSearchText from './ImageSearchText';
+import POTDSearchText from './POTDsearchText';
 import SearchMenu from './SearchMenu';
 
 const BottomNavControls = (props) => {
@@ -22,7 +23,12 @@ const BottomNavControls = (props) => {
               </>
             )
           case "picOfTheDay":
-            return <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
+            return (
+              <>
+              <POTDSearchText  />
+              <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
+              </>
+            )
           case "epic":
             return (
               <>
