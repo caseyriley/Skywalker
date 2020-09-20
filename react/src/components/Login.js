@@ -50,7 +50,7 @@ const Login = () => {
     };
 
     const loginDemoUser = async () => {
-        const demoEmail = "lisa@aa.com";
+        const demoEmail = "barbarella@hotmail.com";
         const demoPassword = "password"
         let speed=70, i=1, k=0;
 
