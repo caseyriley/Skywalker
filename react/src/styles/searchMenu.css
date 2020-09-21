@@ -76,62 +76,62 @@
 	width: 90%;
   top: 5px;
   left: -7%;
-	background-color: #8242cc;
+	background-color: #af81d4;
 }
 .search-menu-nav .start-about, .search-menu-nav__a:nth-child(2):hover~.animation {
 	width: 90%;
   top: 35px;
   left: -7%;
-	background-color: #313899;
+	background-color: #868ce0;
 }
 .search-menu-nav .start-blog, .search-menu-nav__a:nth-child(3):hover~.animation {
 	width: 90%;
   top: 65px;
   left: -7%;
-	background-color: #2ca5eb;
+	background-color: #75bae2;
 }
 .search-menu-nav .start-portefolio, .search-menu-nav__a:nth-child(4):hover~.animation {
 	width: 90%;
   top: 95px;
   left: -7%;
-	background-color: #36b831;
+	background-color: #85ce83;
 }
 .search-menu-nav .start-contact, .search-menu-nav__a:nth-child(5):hover~.animation {
 	width: 90%;
   top: 125px;
   left: -7%;
-	background-color: #f0a720;
+	background-color: #ebbd68;
 }
 .menu-item-1~.animation{
   width: 90%;
   top: 5px;
   left: -7%;
-	background-color: #a272c9;
+	background-color: #bb99d6;
 }
 .menu-item-2~.animation{
   width: 90%;
   top: 35px;
   left: -7%;
-	background-color: #646de7;
+	background-color: #a7abe6;
 }
 
 .menu-item-3~.animation{
   width: 90%;
   top: 65px;
   left: -7%;
-	background-color: #50b0e7;
+	background-color: #98cae7;
 }
 .menu-item-4~.animation{
   width: 90%;
   top: 95px;
   left: -7%;
-	background-color: #78d475;
+	background-color: #9bd499;
 }
 .menu-item-5~.animation{
   width: 90%;
   top: 125px;
   left: -7%;
-	background-color: #f5b53f;
+	background-color: #ecc67e;
 }
 /* .menu-item-2~.animation{ */
   /* width: 90% !important;

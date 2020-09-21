@@ -41,6 +41,7 @@
   width: 80px;
   transform: rotate(-90deg);
   opacity: 80%;
+  filter: hue-rotate(55deg) brightness(92%);
 }
 
 
@@ -49,4 +50,5 @@
   width: 80px;
   transform: rotate(90deg);
   opacity: 80%;
+  filter: hue-rotate(55deg) brightness(92%);
 }
