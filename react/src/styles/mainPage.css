@@ -268,8 +268,8 @@
   width: 100px;
   /* border: 1px solid rgb(131, 131, 131); */
   position: fixed;
-  bottom: 30px;
-  left: 30px;
+  bottom: 20px;
+  left: 20px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
