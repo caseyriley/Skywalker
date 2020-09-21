@@ -159,7 +159,7 @@
   line-height: 2;
   font-size: 20px;
   margin: 30px auto 30px auto;
-
+  pointer-events: none;
 }
 
 .loading{
@@ -241,6 +241,7 @@
   background-position: center;
   background-size: cover;
   opacity: 80%;
+  z-index: 1;
 }
 #chevron-left{
   position: fixed;
@@ -252,6 +253,7 @@
   background-position: center;
   background-size: cover;
   opacity: 80%;
+  z-index: 1;
 }
 .epic-img-c__date-not-available{
   height: 100%;

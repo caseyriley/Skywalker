@@ -1,5 +1,6 @@
 import React from 'react';
 import EpicEnhancedToggle from './EpicEnhancedToggle';
+import EpicSearchText from './EpicSearchText';
 import FilterEndDate from './FilterEndDate';
 import FilterStartDate from './FilterStartDate';
 import ImageSearchText from './ImageSearchText';
@@ -34,6 +35,7 @@ const BottomNavControls = (props) => {
           case "epic":
             return (
               <>
+                <EpicSearchText />
                 <EpicEnhancedToggle epicEnhancedState={props.epicEnhancedState} toggleEnhancedState={props.toggleEnhancedState}/>
                 <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
               </>
