@@ -1,0 +1,8 @@
+@media screen and ( max-height: 700px){
+.main-c__bottom-nav{
+  position: fixed;
+  bottom: 0px;
+  height: 280px;
+}
+
+}

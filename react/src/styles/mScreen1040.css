@@ -1,0 +1,36 @@
+@media screen and (max-width: 1040px){
+/* --------search-menu------ */
+  .search-menu-nav {
+  right: 20px;
+}
+/* ---------------------------- */
+/* ------------search-bar---------- */
+#main-c__bottom-nav-top__Searchbar{
+  right: 20px;
+}
+/* ---------------------------- */
+/* ------------image-search------- */
+#main-c__bottom-nav-top__image-size-switch{
+  left: 20px;
+}
+#filter-date-c{
+  right: 200px;
+}
+#filter-end-date-c{
+  right: 200px;
+}
+
+
+/* ------------potd----------------- */
+#potd-image-size-select{
+  left: 20px;
+}
+#POTD-next-prev{
+  right: 200px;
+}
+/* --------------------------------- */
+/* ----------------epic---------------- */
+#enhanced-toggle{
+  right: 220px;
+}
+}
