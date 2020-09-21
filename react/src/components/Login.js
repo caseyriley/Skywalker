@@ -50,8 +50,8 @@ const Login = () => {
     };
 
     const loginDemoUser = async () => {
-        const demoEmail = "barbarella@hotmail.com";
-        const demoPassword = "password"
+        const demoEmail = "lisa@aa.com";
+        const demoPassword = "password";
         let speed=70, i=1, k=0;
 
         const ghostWriteEmail = () => {

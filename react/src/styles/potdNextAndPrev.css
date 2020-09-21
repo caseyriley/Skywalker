@@ -40,7 +40,7 @@
   height: 80px;
   width: 80px;
   transform: rotate(-90deg);
-  opacity: 80%;
+  opacity: .8;
   filter: hue-rotate(55deg) brightness(92%);
 }
 
@@ -49,6 +49,6 @@
   height: 80px;
   width: 80px;
   transform: rotate(90deg);
-  opacity: 80%;
+  opacity: .8;
   filter: hue-rotate(55deg) brightness(92%);
 }

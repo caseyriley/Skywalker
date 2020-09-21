@@ -240,7 +240,7 @@
   filter: invert(100%);
   background-position: center;
   background-size: cover;
-  opacity: 80%;
+  opacity: .8;
   z-index: 1;
 }
 #chevron-left{
@@ -252,7 +252,7 @@
   filter: invert(100%);
   background-position: center;
   background-size: cover;
-  opacity: 80%;
+  opacity: .8;
   z-index: 1;
 }
 .epic-img-c__date-not-available{
@@ -284,10 +284,10 @@
   transition-property: opacity;
   transition-delay: .4s;
   transition-duration: .6s; 
-  opacity: 100%;
+  opacity: 1;
 }
 .none{
-  opacity: 0%;
+  opacity: 0;
   pointer-events: none;
   visibility: hidden;
 }
