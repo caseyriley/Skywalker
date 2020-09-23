@@ -58,7 +58,7 @@
   height: 40px;
   width: 100px;
   position: relative;
-  top: 170px;
+  top: 190px;
   /* bottom: 25px; */
   left: calc(50% - 50px);
 }
@@ -68,4 +68,20 @@
   display: none;
 }
 /* ------------------------------------------- */
+/* ------------potd----------------- */
+#potd-image-size-select{
+  left: calc(50% - 200px);
+  top: 80px;
+}
+#POTD-next-prev{
+  right: calc(50%);
+  top: 40px;
+}
+/* --------------------------------- */
+/* ----------------epic---------------- */
+#enhanced-toggle{
+  right: calc(50% + 20px);
+  top: 0px;
+}
+/* ---------------------------------------- */
 }
