@@ -30,12 +30,15 @@ export default function useSearchFunction(query, pageNumber, startDateFilterStat
       setAllResults(prevResults => {
         return [...new Set([...prevResults, ...res.data.collection.items.map(item => item)])]
       })
+        
       
       // .then(res => console.log("imageData====>", res.data.collection.items.map(item => item)))
 
       setHasMore(res.data.collection.links[0].prompt !== "NEXT")
       setLoading(false)
     })
+      .then(() => console.log(allResults))
+    
     .catch(e => {
       if (axios.isCancel(e)) return
       setError(true)

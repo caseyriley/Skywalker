@@ -12,8 +12,8 @@ const POTDImage = (props) => {
       <div id={"potd-c"}>
         <img className={`potd-img ${props.potdImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.potdImageSizeState === 4 ? "potd-full-image" : ""}`} src={props.potdResult.hdurl} alt={""}></img>
         <div>
-          <div id={"potd-description"}>
-                <h2>{props.potdResult.title}</h2>
+          <div className={"potd-description"}>
+              <h2>{props.potdResult.title}</h2>
               <p>{props.potdResult.explanation}</p>
           </div>
         </div>

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './styles/mainPage.css';
 import './styles/NASAImageSearch.css';
 import './styles/POTDSearch.css';
+import './styles/imageDataGallery.css';
+import './styles/potdImage.css';
 import './styles/imageSizeSelect.css'
 import './styles/searchMenu.css';
 // import './styles/searchFilter.css';
