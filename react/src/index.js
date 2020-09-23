@@ -17,8 +17,9 @@ import './styles/imageSearchText.css';
 import './styles/potdImageSizeSelect.css';
 import './styles/potdNextAndPrev.css'
 import './styles/mScreen1040.css'
+import './styles/mScreen850.css'
 import './styles/mScreenH700.css';
-import './styles/mScreen840.css';
+import './styles/mScreen1100.css';
 
 import App from './App';
 

@@ -1,7 +1,7 @@
 #POTD-next-prev{
   /* border: 5px solid blue; */
   position: absolute;
-  top: 140px;
+  top: 60px;
   right: 280px;
   display: flex;
   align-items: center;

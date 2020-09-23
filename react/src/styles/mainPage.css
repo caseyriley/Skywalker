@@ -34,6 +34,7 @@
 .main-c__bottom-nav{
   position: fixed;
   bottom: 0px;
+  height: 40vh;
   height: 40%;
   width: 100%;
   /* border-top: 1px solid rgb(208, 208, 208); */
@@ -43,6 +44,7 @@
   background-color: hsl(0, 0%, 100%, .95);
   transition: height 1s;
   z-index: 1;
+
 }
 .open{
   height: 40%;
@@ -103,15 +105,6 @@
   height: 25px;
   fill: rgb(233, 233, 233);
 }
-
-
-
-
-
-
-
-
-
 .epic-img-c {
   height: 100%;
   width: 100vw;
@@ -161,7 +154,7 @@
   width: 100px;
   /* border: 1px solid rgb(131, 131, 131); */
   position: fixed;
-  bottom: 20px;
+  bottom: 25px;
   left: 20px;
   border-radius: 20px;
   display: flex;
@@ -184,7 +177,18 @@
   pointer-events: none;
   visibility: hidden;
 }
-
+#nav-scroll{
+  /* overflow-y: scroll; */
+  position: relative;
+  top: -60px;
+  height: calc(40vh - 80px);
+}
+#nav-scroll__inner{
+  position: relative;
+  border: 1px solid transparent;
+  width: 100%;
+  height: calc(40vh - 80px);
+}
 
 
 

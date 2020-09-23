@@ -1,9 +1,10 @@
 .main-c__image-ul{
   display: flex;
+   justify-content: space-evenly;
   flex-wrap: wrap;
   list-style-type: none;
   padding: 0px;
-  width: 100vw;
+  /* width: 70vw; */
   margin: auto;
   margin-top: 0px;
   /* overflow: hidden;  */
@@ -18,6 +19,7 @@
   /* flex-wrap: wrap; */
   margin: 3px;  
   justify-content: space-evenly;
+  background-color: thistle;
   
 }
 .search-array-image{

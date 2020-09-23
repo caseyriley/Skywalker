@@ -1,0 +1,71 @@
+@media screen and (max-width: 850px){
+  #main-c__bottom-nav-top{
+  width: 100vw;
+  height: 130px;
+  border-bottom: none;
+  position: relative;
+  top: -60px;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+  #nav-scroll{
+  overflow-y: scroll;
+  position: relative;
+  top: -60px;
+  /* border: 1px solid pink; */
+  height: calc(40vh - 80px);
+}
+#nav-scroll__inner{
+  position: relative;
+  border: 1px solid transparent;
+  width: 100%;
+  height: calc(40vh);
+}
+/* ------------search-bar---------- */
+  #main-c__bottom-nav-top__Searchbar{
+  position: absolute;
+  left: calc(50% - 200px);
+  top: 30px; 
+
+}
+/* ---------------------------- */
+/* ------------image-search------- */
+#main-c__bottom-nav-top__image-size-switch{
+  position: absolute;
+  top: 80px;
+  left: calc(50% - 200px);
+  
+}
+#filter-date-c{
+  right: calc(50% + 50px);
+  top: 0px;
+}
+#filter-end-date-c{
+  right: calc(50% + 50px);
+  top: 80px;
+}
+/* --------------------------------- */
+/* --------search-menu------ */
+  .search-menu-nav {
+  right: calc(50% - 200px);
+  top: 0px;
+}
+/* ---------------------------- */
+/*----------log-out-button-------*/
+.logout-button{
+  height: 40px;
+  width: 100px;
+  position: relative;
+  top: 170px;
+  /* bottom: 25px; */
+  left: calc(50% - 50px);
+}
+/* -------------------------------------- */
+/* =============image-search-text------------ */
+#image-search-text{
+  display: none;
+}
+/* ------------------------------------------- */
+}
