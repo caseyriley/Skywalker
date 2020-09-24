@@ -171,6 +171,15 @@
   transition-delay: .4s;
   transition-duration: .6s; 
   opacity: 1;
+  margin: 0px 0px 0px 0px;
+}
+.logout-button:hover{
+  color: rgb(195, 166, 241);
+  box-shadow: 
+        inset 0px 2px 4px -1px rgba(125, 125, 125, 0.6),
+        inset 0px -2px 5px -0px rgba(125, 125, 125, 0.6),
+        0px 1px 3px 0px rgba(125, 125, 125, 0.6);
+  margin: 0px 0px -3px 0px;
 }
 .none{
   opacity: 0;

@@ -42,6 +42,12 @@
   transform: rotate(-90deg);
   opacity: .8;
   filter: hue-rotate(55deg) brightness(92%);
+  transition-property: transform;
+  transition-duration: .2s;
+}
+#POTD-next-prev__prev__img:hover{
+  transform: rotate(-90deg) scale(1.1);
+  filter: hue-rotate(55deg) brightness(92%) drop-shadow(-7px 0px 2px hsl(0, 0%, 0%, .2));
 }
 
 
@@ -51,4 +57,10 @@
   transform: rotate(90deg);
   opacity: .8;
   filter: hue-rotate(55deg) brightness(92%);
+  transition-property: transform, filter;
+  transition-duration: .2s;
+}
+#POTD-next-prev__next__img:hover{
+  transform: rotate(90deg) scale(1.1);
+  filter: hue-rotate(55deg) brightness(92%) drop-shadow(7px 0px 2px hsl(0, 0%, 0%, .2));
 }
