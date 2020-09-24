@@ -40,17 +40,24 @@
   justify-content: center;
   align-items: center;
 }
-#main-c__bottom-nav-top__Searchbar__button{
+.main-c__bottom-nav-top__Searchbar__button{
   height: 20px;
   min-width: 30px;
   background-color: rgb(177, 177, 177);
   border-radius: 999px;
-  margin-right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   pointer-events: all;
   border: none;
   outline: none;
-  box-shadow: 0px 4px 4px 2px rgb(0, 0, 0);
+  box-shadow: 0px 3px 2px 1px rgb(0, 0, 0, .3);
+  transition: all .3s;
+  margin: -2px 0px 0px 0px;
 }
+.main-c__bottom-nav-top__Searchbar__button:hover{
+  background-color: rgb(195, 166, 241);
+  box-shadow: 0px 1px 2px 1px rgb(0, 0, 0, .3);
+  margin: 0px 10px 0px 0px;
+}
+

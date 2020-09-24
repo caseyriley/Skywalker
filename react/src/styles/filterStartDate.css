@@ -16,6 +16,7 @@
   color: grey;
   margin: 0px 0px 10px 0px;
 }
+
 #filter-date{
   width: 150px;
   height: 40px;
@@ -67,4 +68,17 @@
   pointer-events: all;
   border: none;
   outline: none;
+}
+.checkmark{
+  height: 25px;
+  position: absolute;
+  left: 160px;
+  top: 40px;
+  fill:  rgb(2, 255, 2);
+  border: 1px solid  rgb(195, 166, 241);
+  border-radius: 5px;
+  display: none;
+}
+.show-check{
+  display: block;
 }

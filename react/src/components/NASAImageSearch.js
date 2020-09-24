@@ -97,7 +97,7 @@ const NASAImageSearch = (props) => {
         <input name={"main-c__bottom-nav-top__Searchbar__input"} value={search} placeholder={"search"}
           onChange={e => setSearch(e.target.value)}
         ></input>
-        <button id={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>
+        <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>
           <LeftArrow />
         </button>
       </form>
