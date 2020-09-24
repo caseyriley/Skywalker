@@ -1,4 +1,4 @@
-.main-c__bottom-nav-top__Searchbar{
+#main-c__bottom-nav-top__Searchbar{
   width: 400px;
   height: 40px;
   border-radius: 999px;
@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
 }
-.main-c__bottom-nav-top__Searchbar input{
+#main-c__bottom-nav-top__Searchbar input{
   outline: none;
   border: none;
   background-color: transparent;
@@ -20,8 +20,9 @@
   font-weight: 400;
   line-height: 1.15;
   font-size: 20px;
-  color: grey;
-  margin-left: 5px;
+  color: rgb(24, 24, 24);
+  opacity: 60%;
+  margin-left: 15px; 
 }
 .magnifying-glass{
   height: 30px;
@@ -48,4 +49,15 @@
   pointer-events: all;
   border: none;
   outline: none;
+}
+input[type="date" i] {
+    align-items: center;
+    display: -webkit-inline-flex;
+    font-family: monospace;
+    padding-inline-start: 1px;
+    cursor: default;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px 30px 0px 30px;
+    font-size: 20px;
 }

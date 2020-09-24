@@ -11,12 +11,14 @@ const POTDSearch = (props) => {
   return (
     <div id={"main-c__bottom-nav-top__Searchbar"} >
       <MagnifyingGlass />
-      <input type={"text"}
+      <input 
+        type="date"
         value={potdSearchValue}
         placeholder={"YYYY-MM-DD"}
         onChange={e=>updatePotdSearchValue(e)}
+        min="1995-06-20" max="2030-01-01"
         >
-        {/* onChange={e=>props.handlePotdSearch(e)}> */}
+
       </input>
       <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"} onClick={() => { 
         // props.setPotdQuery(props.potdSearchValue); 

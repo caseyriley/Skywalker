@@ -119,9 +119,8 @@
 #chevron-right{
   position: fixed;
   top: calc(50vh - 80px);
-  right: 30px;
-  height: 80px;
-  width: 80px;
+  right: 1.5vw;
+  height: 7.5vw;
   transform: rotate(180deg);
   filter: invert(100%);
   background-position: center;
@@ -132,9 +131,8 @@
 #chevron-left{
   position: fixed;
   top: calc(50vh - 80px);
-  left: 30px;
-  height: 80px;
-  width: 80px;
+  left: 1.5vw;
+  height: 7.5vw;
   filter: invert(100%);
   background-position: center;
   background-size: cover;
