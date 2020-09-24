@@ -87,7 +87,7 @@
   /* width: 100%; */
   height: auto;
 }
-#image-modal-c__description-c{
+.image-modal-c__description-c{
   width: 80%;
   height: auto;
   margin: 30px 0px 30px 0px;
@@ -101,7 +101,7 @@
   animation: fadeInAnimation ease 5s;
   animation-iteration-count: 1; 
   animation-fill-mode: forwards;
-
+  
 }
 @keyframes fadeInAnimation { 
     0% { 

@@ -17,8 +17,6 @@ const FilterEndDate = (props) => {
     setFilterEndDateState([]);
     setSearchActiveState(false);
     const inpt = document.getElementById("endDateInput").value = "";
-    console.log("inpt", inpt)
-
   }
 
   return (
@@ -29,6 +27,7 @@ const FilterEndDate = (props) => {
         <input id={"endDateInput"} type={"text"}
           placeholder={"YYYY"}
           onChange={e => setFilterEndDateState(e.target.value)}
+          type="number" min="1920" max="2030" step="1" minLength="4" maxLength="4"
         >
         </input>
         <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"} onClick={e => props.setEndDateFilterState(filterEndDateState), check}>

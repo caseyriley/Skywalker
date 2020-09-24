@@ -20,8 +20,6 @@ const FilterStartDate = (props) => {
     setFilterDateSearchState([]);
     setSearchActiveState(false);
     const inpt = document.getElementById("startDateInput").value = "";
-    console.log("inpt",inpt)
-    
   }
   
   
@@ -33,6 +31,7 @@ const FilterStartDate = (props) => {
         <input id={"startDateInput"} name={"startDateInput"} type={"text"}
           placeholder={"YYYY"}
           onChange={e => setFilterDateSearchState(e.target.value)}
+          type="number" min="1920" max="2030" step="1" minLength="4" maxLength="4"
         >
         </input>
         <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"} onClick={e => props.setStartDateFilterState(filterDateSearchState), check}>

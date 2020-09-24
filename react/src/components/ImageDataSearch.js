@@ -14,6 +14,7 @@ const ImageDataSearch = (props) => {
       <MagnifyingGlass />
       <input type={"text"}
         value={props.searchValue}
+        
         placeholder={"Search Database"}
         onChange={props.updateSearchValue}>
       </input>
