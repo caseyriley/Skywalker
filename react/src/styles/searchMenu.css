@@ -76,7 +76,7 @@
 	width: 90%;
   top: 5px;
   left: -7%;
-	background-color: #af81d4;
+	background-color: #b88add;
 }
 .search-menu-nav .start-about, .search-menu-nav__a:nth-child(2):hover~.animation {
 	width: 90%;
@@ -106,7 +106,7 @@
   width: 90%;
   top: 5px;
   left: -7%;
-	background-color: #bb99d6;
+	background-color:rgb(195, 166, 241);
 }
 .menu-item-2~.animation{
   width: 90%;
