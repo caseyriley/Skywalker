@@ -9,6 +9,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  box-shadow: 3px 3px 8px 1px rgb(0, 0, 0, .15);
 }
   #nav-scroll{
   overflow-y: scroll;
@@ -40,37 +41,43 @@
 }
 #filter-date-c{
   right: calc(50% + 50px);
-  top: 0px;
+  top: 10px;
 }
 #filter-end-date-c{
   right: calc(50% + 50px);
-  top: 80px;
+  top: 90px;
 }
 /* --------------------------------- */
 /* --------search-menu------ */
   .search-menu-nav {
   right: calc(50% - 200px);
-  top: 0px;
+  top: 10px;
 }
 /* ---------------------------- */
 /*----------log-out-button-------*/
 .logout-button{
   height: 40px;
-  width: 100px;
+  /* width: 100px; */
   position: relative;
-  top: 190px;
+  top: 280px;
   /* bottom: 25px; */
-  left: calc(50% - 120px);
-  margin-bottom: 30px;
+  left: calc(50% - 150px);
+  margin-bottom: 100px;
 }
 /* -------------------------------------- */
 /* -------------dog------------------------- */
 .dog{
   position: absolute;
-  top: 162px;
-  left: calc(50% + 10px );
+  top: 240px;
+  left: calc(50% + 30px );
 }
 /* ------------------------------------------ */
+/* -----------------about-button---------------------------- */
+.info-button{
+  top: 200px;
+  left: calc(50% - 150px);
+}
+/* ------------------------------------------------------------- */
 /* =============image-search-text------------ */
 #image-search-text{
   display: none;

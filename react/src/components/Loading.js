@@ -15,7 +15,7 @@ const Loading = () => {
   }, [])
 
   return (
-    <div className="loading" ref={orbitContainer}></div>
+    <div className="loading-animation" ref={orbitContainer}></div>
   )
 }
 export default Loading;

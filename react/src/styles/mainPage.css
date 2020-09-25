@@ -169,36 +169,37 @@
 } 
 .logout-button{
   height: 40px;
-  width: 100px;
+  width: 150px;
   /* border: 1px solid rgb(131, 131, 131); */
   position: absolute;
   top: 135px;
-  /* left: 130px; */
-  /* bottom: 25px; */
-  left: 20px;
+  left: 100px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Roboto',sans-serif;
   font-size: 20px;
-  color: grey;
+  /* color: grey; */
   box-shadow: 
         inset 0px 2px 4px -1px rgba(125, 125, 125, 0.6),
         inset 0px -2px 5px -0px rgba(125, 125, 125, 0.6),
-        0px 4px 6px 0px rgba(125, 125, 125, 0.6);
+        0px 3px 4px 0px rgba(125, 125, 125, 0.3);
   transition-property: opacity;
   transition-delay: .4s;
   transition-duration: .6s; 
   opacity: 1;
   margin: 0px 0px 0px 0px;
+  color: #d9d9d9;
+  text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+  background-color: rgb(245, 245, 245);
 }
 .logout-button:hover{
   color: rgb(195, 166, 241);
   box-shadow: 
         inset 0px 2px 4px -1px rgba(125, 125, 125, 0.6),
         inset 0px -2px 5px -0px rgba(125, 125, 125, 0.6),
-        0px 1px 3px 0px rgba(125, 125, 125, 0.6);
+        0px 1px 1px 0px rgba(125, 125, 125, 0.3);
   margin: 0px 0px -3px 0px;
 }
 .none{
@@ -217,14 +218,14 @@
   height: calc(40vh - 80px);
 }
 .dog{
-  height: 80px;
+  height: 120px;
   width: 80px;
   position: absolute;
-  top: 105px;
-  left: 130px;
+  top: 85px;
+  left: 260px;
   opacity: .85;
 }
-.loading{
+.loading-animation{
   position: absolute;
   top: 150px;
   height: 50vh;
