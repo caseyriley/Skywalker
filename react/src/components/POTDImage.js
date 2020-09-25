@@ -1,5 +1,6 @@
 import React from 'react';
 import doubleChevron from '../images/doubleChevron.png'
+import Loading from './Loading';
 
 const POTDImage = (props) => {
   console.log("POTDprops", props)
@@ -7,7 +8,7 @@ const POTDImage = (props) => {
     <>
       <img id={"chevron-right"} src={doubleChevron} alt={""} onClick={props.potdNextDay}></img>
       <img id={"chevron-left"} src={doubleChevron} alt={""} onClick={props.potdPrevDay} ></img>
-    {props.potdResult !== undefined ?
+      {props.potdError !== true ?
     <>
       <div id={"potd-c"}>
         <img className={`potd-img ${props.potdImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.potdImageSizeState === 4 ? "potd-full-image" : ""}`} src={props.potdResult.hdurl} alt={""}></img>
@@ -20,7 +21,13 @@ const POTDImage = (props) => {
       </div>
     </>
     :
-      <img className={"potd-img"} src={''} alt={""}></img>
+        <>
+          <Loading/>
+          <div className={"epic-img-c__date-not-available"}>
+            <h1>Date Not Available</h1>
+            <h1>Please Try Again</h1>
+          </div>
+        </>
     }
     </>
   )

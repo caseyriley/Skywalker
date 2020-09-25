@@ -14,7 +14,7 @@ const ImageSwitch = (props) => {
           case "imageSearch":
             return <ImageDataGallery modalImageSizeState={props.modalImageSizeState} openCloseState={props.openCloseState} setOpenCloseState={props.setOpenCloseState} error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
           case "picOfTheDay":
-            return <POTDImage potdNextDay={props.potdNextDay} potdPrevDay={props.potdPrevDay} setPotdImageSizeState={props.setPotdImageSizeState} potdImageSizeState={props.potdImageSizeState} potdResult={props.potdResult} results={props.results} /> 
+            return <POTDImage potdError={props.potdError} potdNextDay={props.potdNextDay} potdPrevDay={props.potdPrevDay} setPotdImageSizeState={props.setPotdImageSizeState} potdImageSizeState={props.potdImageSizeState} potdResult={props.potdResult} results={props.results} /> 
           case "epic":
             return <EPICimage epicEnhancedState={props.epicEnhancedState} epicQuery={props.epicQuery} epicResult={props.epicResult} error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
           case "infiniteScroll":

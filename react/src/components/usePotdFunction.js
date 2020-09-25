@@ -32,7 +32,7 @@ export default function usePotdFunction(potdQuery) {
         setPotdResult(res.data)
         // setPotdResult(res.data.hdurl)
       })
-      // .then(res => console.log("potdResult---->", res.data.hdurl))
+      .then(res => console.log("potdResult---->", potdResult))
 
       .catch(e => {
         if (axios.isCancel(e)) return
