@@ -151,8 +151,10 @@
   height: 40px;
   width: 100px;
   /* border: 1px solid rgb(131, 131, 131); */
-  position: fixed;
-  bottom: 25px;
+  position: absolute;
+  top: 135px;
+  /* left: 130px; */
+  /* bottom: 25px; */
   left: 20px;
   border-radius: 20px;
   display: flex;
@@ -179,11 +181,11 @@
         0px 1px 3px 0px rgba(125, 125, 125, 0.6);
   margin: 0px 0px -3px 0px;
 }
-.none{
+/* .none{
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-}
+} */
 #nav-scroll{
   /* overflow-y: scroll; */
   position: relative;
@@ -195,6 +197,13 @@
   border: 1px solid transparent;
   width: 100%;
   height: calc(40vh - 80px);
+}
+.dog{
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 105px;
+  left: 130px;
 }
 
 

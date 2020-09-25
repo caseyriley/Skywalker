@@ -60,9 +60,17 @@
   position: relative;
   top: 190px;
   /* bottom: 25px; */
-  left: calc(50% - 50px);
+  left: calc(50% - 120px);
+  margin-bottom: 30px;
 }
 /* -------------------------------------- */
+/* -------------dog------------------------- */
+.dog{
+  position: absolute;
+  top: 162px;
+  left: calc(50% + 10px );
+}
+/* ------------------------------------------ */
 /* =============image-search-text------------ */
 #image-search-text{
   display: none;

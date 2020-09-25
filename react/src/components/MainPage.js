@@ -1,4 +1,4 @@
-import React, {useState, useRef, useCallback} from 'react';
+import React, {useState, useRef, useCallback, useEffect} from 'react';
 import ChevronSkywalker from '../images/ChevronSkywalker';
 import ChevronSkywalkerInverse from '../images/ChevronSkywalkerInverse';
 import ImageSizeSelect from './ImageSizeSelect';
@@ -12,6 +12,7 @@ import FilterStartDate from './FilterStartDate';
 import FilterEndDate from './FilterEndDate';
 import BottomNavControls from './BottomNavControls';
 import LogoutButton from './LogoutButton';
+import lottie from 'lottie-web';
 
 // import { API_URL } from '../config.js'
 
@@ -201,9 +202,19 @@ const MainPage = () => {
       setEpicEnhancedState("natural")
     }
   }
-
-
   //-----------------------------------------------------
+  //---------------lottie--------------------------------
+  const container = useRef(null);
+  useEffect(()=>{
+    lottie.loadAnimation({
+      container: container.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('../images/astronaut-dog.json')
+    })
+  },[])
+  //--------------------------------------------------
     return (
       <div id={"main-c"}>
         <div id={"main-c__scroll"}>
@@ -219,6 +230,7 @@ const MainPage = () => {
               <div id={"nav-scroll__inner"}>
                 <BottomNavControls potdPrevDay={potdPrevDay} potdNextDay={potdNextDay} setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState}  searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState}/>
                 <LogoutButton bottomNavState={bottomNavState} /> 
+                <div className="dog" ref={container}></div>
               </div>
             </div>
           </div>
