@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import doubleChevron from '../images/doubleChevron.png';
+import Loading from './Loading';
 // import spaceArrow from '../images/SpaceArrow';
 
 const EPICimage = (props) => {
@@ -52,10 +53,13 @@ const EPICimage = (props) => {
         {/* `https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/${props.epicResult[0].image}.png?api_key=DEMO_KEY` */}
       </div>
         :
-        <div className={"epic-img-c__date-not-available"}> 
-          <h1>Date Not Available</h1>
-          <h1>Please Try Again</h1>
-        </div>
+        <>
+         <Loading/>
+         <div className={"epic-img-c__date-not-available"}> 
+           <h1>Date Not Available</h1>
+           <h1>Please Try Again</h1>
+         </div>
+        </>
       }
     </>
   )

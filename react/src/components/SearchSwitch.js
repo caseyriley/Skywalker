@@ -7,6 +7,7 @@ import ImageDataSearch from './ImageDataSearch';
 import EPICSearch from './EPICsearch';
 import POTDimageSizeSelect from './POTDimageSizeSelect';
 import ImageSizeSelect from './ImageSizeSelect';
+import LandsatSearch from './LandsatSearch';
 
 const SearchSwitch = (props) => {
   
@@ -31,9 +32,9 @@ const SearchSwitch = (props) => {
               </>
               )
           case "epic":
-            return <EPICSearch setEpicSearchValue={props.setEpicSearchValue} epicSearchValue={props.epicSearchValue} epicQuery={props.epicQuery} setEpicQuery={props.setEpicQuery} closeBottomNav={props.closeBottomNav}/>
+            return <EPICSearch epicQuery={props.epicQuery} setEpicQuery={props.setEpicQuery} closeBottomNav={props.closeBottomNav}/>
           case "infiniteScroll":
-            return <NASAInfiniteScroll closeBottomNav={props.closeBottomNav} updateSearchValue={props.updateSearchValue} searchValue={props.searchValue} query={props.query} handleSearch={props.handleSearch} setResults={props.setResults} results={props.results} />
+            return <LandsatSearch landsatQuery={props.landsatQuery} setLandsatQuery={props.setLandsatQuery} closeBottomNav={props.closeBottomNav}/>
           case "mars-weather":
             return <NASAInfiniteScroll closeBottomNav={props.closeBottomNav} updateSearchValue={props.updateSearchValue} searchValue={props.searchValue} query={props.query} handleSearch={props.handleSearch} setResults={props.setResults} results={props.results} />
         }

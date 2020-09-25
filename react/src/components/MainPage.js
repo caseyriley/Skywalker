@@ -203,7 +203,7 @@ const MainPage = () => {
     }
   }
   //-----------------------------------------------------
-  //---------------lottie--------------------------------
+  //---------------lottie-dog-------------------------------
   const container = useRef(null);
   useEffect(()=>{
     lottie.loadAnimation({
@@ -215,6 +215,10 @@ const MainPage = () => {
     })
   },[])
   //--------------------------------------------------
+  // ---------------------Landsat---------------------------------
+  const [landsatQuery, setLandsatQuery] = useState("2019-05-30");
+  // ---------------------------------------------------------
+
     return (
       <div id={"main-c"}>
         <div id={"main-c__scroll"}>
@@ -224,7 +228,7 @@ const MainPage = () => {
             </div>
             
               <div id={"main-c__bottom-nav-top"} >
-                <SearchSwitch modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
+              <SearchSwitch landsatQuery={landsatQuery} setLandsatQuery={setLandsatQuery} modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
               </div>
             <div id={"nav-scroll"}>
               <div id={"nav-scroll__inner"}>
