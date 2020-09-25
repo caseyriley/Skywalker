@@ -231,7 +231,18 @@
   width: 50vh;
   left: calc(50% - 34.5vh);
   filter: hue-rotate(230deg);
+  opacity: 0;
+    animation: fadeInAnimation 3s ease-in;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+  position: fixed;
+    
 }
-
-
-
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+} 
