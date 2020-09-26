@@ -31,7 +31,7 @@ const [imageModalState, setImageModalState] = useState(false);
     : <div></div>  }
     <ul className={"main-c__image-ul"}>
       {/* <li className={"main-c__image-li"}> */}
-        {props.allResults ? props.allResults.map((item, index) => {
+        {props.allResults && props.error !== true ? props.allResults.map((item, index) => {
           if (props.allResults.length === index + 1) {
             return (
               <>

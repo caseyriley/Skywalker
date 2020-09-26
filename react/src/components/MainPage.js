@@ -13,6 +13,7 @@ import FilterEndDate from './FilterEndDate';
 import BottomNavControls from './BottomNavControls';
 import LogoutButton from './LogoutButton';
 import lottie from 'lottie-web';
+import useAudioSearchFunction from './useAudioSearchFunction';
 
 // import { API_URL } from '../config.js'
 
@@ -215,8 +216,46 @@ const MainPage = () => {
     })
   },[])
   //--------------------------------------------------
-  // ---------------------Landsat---------------------------------
-  const [landsatQuery, setLandsatQuery] = useState("2019-05-30");
+  // ---------------------Audio---------------------------------
+   
+  const [audioQuery, setAudioQuery] = useState('')
+  const [audioPageNumber, setAuidoPageNumber] = useState(1)
+  const [audioStartDateFilterState, setAudioStartDateFilterState] = useState(false);
+  const [audioEndDateFilterState, setAudioEndDateFilterState] = useState(false);
+
+  const {
+    allAudioResults,
+    audioHasMore,
+    audioLoading,
+    audioError
+  } = useAudioSearchFunction(audioQuery, audioPageNumber, audioStartDateFilterState, audioEndDateFilterState)
+
+  const audioObserver = useRef()
+
+  const lastAdioSearchElementRef = useCallback(node => {
+    // console.log(node)
+    if (audioLoading) return
+    if (audioObserver.current) audioObserver.current.disconnect()
+    audioObserver.current = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && audioHasMore) {
+        console.log('Visible')
+        setAuidoPageNumber(prevPageNumber => prevPageNumber + 1)
+      }
+    })
+    if (node) audioObserver.current.observe(node)
+  }, [audioLoading, audioHasMore])
+
+
+  const [audioSearchValue, setAudioSearchValue] = useState();
+  function updateAudioSearchValue(e) {
+    setAudioSearchValue(e.target.value)
+  }
+
+  function handleAudioSearch(e) {
+    setAudioQuery(audioSearchValue)
+    setAuidoPageNumber(1)
+  }
+ 
   // ---------------------------------------------------------
 
     return (
@@ -228,7 +267,9 @@ const MainPage = () => {
             </div>
             
               <div id={"main-c__bottom-nav-top"} >
-              <SearchSwitch landsatQuery={landsatQuery} setLandsatQuery={setLandsatQuery} modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
+              <SearchSwitch
+                closeBottomNav={closeBottomNav} updateAudioSearchValue={updateAudioSearchValue} audioSearchValue={audioSearchValue} audioQuery={audioQuery} handleAudioSearch={handleAudioSearch} allAudioResults={allAudioResults}
+                modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
               </div>
             <div id={"nav-scroll"}>
               <div id={"nav-scroll__inner"}>
@@ -239,7 +280,9 @@ const MainPage = () => {
             </div>
           </div>
         </div>
-        <ImageSwitch error={error} potdError={potdError} potdNextDay={potdNextDay} potdPrevDay={potdPrevDay} modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
+        <ImageSwitch
+          audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAdioSearchElementRef={lastAdioSearchElementRef} allAudioResults={allAudioResults}  
+          error={error} potdError={potdError} potdNextDay={potdNextDay} potdPrevDay={potdPrevDay} modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
             {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}
       </div>
       

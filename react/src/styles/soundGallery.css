@@ -1,0 +1,81 @@
+.root{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sound-countainer{
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 0px;
+  margin: auto;
+  flex-wrap: wrap;
+
+}
+.sound-button{
+  padding: 20px;
+  /* min-width: 400px;
+  max-width: 500px; */
+  width: auto;
+  /* max-width: 500px; */
+  height: 30px;
+  background-color: #0e8dbc;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-justify: center;
+  text-align: center;
+  margin: 20px 20px 0px 20px;
+  flex-shrink: 20;
+  box-shadow: inset 0px 6px 8px 1px rgb(255, 255, 255, .4),
+  inset 0px -6px 8px 1px rgba(0, 0, 0, 0.4);
+  
+
+}
+.sound-description{
+  flex-shrink: 20;
+  color: #FFFFFF;
+  position: relative;
+  top: -5px;
+  text-shadow: 
+  0 1px 0 #CCCCCC, 
+  0 2px 0 #c9c9c9, 
+  0 3px 0 #bbb, 
+  0 4px 0 #b9b9b9, 
+  0 5px 0 #aaa, 
+  0 6px 1px rgba(0,0,0,.1), 
+  0 0 5px rgba(0,0,0,.1), 
+  0 1px 3px rgba(0,0,0,.3), 
+  0 3px 5px rgba(0,0,0,.2), 
+  0 5px 10px rgba(0,0,0,.25), 
+  0 10px 10px rgba(0,0,0,.2), 
+  0 20px 20px rgba(0,0,0,.15);
+  font: 30px 'ChunkFiveRegular';
+  margin: 0px;
+  transition: all .2s;
+}
+.sound-description:hover{
+  margin-bottom: -4px;
+  text-shadow: 0 1px 0 #CCCCCC, 
+  0 1px 0 #bbb, 
+  0 2px 0 #aaa, 
+  0 3px 1px rgba(0,0,0,.1), 
+  0 0 5px rgba(0,0,0,.1), 
+  0 1px 3px rgba(0,0,0,.3), 
+  0 3px 5px rgba(0,0,0,.2), 
+  0 5px 10px rgba(0,0,0,.25), 
+  0 10px 10px rgba(0,0,0,.2), 
+  0 20px 20px rgba(0,0,0,.15);
+}
+.mp3string{
+  color: white;
+}

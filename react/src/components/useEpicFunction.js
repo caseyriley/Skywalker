@@ -37,9 +37,6 @@ export default function useEpicFunction(epicQuery, epicEnhancedState) {
     
     fetch(`https://api.nasa.gov/EPIC/api/${epicEnhancedState}/date/${epicQuery}?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
 
-    // fetch(`https://api.nasa.gov/EPIC/api/natural/all?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
-    // fetch(`https://epic.gsfc.nasa.gov/api/images.php?enhanced/date/2020-06-08?api_key="DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"`
-    // , { mode: 'no-cors'}
     )
     // .then(res => res.json)
       .then(res => res.json())

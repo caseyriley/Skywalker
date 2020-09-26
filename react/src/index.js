@@ -16,6 +16,7 @@ import './styles/epicEnhancedToggle.css';
 import './styles/imageSearchText.css';
 import './styles/potdImageSizeSelect.css';
 import './styles/potdNextAndPrev.css'
+import './styles/soundGallery.css'
 import './styles/mScreen1040.css'
 import './styles/mScreen850.css'
 import './styles/mScreenH700.css';
