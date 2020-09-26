@@ -1,6 +1,7 @@
 import React from 'react';
-import NASAImage from './NASAImage';
-import NASAImageSearch from './NASAImageSearch';
+import ReactAudioPlayer from 'react-audio-player';
+// import NASAImage from './NASAImage';
+// import NASAImageSearch from './NASAImageSearch';
 import POTDSearch from './POTDSearch';
 import NASAInfiniteScroll from './NasaInfiniteScroll';
 import ImageDataSearch from './ImageDataSearch';
@@ -11,7 +12,6 @@ import AudioSearch from './AudioSearch';
 
 
 const SearchSwitch = (props) => {
-  
   return (
     <>
       {(() => {
@@ -35,7 +35,17 @@ const SearchSwitch = (props) => {
           case "epic":
             return <EPICSearch epicQuery={props.epicQuery} setEpicQuery={props.setEpicQuery} closeBottomNav={props.closeBottomNav}/>
           case "infiniteScroll":
-            return <AudioSearch closeBottomNav={props.closeBottomNav} updateAudioSearchValue={props.updateAudioSearchValue} audioSearchValue={props.audioSearchValue} audioQuery={props.audioQuery} handleAudioSearch={props.handleAudioSearch} allAudioResults={props.allAudioResults}/>
+            return (
+              <>
+                <div className={"react-audio-player-cover"}></div>
+                <ReactAudioPlayer
+                  src={`${props.mp3Result[0]}`}
+                  autoPlay
+                  controls
+                />
+                <AudioSearch closeBottomNav={props.closeBottomNav} updateAudioSearchValue={props.updateAudioSearchValue} audioSearchValue={props.audioSearchValue} audioQuery={props.audioQuery} handleAudioSearch={props.handleAudioSearch} allAudioResults={props.allAudioResults}/>
+              </>
+              )
           case "mars-weather":
             return <NASAInfiniteScroll closeBottomNav={props.closeBottomNav} updateSearchValue={props.updateSearchValue} searchValue={props.searchValue} query={props.query} handleSearch={props.handleSearch} setResults={props.setResults} results={props.results} />
         }

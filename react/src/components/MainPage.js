@@ -1,15 +1,16 @@
 import React, {useState, useRef, useCallback, useEffect} from 'react';
+import useMp3 from './useMp3';
 import ChevronSkywalker from '../images/ChevronSkywalker';
 import ChevronSkywalkerInverse from '../images/ChevronSkywalkerInverse';
-import ImageSizeSelect from './ImageSizeSelect';
-import SearchMenu from './SearchMenu';
+// import ImageSizeSelect from './ImageSizeSelect';
+// import SearchMenu from './SearchMenu';
 import SearchSwitch from './SearchSwitch';
 import useSearchFunction from './useSearchFunction';
 import usePotdFunction from './usePotdFunction';
 import useEpicFunction from './useEpicFunction';
 import ImageSwitch from './ImageSwitch';
-import FilterStartDate from './FilterStartDate';
-import FilterEndDate from './FilterEndDate';
+// import FilterStartDate from './FilterStartDate';
+// import FilterEndDate from './FilterEndDate';
 import BottomNavControls from './BottomNavControls';
 import LogoutButton from './LogoutButton';
 import lottie from 'lottie-web';
@@ -255,7 +256,13 @@ const MainPage = () => {
     setAudioQuery(audioSearchValue)
     setAuidoPageNumber(1)
   }
- 
+
+  const [mp3Query, setMp3query] = useState();
+  const {
+    mp3Result,
+    mp3Error
+  } = useMp3(mp3Query)
+
   // ---------------------------------------------------------
 
     return (
@@ -268,7 +275,7 @@ const MainPage = () => {
             
               <div id={"main-c__bottom-nav-top"} >
               <SearchSwitch
-                closeBottomNav={closeBottomNav} updateAudioSearchValue={updateAudioSearchValue} audioSearchValue={audioSearchValue} audioQuery={audioQuery} handleAudioSearch={handleAudioSearch} allAudioResults={allAudioResults}
+                mp3Result={mp3Result} closeBottomNav={closeBottomNav} updateAudioSearchValue={updateAudioSearchValue} audioSearchValue={audioSearchValue} audioQuery={audioQuery} handleAudioSearch={handleAudioSearch} allAudioResults={allAudioResults}
                 modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery}  potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
               </div>
             <div id={"nav-scroll"}>
@@ -281,7 +288,7 @@ const MainPage = () => {
           </div>
         </div>
         <ImageSwitch
-          audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAdioSearchElementRef={lastAdioSearchElementRef} allAudioResults={allAudioResults}  
+          mp3Query={mp3Query} setMp3query={setMp3query} mp3Result={mp3Result} audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAdioSearchElementRef={lastAdioSearchElementRef} allAudioResults={allAudioResults}  
           error={error} potdError={potdError} potdNextDay={potdNextDay} potdPrevDay={potdPrevDay} modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
             {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}
       </div>

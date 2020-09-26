@@ -79,3 +79,26 @@
 .mp3string{
   color: white;
 }
+.react-audio-player{
+  position: absolute;
+  left: 100px;
+  pointer-events: all;
+  outline: none;
+}
+audio {
+  width: 300px;
+  height: 54px;
+  pointer-events: all;
+}
+.react-audio-player-cover{
+  position: absolute;
+  left: 100px;
+  width: 300px;
+  height: 54px;
+  pointer-events: none;
+  border-radius: 999px;
+  box-shadow: 
+        inset 0px 4px 4px -4px rgba(125, 125, 125, 0.5),
+        inset 0px -4px 5px -3px rgba(125, 125, 125, 0.5);
+        z-index: 2;
+}
