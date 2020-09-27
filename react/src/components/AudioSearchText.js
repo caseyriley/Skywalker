@@ -13,6 +13,7 @@ const AudioSearchText = () => {
           <p>Audio controls include play, pause, skip to selected time, and volume.</p>
           <p>Downloading audio is easy. Once audio is playing, click the three dots
              on the rights side of the audio player and select download.</p>
+          <p>Try the keyword "sound" for fun examples of what this page can do 🚀</p>
           <p></p>
         </div>
       }

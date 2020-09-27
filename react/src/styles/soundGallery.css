@@ -23,13 +23,11 @@
 }
 .sound-button{
   padding: 20px;
-  /* min-width: 400px;
-  max-width: 500px; */
   width: auto;
-  /* max-width: 500px; */
   height: 30px;
-  background-color: #0e8dbc;
-  border-radius: 18px;
+  background-color: rgb(14, 141, 188, .7);
+
+  border-radius: 209px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,10 +35,15 @@
   text-align: center;
   margin: 20px 20px 0px 20px;
   flex-shrink: 20;
-  box-shadow: inset 0px 6px 8px 1px rgb(255, 255, 255, .4),
-  inset 0px -6px 8px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 
+    inset 0px 6px 8px 1px rgb(255, 255, 255, .4),
+    inset 0px -6px 8px 1px rgba(0, 0, 0, 0.4);
+  transition: background-color .3s;
   
 
+}
+.sound-button:hover{
+  background-color: rgba(189, 122, 230, 0.7);
 }
 .sound-description{
   flex-shrink: 20;
@@ -154,4 +157,32 @@ audio {
   font-family: 'PT Sans Narrow', sans-serif;
   text-align: center;
   margin: auto;
+}
+.parallax{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  overflow-y: scroll;
+  height: 100vh;
+  
+}
+.parallax-background{
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-image: url("../images/saturn2.jpg");
+  background-position-y: 150%;
+  position: absolute;
+  /* top: 0px;
+  left: 0px;  */
+pointer-events: none;
+  /* z-index: -1; */
+  /* transform: translateY(200px) !important ; */
+}
+.background-triangles {
+    width: 1080px;
+    height: 1280px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
 }
