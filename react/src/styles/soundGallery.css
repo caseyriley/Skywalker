@@ -14,10 +14,11 @@
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: auto;
   padding: 0px;
   margin: auto;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 
 }
 .sound-button{
@@ -75,6 +76,18 @@
   0 5px 10px rgba(0,0,0,.25), 
   0 10px 10px rgba(0,0,0,.2), 
   0 20px 20px rgba(0,0,0,.15);
+}
+.shuttle{
+  position: relative;
+  top: -1px;
+  left: 10px;
+  height: 80px;
+  transform: rotate(90deg);
+  margin-right: 0px;
+  transition: all .3s;
+}
+.shuttle:hover{
+  left: 15px;
 }
 .mp3string{
   color: white;
