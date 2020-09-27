@@ -53,5 +53,9 @@
 .react-audio-player-cover{
   left: 20px;
 }
+.audio-info{
+  right: 200px;
+  width: 37vw;
+}
 /* -------------------------------------------------------------------- */
 }

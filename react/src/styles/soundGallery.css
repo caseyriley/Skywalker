@@ -100,5 +100,45 @@ audio {
   box-shadow: 
         inset 0px 4px 4px -4px rgba(125, 125, 125, 0.5),
         inset 0px -4px 5px -3px rgba(125, 125, 125, 0.5);
-        z-index: 2;
+        z-index: 1;
+}
+.audio-info{
+  position: absolute;
+  top: 20px;
+  right: 270px;
+  width: 34.5vw;
+  height: 160px;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+.audio-info__scroll{
+  margin: 20px 0px 20px 0px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.audio-info__scroll p{
+  margin: 0px 20px 20px 20px;
+  font-size: 20px;
+  color: grey;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-align: left;
+}
+.audio-info__scroll h2{
+  margin: 20px 20px 20px 20px;
+  font-size: 23px;
+  color: grey;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-align: center;
+  margin: auto;
 }

@@ -19,7 +19,7 @@ const ImageSwitch = (props) => {
           case "epic":
             return <EPICimage epicEnhancedState={props.epicEnhancedState} epicQuery={props.epicQuery} epicResult={props.epicResult} error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
           case "infiniteScroll":
-            return <SoundGallery mp3Query={props.mp3Query} setMp3query={props.setMp3query} mp3Result={props.mp3Result} audioError={props.audioError} openCloseState={props.openCloseState} setOpenCloseState={props.setOpenCloseState} audioLoading={props.audioLoading} lastAdioSearchElementRef={props.lastAdioSearchElementRef} allAudioResults={props.allAudioResults}/> 
+            return <SoundGallery setMp3Info={props.setMp3Info} mp3Query={props.mp3Query} setMp3query={props.setMp3query} mp3Result={props.mp3Result} audioError={props.audioError} openCloseState={props.openCloseState} setOpenCloseState={props.setOpenCloseState} audioLoading={props.audioLoading} lastAdioSearchElementRef={props.lastAdioSearchElementRef} allAudioResults={props.allAudioResults}/> 
           case "mars-weather":
             return <NASAImageGallery error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
         }

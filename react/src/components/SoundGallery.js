@@ -28,8 +28,8 @@ const SoundGallery = (props) => {
       <ul className={"sound-countainer"} >
         {props.allAudioResults ? props.allAudioResults.map(item => {
           return(
-            <li className={"sound-button"} onClick={() => props.setMp3query(item.href)}>
-              <h3 className={"sound-description"} key={`${item.data[0].title} ${Math.floor(Math.random() * Math.floor(1000))}`}>{`${item.data[0].title}`}</h3>
+            <li className={"sound-button"} onClick={() => (props.setMp3query(item.href), props.setMp3Info(item))} key={`${item.data[0].title} ${Math.floor(Math.random() * Math.floor(1000))}`} >
+              <h3 className={"sound-description"} >{`${item.data[0].title}`}</h3>
             </li>
           )
           

@@ -103,53 +103,53 @@ const MainPage = () => {
     
     if (day < 28){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 1 && day < 31){
+    } else if (month === 1 && day < 31){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 2){
+    } else if (month === 2){
       setPotdQuery(`${year}-${parseInt(month) + 1}-01`)
-    } else if (month == 3 && day < 31){
+    } else if (month === 3 && day < 31){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 4 && day < 30){
+    } else if (month === 4 && day < 30){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 5 && day < 31){
+    } else if (month === 5 && day < 31){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 6 && day < 30){
+    } else if (month === 6 && day < 30){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 7 && day < 31){
+    } else if (month === 7 && day < 31){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 8 && day < 31){
+    } else if (month === 8 && day < 31){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 9 && day < 30){
+    } else if (month === 9 && day < 30){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 10 && day < 31){
+    } else if (month === 10 && day < 31){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 11 && day < 30){
+    } else if (month === 11 && day < 30){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 12 && day < 31){
+    } else if (month === 12 && day < 31){
       setPotdQuery(`${year}-${month}-${parseInt(day) + 1}`)
-    } else if (month == 1 && day > 30) {
+    } else if (month === 1 && day > 30) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 2 && day == 28) {
+    } else if (month === 2 && day === 28) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 3 && day == 31) {
+    } else if (month === 3 && day === 31) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 4 && day == 30) {
+    } else if (month === 4 && day === 30) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 5 && day == 31) {
+    } else if (month === 5 && day === 31) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 6 && day == 30) {
+    } else if (month === 6 && day === 30) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 7 && day == 31) {
+    } else if (month === 7 && day === 31) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 8 && day == 31) {
+    } else if (month === 8 && day === 31) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 9 && day == 30) {
+    } else if (month === 9 && day === 30) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 10 && day == 31) {
+    } else if (month === 10 && day === 31) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 11 && day == 30) {
+    } else if (month === 11 && day === 30) {
       setPotdQuery(`${year}-0${parseInt(month) + 1}-01`)
-    } else if (month == 12 && day == 31) {
+    } else if (month === 12 && day === 31) {
       setPotdQuery(`${parseInt(year) + 1}-01-01`)
     }
   }
@@ -160,29 +160,29 @@ const MainPage = () => {
 
     if (day > 1){
       setPotdQuery(`${year}-${month}-${parseInt(day) - 1}`)
-    } else if (month == 1){
+    } else if (month === 1){
       setPotdQuery(`${parseInt(year) - 1}-12-31`)
-    } else if (month == 2){
+    } else if (month === 2){
       setPotdQuery(`${year}-01-31`)
-    } else if (month == 3) {
+    } else if (month === 3) {
       setPotdQuery(`${year}-02-28`)
-    } else if (month == 4) {
+    } else if (month === 4) {
       setPotdQuery(`${year}-03-31`)
-    } else if (month == 5) {
+    } else if (month === 5) {
       setPotdQuery(`${year}-04-30`)
-    } else if (month == 6) {
+    } else if (month === 6) {
       setPotdQuery(`${year}-05-31`)
-    } else if (month == 7) {
+    } else if (month === 7) {
       setPotdQuery(`${year}-06-30`)
-    } else if (month == 8) {
+    } else if (month === 8) {
       setPotdQuery(`${year}-07-31`)
-    } else if (month == 9) {
+    } else if (month === 9) {
       setPotdQuery(`${year}-08-31`)
-    } else if (month == 10) {
+    } else if (month === 10) {
       setPotdQuery(`${year}-09-30`)
-    } else if (month == 11) {
+    } else if (month === 11) {
       setPotdQuery(`${year}-010-30`)
-    } else if (month == 12) {
+    } else if (month === 12) {
       setPotdQuery(`${year}-11-30`)
     } 
   }
@@ -263,6 +263,9 @@ const MainPage = () => {
     mp3Error
   } = useMp3(mp3Query)
 
+  const [mp3Info, setMp3Info] = useState();
+
+
   // ---------------------------------------------------------
 
     return (
@@ -280,7 +283,7 @@ const MainPage = () => {
               </div>
             <div id={"nav-scroll"}>
               <div id={"nav-scroll__inner"}>
-                <BottomNavControls potdPrevDay={potdPrevDay} potdNextDay={potdNextDay} setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState}  searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState}/>
+                <BottomNavControls mp3Info={mp3Info} potdPrevDay={potdPrevDay} potdNextDay={potdNextDay} setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState}  searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState}/>
                 <LogoutButton bottomNavState={bottomNavState} /> 
                 <div className="dog" ref={container}></div>
               </div>
@@ -288,7 +291,7 @@ const MainPage = () => {
           </div>
         </div>
         <ImageSwitch
-          mp3Query={mp3Query} setMp3query={setMp3query} mp3Result={mp3Result} audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAdioSearchElementRef={lastAdioSearchElementRef} allAudioResults={allAudioResults}  
+          setMp3Info={setMp3Info} mp3Query={mp3Query} setMp3query={setMp3query} mp3Result={mp3Result} audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAdioSearchElementRef={lastAdioSearchElementRef} allAudioResults={allAudioResults}  
           error={error} potdError={potdError} potdNextDay={potdNextDay} potdPrevDay={potdPrevDay} modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
             {/* <Results potdResult={potdResult}  error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} /> */}
       </div>

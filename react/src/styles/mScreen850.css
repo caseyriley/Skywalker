@@ -106,5 +106,10 @@
   top: 80px;
   height: 40px;
 }
+.audio-info{
+  top: 10px;
+  right: calc(50% - 20px);
+  width: 220px;
+}
 /* -------------------------------------------- */
 }

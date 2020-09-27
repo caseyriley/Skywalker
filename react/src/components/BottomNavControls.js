@@ -1,4 +1,6 @@
 import React from 'react';
+import AudioInfo from './AudioInfo';
+import AudioSearchText from './AudioSearchText';
 import EpicEnhancedToggle from './EpicEnhancedToggle';
 import EpicSearchText from './EpicSearchText';
 import FilterEndDate from './FilterEndDate';
@@ -41,7 +43,13 @@ const BottomNavControls = (props) => {
               </>
             )
           case "infiniteScroll":
-            return <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
+            return (
+              <>
+                <AudioSearchText/>
+                <AudioInfo mp3Info={props.mp3Info}/>
+                <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
+              </>
+            )
           case "mars-weather":
             return <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
         }
