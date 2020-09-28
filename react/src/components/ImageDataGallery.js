@@ -4,15 +4,21 @@ import React, {useState} from 'react';
 const ImageDataGallery = (props) => {
 const [imageModalState, setImageModalState] = useState(false);
 // const [props.openCloseState, setOpenCloseState] = useState(false);
-
+  
     function setModalStateFalse(){
       props.setOpenCloseState(false)
     }
 
    function setupModalInfo(e){
-     let description = e.target.nextSibling.innerHTML;
+     let title = e.target.nextSibling.innerHTML;
+     let description = e.target.nextSibling.nextSibling.innerHTML; 
      let hrf = e.target.src
-     setImageModalState({ hrf: hrf, description: description })
+     
+     setImageModalState({ hrf: hrf
+      , description: description
+      , title: title 
+    })
+     console.log("imageModalState====>", imageModalState);
    }
 
   return (
@@ -22,11 +28,12 @@ const [imageModalState, setImageModalState] = useState(false);
           onClick={() => props.setOpenCloseState(false)} 
          >
         <div id={"image-modal-c__scroll"}>
-            <img id={"image-modal-c__image"} className={`${props.modalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.modalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />
-            <div className={`image-modal-c__description-c`}>
-          <p>{imageModalState.description}</p>
+          <img id={"image-modal-c__image"} className={`${props.modalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.modalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />
+          <div className={`image-modal-c__description-c`}>
+            <h1>{imageModalState.title}</h1>
+            <p>{imageModalState.description}</p>
+          </div>
         </div>
-      </div>
     </div> 
     : <div></div>  }
     <ul className={"main-c__image-ul"}>
@@ -49,6 +56,7 @@ const [imageModalState, setImageModalState] = useState(false);
                 <img 
                   className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt="" loading="lazy" >
                 </img>
+                <p className={"search-array-image__data__descirption"} loading="lazy">{item.data[0].title}</p>
                 <p className={"search-array-image__data__descirption"} loading="lazy">{item.data[0].description}</p>
               </div>
             )

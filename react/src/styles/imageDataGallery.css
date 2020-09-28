@@ -103,6 +103,18 @@
   animation-fill-mode: forwards;
   
 }
+.image-modal-c__description-c h1{
+  color: white;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  line-height: 2;
+  /* font-size: 20px; */
+  animation: fadeInAnimation ease 5s;
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards;
+  margin: auto;
+  
+}
 @keyframes fadeInAnimation { 
     0% { 
         opacity: 0; 
