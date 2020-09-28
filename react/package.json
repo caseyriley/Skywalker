@@ -9,6 +9,7 @@
     "axios": "^0.20.0",
     "lottie-web": "^5.7.3",
     "react": "^16.13.1",
+    "react-audio-player": "^0.13.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
