@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import FacebookImage from '../images/FacebookImage.png';
+import TwitterCircular from '../images/TwitterCircular.png';
 
 
 const ImageDataGallery = (props) => {
@@ -35,19 +36,29 @@ const [imageModalState, setImageModalState] = useState(false);
           <div className={`image-modal-c__description-c`}>
             <h1>{imageModalState.title}</h1>
             <p>{imageModalState.description}</p>
-            {/* ---------------FB--------------- */}
-              <div class="fb-share-button" 
-                // data-href={`${imageModalState.hrf}`} 
-                // data-href="https://skywalker3.herokuapp.com/" 
-                data-layout="button" 
-                data-size="large"
-                lazy="true"
-              >
-                
-                <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${imageModalState.hrf}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
-                  {/* <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fskywalker3.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a> */}
-              </div>
-            {/* -------------------------------- */}
+            <div className={"social-media-links"} >
+              {/* ---------------FB--------------- */}
+                <div class="fb-share-button" 
+                  // data-href={`${imageModalState.hrf}`} 
+                  // data-href="https://skywalker3.herokuapp.com/" 
+                  data-layout="button" 
+                  data-size="large"
+                  lazy="true"
+                >
+                  
+                  <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${imageModalState.hrf}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
+                    {/* <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fskywalker3.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a> */}
+                </div>
+              {/* -------------------------------- */}
+              {/* -----------------Twitter------------- */}
+                <a className="twitter-share-button"
+                  href={`https://twitter.com/intent/tweet?text=${imageModalState.hrf}`}
+
+                  data-size="large">
+                  <img className="twitter-share-image" src={TwitterCircular} alt="" />
+                </a>
+              {/* ------------------------------------- */}
+            </div>
           </div>
         </div>
     </div> 
