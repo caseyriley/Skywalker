@@ -6,7 +6,6 @@
   flex-direction: column;
   right: 350px;
   top: 20px;
-  
 }
 #filter-date-c span { 
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -29,6 +28,12 @@
         inset 0px 4px 4px -4px rgba(125, 125, 125, 0.5),
         inset 0px -4px 5px -3px rgba(125, 125, 125, 0.5);
 }
+#startDateInput{
+  position: relative;
+  left: 0px;
+  width: 75px !important;
+  margin-right: 0px;
+}
 #filter-date input{
   outline: none;
   border: none;
@@ -39,15 +44,24 @@
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: 400;
   line-height: 1.15;
-  font-size: 20px;
+  font-size: 18px;
   color: grey;
   margin-left: 5px;
 }
+input[type="number" i] {
+  position: relative;
+  left: -6px !important;
+  margin: 0px 0px 0px 0px;
+  
+
+}
 .magnifying-glass{
-  height: 30px;
+  position: relative;
+  left: 0px;
+  min-height: 20px !important;
+  min-width: 20px !important;
   fill: grey;
   margin-left: 10px;
-
 }
 #main-c__bottom-nav-top__Searchbar__form{
   width: 100%;

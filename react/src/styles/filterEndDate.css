@@ -5,10 +5,7 @@
   position: absolute;
   flex-direction: column;
   right: 350px;
-  /* margin-top: 45px; */
   top: 107px;
-  
- 
 }
 #filter-end-date-c span { 
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -23,13 +20,18 @@
   height: 40px;
   border-radius: 999px;
   background-color: rgb(233, 233, 233);
-  
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 
         inset 0px 4px 4px -4px rgba(125, 125, 125, 0.5),
         inset 0px -4px 5px -3px rgba(125, 125, 125, 0.5);
+}
+#endDateInput{
+  position: relative;
+  left: 0px;
+  width: 75px !important;
+  margin-right: 0px;
 }
 #filter-end-date input{
   outline: none;
@@ -41,15 +43,17 @@
   font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: 400;
   line-height: 1.15;
-  font-size: 20px;
+  font-size: 18px;
   color: grey;
   margin-left: 5px;
 }
 .magnifying-glass{
-  height: 30px;
+  position: relative;
+  left: 0px;
+  min-height: 20px !important;
+  min-width: 20px !important;
   fill: grey;
   margin-left: 10px;
-
 }
 #main-c__bottom-nav-top__Searchbar__form{
   width: 100%;
@@ -73,5 +77,5 @@
 }
 input[type="number" i] {
     padding: 1px 2px;
-    margin: 0px 10px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
