@@ -23,6 +23,8 @@ const [imageModalState, setImageModalState] = useState(false);
 
   return (
     <>
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="EJjP46dz"></script>
       {props.openCloseState ? 
         <div id={"image-modal-c"}
           onClick={() => props.setOpenCloseState(false)} 
@@ -32,6 +34,19 @@ const [imageModalState, setImageModalState] = useState(false);
           <div className={`image-modal-c__description-c`}>
             <h1>{imageModalState.title}</h1>
             <p>{imageModalState.description}</p>
+            {/* ---------------FB--------------- */}
+              <div class="fb-share-button" 
+                // data-href={`${imageModalState.hrf}`} 
+                // data-href="https://skywalker3.herokuapp.com/" 
+                data-layout="button" 
+                data-size="large"
+                lazy="true"
+              >
+                
+                <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${imageModalState.hrf}`} class="fb-xfbml-parse-ignore">Share</a>
+                  {/* <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fskywalker3.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a> */}
+              </div>
+            {/* -------------------------------- */}
           </div>
         </div>
     </div> 
