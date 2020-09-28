@@ -28,6 +28,6 @@ import App from './App';
 ReactDOM.render(
   <React.StrictMode>
     <App />,
-  </React.StrictMode>,
+  c</React.StrictMode>,
   document.getElementById('root')
 );
