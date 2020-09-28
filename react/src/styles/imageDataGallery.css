@@ -123,3 +123,21 @@
         opacity: 1; 
      } 
 } 
+.fb-share-button{
+  position: relative;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  margin: 20px 0px 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.fb-share-button a{
+  color: white;
+  text-decoration: none;
+}
+.facebook-image{
+  height: 80px;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 import doubleChevron from '../images/doubleChevron.png'
+import FacebookSvg from '../images/FacebookSvg';
+import FacebookImage from '../images/FacebookImage.png';
 import Loading from './Loading';
 
 const POTDImage = (props) => {
@@ -25,8 +27,7 @@ const POTDImage = (props) => {
                 data-size="large"
                 lazy="true"
               >
-
-                <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${props.potdResult.hdurl}`} class="fb-xfbml-parse-ignore">Share</a>
+                <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${props.potdResult.hdurl}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
                 {/* <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fskywalker3.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a> */}
               </div>
               {/* -------------------------------- */}

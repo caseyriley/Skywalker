@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import FacebookImage from '../images/FacebookImage.png';
 
 
 const ImageDataGallery = (props) => {
@@ -43,7 +44,7 @@ const [imageModalState, setImageModalState] = useState(false);
                 lazy="true"
               >
                 
-                <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${imageModalState.hrf}`} class="fb-xfbml-parse-ignore">Share</a>
+                <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${imageModalState.hrf}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
                   {/* <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fskywalker3.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a> */}
               </div>
             {/* -------------------------------- */}
