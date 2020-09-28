@@ -17,6 +17,19 @@ const POTDImage = (props) => {
               <h2>{props.potdResult.title}</h2>
               <p>{props.potdResult.explanation}</p>
           </div>
+              {/* ---------------FB--------------- */}
+              <div class="fb-share-button"
+                // data-href={`${imageModalState.hrf}`} 
+                // data-href="https://skywalker3.herokuapp.com/" 
+                data-layout="button"
+                data-size="large"
+                lazy="true"
+              >
+
+                <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${props.potdResult.hdurl}`} class="fb-xfbml-parse-ignore">Share</a>
+                {/* <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fskywalker3.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a> */}
+              </div>
+              {/* -------------------------------- */}
         </div>
       </div>
     </>
