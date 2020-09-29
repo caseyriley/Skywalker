@@ -48,7 +48,7 @@ def get_user_tweets(id):
 # Get all all tweets joined with user data
 @tweets.route("/", methods=["GET"])
 def get_all_tweets():
-
+  
   model_tweets = db.session.query(Tweet).options(joinedload("user")).all()
   tweets = []
   for model_tweet in model_tweets:

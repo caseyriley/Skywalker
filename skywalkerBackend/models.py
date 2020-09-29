@@ -78,6 +78,8 @@ class Tweet(db.Model):
         }
 
 
+
+
 class Retweet(db.Model):
     __tablename__ = 'retweets'
 
