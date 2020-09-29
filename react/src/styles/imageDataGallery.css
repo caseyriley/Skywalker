@@ -141,11 +141,66 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+/* .star-c{
+  max-height: 77px;
+  max-width: 77px;
+  border-radius: 999px;
+  background-color: rgb(205, 23, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+} */
+.star-c{
+  height: 100px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: -8px;
+  left: 0px;
+
+}
+.star{
+  height: 80px;
   
+  bottom: 5px;
+  transition: all .3s;
+  filter: hue-rotate(0deg);
+}
+.star:hover{
+  height: 100px;
+  filter: hue-rotate(20deg);
+}
+.star-c span {
+  font-size: 17px;
+  color: rgb(98, 0, 255);
+  /* color: #444444;  */
+/* background: #FFFFFF; */
+text-shadow: 
+1px 0px 1px #CCCCCC, 
+0px 1px 1px #EEEEEE, 
+2px 1px 1px #CCCCCC, 
+1px 2px 1px #EEEEEE, 
+3px 2px 1px #CCCCCC, 
+2px 3px 1px #EEEEEE, 
+4px 3px 1px #CCCCCC;
+/* 3px 4px 1px #EEEEEE, 
+5px 4px 1px #CCCCCC, 
+4px 5px 1px #EEEEEE, 
+6px 5px 1px #CCCCCC, 
+5px 6px 1px #EEEEEE, 
+7px 6px 1px #CCCCCC; */
+
 }
 .fb-share-button a{
   color: white;
   text-decoration: none;
+  margin: 0px 0px 0px 50px;
 }
 .facebook-image{
   height: 80px;
@@ -159,6 +214,5 @@
 }
 .twitter-share-image{
   height: 80px;
-  
-  
 }
+

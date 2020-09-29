@@ -77,7 +77,23 @@ class Tweet(db.Model):
             "media": self.media,
         }
 
+class Gallery(db.Model):
+    __tablename__ = 'gallery'
 
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    media = db.Column(db.Text)
+    title = db.Column(db.Text)
+    description = db.Column(db.Text)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "media": self.media,
+            "title": self.title,
+            "description": self.description
+        }
 
 
 class Retweet(db.Model):

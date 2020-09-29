@@ -22,6 +22,18 @@ CREATE TABLE users (
 --   created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 -- );
 
+
+CREATE TABLE gallery (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  media VARCHAR,
+  title VARCHAR,
+  description VARCHAR,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 -- CREATE TABLE retweets (
 --   id SERIAL PRIMARY KEY,
 --   user_id INTEGER NOT NULL,

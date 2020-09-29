@@ -17,6 +17,7 @@ from .tweets import tweets
 from .likes import likes
 from .auth import auth
 from .replies import replies
+from .gallery import gallery
 
 
 app = Flask(__name__, static_url_path='')
@@ -29,6 +30,7 @@ app.register_blueprint(tweets, url_prefix='/api/tweets')
 app.register_blueprint(likes, url_prefix='/api/likes')
 app.register_blueprint(auth, url_prefix='/api/auth')
 app.register_blueprint(replies, url_prefix='/api/replies')
+app.register_blueprint(gallery, url_prefix='/api/gallery')
 
 db.init_app(app)
 jwt = JWTManager(app)
