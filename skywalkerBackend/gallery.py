@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from sqlalchemy.orm import subqueryload, joinedload
-from .models import db, Tweet
+from .models import db, Gallery
+# from .models import db, Tweet
 import requests
 import json
 from flask_jwt_extended  import jwt_required

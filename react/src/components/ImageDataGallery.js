@@ -28,9 +28,10 @@ const [imageModalState, setImageModalState] = useState(false);
     <>
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="EJjP46dz"></script>
+   
       {props.openCloseState ? 
         <div id={"image-modal-c"}
-          onClick={() => props.setOpenCloseState(false)} 
+          // onClick={() => props.setOpenCloseState(false)} 
          >
         <div id={"image-modal-c__scroll"}>
           <img id={"image-modal-c__image"} className={`${props.modalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.modalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />
@@ -38,7 +39,7 @@ const [imageModalState, setImageModalState] = useState(false);
             <h1>{imageModalState.title}</h1>
             <p>{imageModalState.description}</p>
             <div className={"social-media-links"} >
-                <Star/>
+                <Star imageModalState={imageModalState}/>
               {/* ---------------FB--------------- */}
                 <div class="fb-share-button" 
                   data-layout="button" 
