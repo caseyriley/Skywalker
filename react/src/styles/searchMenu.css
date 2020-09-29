@@ -7,6 +7,7 @@
 	height: 160px;
 
 	background-color: rgb(206, 206, 206);
+	background-color: rgb(220, 218, 218);
 	border-radius: 20px;
   font-size: 0;
   display: flex;
@@ -36,6 +37,7 @@
   /* border: 1px solid green; */
   display: flex;
   justify-content: center;
+  text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.35);
 }
 .search-menu-nav div span{
   width: 300px;
