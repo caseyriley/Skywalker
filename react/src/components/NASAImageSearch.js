@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import LeftArrow from '../images/LeftArrow';
+import RightArrow from '../images/RightArrow.png';
 import MagnifyingGlass from '../images/MagnifyingGlass';
+
 
 const NASAImageSearch = (props) => {
  
@@ -97,9 +98,12 @@ const NASAImageSearch = (props) => {
         <input name={"main-c__bottom-nav-top__Searchbar__input"} value={search} placeholder={"search"}
           onChange={e => setSearch(e.target.value)}
         ></input>
-        <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>
-          <LeftArrow />
-        </button>
+        <div className={"arrow-c"}>
+          <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>
+            <img className={"right-arrow"} src={RightArrow} alt={""}/>
+            {/* <LeftArrow /> */}
+          </button>
+        </div>
       </form>
     </div>
   )

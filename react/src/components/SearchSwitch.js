@@ -38,10 +38,13 @@ const SearchSwitch = (props) => {
             return (
               <>
                 <div className={"react-audio-player-cover"}></div>
+
                 <ReactAudioPlayer
                   src={`${props.mp3Result[0]}`}
                   autoPlay
                   controls
+                  style={{backgroundColor: "white", color: "green", borderRadius: "999px"}}
+                 
                 />
                 <AudioSearch closeBottomNav={props.closeBottomNav} updateAudioSearchValue={props.updateAudioSearchValue} audioSearchValue={props.audioSearchValue} audioQuery={props.audioQuery} handleAudioSearch={props.handleAudioSearch} allAudioResults={props.allAudioResults}/>
               </>

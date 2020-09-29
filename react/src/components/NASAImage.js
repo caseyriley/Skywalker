@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LeftArrow from '../images/LeftArrow';
+import RightArrow from '../images/RightArrow.png';
 import MagnifyingGlass from '../images/MagnifyingGlass';
 
 
@@ -97,7 +97,8 @@ const NASAImage = (props) => {
           onChange={e => setSearch(e.target.value)}
         ></input>
         <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"}>
-          <LeftArrow />
+          {/* <LeftArrow /> */}
+          <img className={"right-arrow"} src={RightArrow} alt={""} />
         </button>
       </form>
     </div>

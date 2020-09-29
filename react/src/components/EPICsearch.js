@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LeftArrow from '../images/LeftArrow';
 import MagnifyingGlass from '../images/MagnifyingGlass';
+import RightArrow from '../images/RightArrow.png';
 
 const EPICsearch = (props) => {
   
@@ -23,7 +24,8 @@ const EPICsearch = (props) => {
         props.setEpicQuery(epicSearchValue);
         props.closeBottomNav()
       }}>
-        <LeftArrow />
+        <img className={"right-arrow"} src={RightArrow} alt={""} />
+        {/* <LeftArrow /> */}
       </button>
     </div>
   )

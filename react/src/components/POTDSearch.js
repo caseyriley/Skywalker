@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import LeftArrow from '../images/LeftArrow';
+import RightArrow from '../images/RightArrow.png';
 import MagnifyingGlass from '../images/MagnifyingGlass';
 
 const POTDSearch = (props) => {
@@ -24,7 +24,8 @@ const POTDSearch = (props) => {
         props.setPotdQuery(potdSearchValue); 
         props.closeBottomNav() 
         }}>
-        <LeftArrow />
+        {/* <LeftArrow /> */}
+        <img className={"right-arrow"} src={RightArrow} alt={""} />
       </button>
     </div>
   )

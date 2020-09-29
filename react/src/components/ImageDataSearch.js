@@ -1,6 +1,7 @@
 import React from 'react';
-import LeftArrow from '../images/LeftArrow';
+import RightArrow from '../images/RightArrow.png';
 import MagnifyingGlass from '../images/MagnifyingGlass';
+
 
 
 
@@ -19,7 +20,8 @@ const ImageDataSearch = (props) => {
         onChange={props.updateSearchValue}>
       </input>
       <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"} onClick={() => { props.handleSearch(); props.closeBottomNav() }}>
-        <LeftArrow />
+        <img className={"right-arrow"} src={RightArrow} alt={""} />
+        {/* <LeftArrow /> */}
       </button>
     </div>
   )

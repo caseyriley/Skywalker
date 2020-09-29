@@ -22,11 +22,12 @@
   background-color: black;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  z-index: 10;
+  /* z-index: 10; */
 }
 #main-c__scroll{
   height: auto;
   width: 100vw;
+  
 }
 .main-c__img{
   width: 100%;
@@ -43,7 +44,7 @@
   box-shadow: 0px -3px 6px 2px rgba(48, 48, 48, 0.2);
   background-color: hsl(0, 0%, 100%, .95);
   transition: height 1s;
-  z-index: 1;
+  z-index: 2;
 }
 .open{
   height: 40%;
@@ -98,12 +99,26 @@
   justify-content: space-evenly;
   align-items: center;
 }
-
+.arrow-c{
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .left-arrow{
   transform: rotate(180deg);
-  height: 25px;
+  height: 22px;
   fill: rgb(233, 233, 233);
+  
+  
 }
+/* @supports (display: flex){
+  .left-arrow{
+    color: yellow;
+    border: 10px solid green;
+  } */
+/* } */
+
 .epic-img-c {
   height: 100%;
   width: 100vw;
@@ -229,7 +244,7 @@
   top: 150px;
   height: 50vh;
   width: 50vh;
-  left: calc(50% - 34.5vh);
+  left: calc(50% - 25vh);
   filter: hue-rotate(230deg);
   opacity: 0;
     animation: fadeInAnimation 3s ease-in;

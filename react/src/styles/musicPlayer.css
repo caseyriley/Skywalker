@@ -1,0 +1,206 @@
+
+.activity-indicator {
+    position: absolute;
+    mix-blend-mode: plus-lighter;
+}
+
+.activity-indicator > div {
+    position: absolute;
+    left: 6px;
+    width: 2px;
+    height: 4px;
+    border-radius: 1px;
+    background-color: white;
+    animation-name: activity-indicator-pulse;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 7px;
+     border: 10px solid green;
+}
+
+.activity-indicator > .ne {
+    transform: rotate(45deg);
+    animation-delay: -875ms;
+     border: 10px solid green;
+}
+
+.activity-indicator > .e {
+    transform: rotate(90deg);
+    animation-delay: -750ms;
+     border: 10px solid green;
+}
+
+.activity-indicator > .se {
+    transform: rotate(135deg);
+    animation-delay: -625ms;
+}
+
+.activity-indicator > .s {
+    transform: rotate(180deg);
+    animation-delay: -500ms;
+}
+
+.activity-indicator > .sw {
+    transform: rotate(-135deg);
+    animation-delay: -375ms;
+}
+
+.activity-indicator > .w {
+    transform: rotate(-90deg);
+    animation-delay: -250ms;
+}
+
+.activity-indicator > .nw {
+    transform: rotate(-45deg);
+    animation-delay: -125ms;
+}
+
+@keyframes activity-indicator-pulse {
+    from { opacity: 0.9  }
+    to   { opacity: 0.25 }
+}
+
+
+button.airplay.on > picture {
+    background-color: -apple-wireless-playback-target-active !important;
+    mix-blend-mode: normal !important;
+}
+
+
+.background-tint {
+    pointer-events: none;
+}
+
+.background-tint,
+.background-tint > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.background-tint > .blur {
+    /* background-color: rgba(0, 0, 0, 0.55); */
+    background-color: transparent !important;
+    -webkit-backdrop-filter: saturate(180%) blur(17.5px);
+}
+
+.background-tint > .tint {
+    /* background-color: rgba(255, 255, 255, 0.14); */
+    background-color: transparent !important;
+    mix-blend-mode: lighten;
+}
+
+
+/* button {
+    position: absolute;
+    left: 0;
+    border: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent !important;
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+} */
+
+/* Icon */
+
+button > picture {
+    /* background-color: var(--secondary-glyph-color);   */
+    mix-blend-mode: plus-lighter;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    transition: transform 150ms;
+    will-change: transform;
+    /* Work around webkit.org/b/174565 by making the shrinking button's icon non-interactive */
+    pointer-events: none;
+     border: 10px solid green;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:focus > picture {
+    background-color: -webkit-focus-ring-color !important;
+    mix-blend-mode: normal !important;
+}
+
+button.skip-back > picture,
+button.play-pause > picture,
+button.skip-forward > picture {
+    background-color: var(--primary-glyph-color);
+}
+
+button.on > picture {
+    background-color: white !important;
+}
+
+button:active > picture {
+    transform: scale(0.89);
+}
+
+/* Corner style */
+
+button.corner {
+    width: 44px !important;
+    height: var(--inline-controls-bar-height) !important;
+}
+
+/* Center style */
+
+button.center,
+button.small-center {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+     border: 10px solid green;
+}
+
+button.center {
+    width: 60px !important;
+    height: 60px !important;
+     border: 10px solid green;
+}
+
+button.small-center {
+    width: 31px !important;
+    height: 31px !important;
+}
+
+button.center > .background-tint,
+button.small-center > .background-tint,
+button.center > .background-tint > div,
+button.small-center > .background-tint > div {
+    border-radius: 50%;
+}
+
+button.center > picture,
+button.small-center > picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(0.4);
+}
+
+button.center:active > picture,
+button.small-center:active > picture {
+    transform: scale(0.4) scale(calc(8/9));
+}
+
+ .visible-controls-bar{
+   /* opacity: 0 !important; */
+   /* border: 10px solid green; */
+ }
+ .media-controls {
+   border: 20px solid green !important;
+ }
+  

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LeftArrow from '../images/LeftArrow';
+import RightArrow from '../images/RightArrow.png';
 import MagnifyingGlass from '../images/MagnifyingGlass';
 import CheckMark from '../images/CheckMark';
 
@@ -31,7 +31,8 @@ const FilterEndDate = (props) => {
         >
         </input>
         <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"} onClick={e => props.setEndDateFilterState(filterEndDateState), check}>
-          <LeftArrow />
+          <img className={"right-arrow"} src={RightArrow} alt={""} />
+          {/* <LeftArrow /> */}
         </button>
       </div>
       <CheckMark resetStartDate={resetStartDate} setSearchActiveState={setSearchActiveState} searchActiveState={searchActiveState} />
