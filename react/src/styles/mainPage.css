@@ -194,7 +194,6 @@
   align-items: center;
   font-family: 'Roboto',sans-serif;
   font-size: 20px;
-  /* color: grey; */
   box-shadow: 
         inset 0px 2px 4px -1px rgba(125, 125, 125, 0.6),
         inset 0px -2px 5px -0px rgba(125, 125, 125, 0.6),
@@ -207,6 +206,8 @@
   color: #d9d9d9;
   text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   background-color: rgb(245, 245, 245);
+  background-color: hsl(180, 65%, 81%, .9);
+  background-color: rgba(175, 223, 238, 0.9);
 }
 .logout-button:hover{
   color: rgb(195, 166, 241);

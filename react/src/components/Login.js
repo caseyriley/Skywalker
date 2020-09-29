@@ -95,7 +95,12 @@ const Login = () => {
                 <div className="login-main--container">
                         <img className={"astronaut"} src={astronaut} alt={""} ></img>
                     <div className={`login-show-hide ${!signUpModal ? "modal-showing" : "modal-hiding"}`}>
-                        <input className="login-input-1" type="text" placeholder="Email" value={email} onChange={updateEmail} />
+                        {/* <input id={"startDateInput"} name={"startDateInput"} type={"text"}
+                            placeholder={"YYYY"}
+                            onChange={e => setFilterDateSearchState(e.target.value)}
+                            type="number" min="1920" max="2030" step="1" minLength="4" maxLength="4"
+                        > */}
+                        <input className="login-input-1"  placeholder="Email" value={email} type="email" onChange={updateEmail} />
                         <input className="login-input-2" type="password" placeholder="Password" value={password} onChange={updatePassword} /> 
                         <div className="login-bar__button--container" onClick={handleSubmit}>
                             <span>Log in</span>
