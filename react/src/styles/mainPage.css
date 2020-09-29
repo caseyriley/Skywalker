@@ -9,6 +9,7 @@
   justify-content: flex-start;
   align-items: center;
   background-color: black;
+ 
 
 }
 #main-c{
@@ -34,17 +35,15 @@
 .main-c__bottom-nav{
   position: fixed;
   bottom: 0px;
-  height: 40vh;
+  /* height: 40vh; */
   height: 40%;
   width: 100%;
-  /* border-top: 1px solid rgb(208, 208, 208); */
   -moz-box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
   -webkit-box-shadow: 0px -3px 3px 1px rgba(205, 205, 205, 0.3);
   box-shadow: 0px -3px 6px 2px rgba(48, 48, 48, 0.2);
   background-color: hsl(0, 0%, 100%, .95);
   transition: height 1s;
   z-index: 1;
-
 }
 .open{
   height: 40%;

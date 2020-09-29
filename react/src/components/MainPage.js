@@ -269,9 +269,28 @@ const MainPage = () => {
   // ---------------------------------------------------------
 
     return (
+      
       <div id={"main-c"}>
+        <div className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed"}`}   >
+          <div className={`main-c__bottom-nav-switch ${bottomNavState ? "flipped" : ""}`} onClick={openCloseBottomNav}>
+            {bottomNavState ? <ChevronSkywalker /> : <ChevronSkywalkerInverse />}
+          </div>
+
+          <div id={"main-c__bottom-nav-top"} >
+            <SearchSwitch
+              mp3Result={mp3Result} closeBottomNav={closeBottomNav} updateAudioSearchValue={updateAudioSearchValue} audioSearchValue={audioSearchValue} audioQuery={audioQuery} handleAudioSearch={handleAudioSearch} allAudioResults={allAudioResults}
+              modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery} potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
+          </div>
+          <div id={"nav-scroll"}>
+            <div id={"nav-scroll__inner"}>
+              <BottomNavControls mp3Info={mp3Info} potdPrevDay={potdPrevDay} potdNextDay={potdNextDay} setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState} searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState} />
+              <LogoutButton bottomNavState={bottomNavState} />
+              <div className="dog" ref={container}></div>
+            </div>
+          </div>
+        </div>
         <div id={"main-c__scroll"}>
-          <div  className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed" }`}   >
+          {/* <div  className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed" }`}   >
             <div className={`main-c__bottom-nav-switch ${bottomNavState ? "flipped" : "" }`} onClick={openCloseBottomNav}>
               {bottomNavState ? <ChevronSkywalker /> : <ChevronSkywalkerInverse />}
             </div>
@@ -288,7 +307,7 @@ const MainPage = () => {
                 <div className="dog" ref={container}></div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <ImageSwitch
           setMp3Info={setMp3Info} mp3Query={mp3Query} setMp3query={setMp3query} mp3Result={mp3Result} audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAudioSearchElementRef={lastAudioSearchElementRef} allAudioResults={allAudioResults}  
