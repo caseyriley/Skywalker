@@ -27,7 +27,7 @@ const [imageModalState, setImageModalState] = useState(false);
   return (
     <>
       <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="EJjP46dz"></script>
+      <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="EJjP46dz"></script>
    
       {props.openCloseState ? 
         <div id={"image-modal-c"}
@@ -41,12 +41,12 @@ const [imageModalState, setImageModalState] = useState(false);
             <div className={"social-media-links"} >
                 <Star imageModalState={imageModalState}/>
               {/* ---------------FB--------------- */}
-                <div class="fb-share-button" 
+                <div className="fb-share-button" 
                   data-layout="button" 
                   data-size="large"
                   lazy="true"
                 > 
-                  <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${imageModalState.hrf}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
+                  <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${imageModalState.hrf}`} className="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
                 </div>
               {/* -------------------------------- */}
               {/* -----------------Twitter------------- */}

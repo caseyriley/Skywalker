@@ -76,8 +76,8 @@ const UserGallery = (props) => {
 
   return (
     <>
-      {/* <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="EJjP46dz"></script>
+      <div id="fb-root"></div>
+      <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="EJjP46dz"></script>
 
       {props.openCloseState ?
         <div id={"image-modal-c"}
@@ -88,25 +88,25 @@ const UserGallery = (props) => {
             <div className={`image-modal-c__description-c`}>
               <h1>{imageModalState.title}</h1>
               <p>{imageModalState.description}</p>
-              <div className={"social-media-links"} > */}
+              <div className={"social-media-links"} >
                 {/* ---------------FB--------------- */}
-                {/* <div class="fb-share-button"
+                <div class="fb-share-button"
                   data-layout="button"
                   data-size="large"
                   lazy="true"
                 >
                   <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${imageModalState.hrf}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
-                </div> */}
+                </div>
                 {/* -------------------------------- */}
                 {/* -----------------Twitter------------- */}
-                {/* <a className="twitter-share-button"
+                <a className="twitter-share-button"
                   href={`https://twitter.com/intent/tweet?text=${imageModalState.hrf}`}
 
                   data-size="large">
                   <img className="twitter-share-image" src={TwitterCircular} alt="" />
-                </a> */}
+                </a>
                 {/* ------------------------------------- */}
-              {/* </div>
+              </div>
             </div>
           </div>
         </div>
@@ -115,9 +115,9 @@ const UserGallery = (props) => {
       <ul className={"main-c__image-ul"}>
         {userGalleryState !== false ? userGalleryState.map((galleryItem, index) => {
             return (
-              <div onClick={e => { setupModalInfo(e); props.setOpenCloseState(true) }} key={`${galleryItem.href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
+              <div onClick={e => { setupModalInfo(e); props.setOpenCloseState(true) }} key={`${galleryItem.media} ${Math.floor(Math.random() * Math.floor(1000))}`}>
                 <img
-                  className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={galleryItem.href} alt="" loading="lazy" >
+                  className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={galleryItem.media} alt="" loading="lazy" >
                 </img>
                 <p className={"search-array-image__data__descirption"} loading="lazy">{galleryItem.title}</p>
                 <p className={"search-array-image__data__descirption"} loading="lazy">{galleryItem.description}</p>
@@ -128,7 +128,7 @@ const UserGallery = (props) => {
         }
         <div className={"loading"}>{props.loading && 'loading.....'}</div>
         <div>{props.error && 'Error'}</div>
-      </ul> */}
+      </ul>
     </>
   )
 }
