@@ -4,6 +4,7 @@ import NASAImageGallery from './NASAImageGallery';
 import POTDImage from './POTDImage';
 import EPICimage from './EPICimage';
 import SoundGallery from './SoundGallery';
+import UserGallery from './UserGallery';
 
 
 const ImageSwitch = (props) => {
@@ -21,7 +22,9 @@ const ImageSwitch = (props) => {
           case "infiniteScroll":
             return <SoundGallery setMp3Info={props.setMp3Info} mp3Query={props.mp3Query} setMp3query={props.setMp3query} mp3Result={props.mp3Result} audioError={props.audioError} openCloseState={props.openCloseState} setOpenCloseState={props.setOpenCloseState} audioLoading={props.audioLoading} lastAudioSearchElementRef={props.lastAudioSearchElementRef} allAudioResults={props.allAudioResults}/> 
           case "mars-weather":
-            return <NASAImageGallery error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
+            return <UserGallery
+            //  modalImageSizeState={props.modalImageSizeState} openCloseState={props.openCloseState} setOpenCloseState={props.setOpenCloseState} error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} 
+             /> 
         }
       })()}
     </>

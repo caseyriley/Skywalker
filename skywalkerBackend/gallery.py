@@ -90,3 +90,33 @@ def post_gallery():
   db.session.commit()
 
   return jsonify(Goodjob='you posted to db')
+
+
+# Get all tweets for one user
+# @tweets.route("/user/<id>", methods=["GET"])
+# def get_user_tweets(id):
+
+#   model_tweets = Tweet.query.filter(Tweet.user_id==id).all()
+#   tweets = []
+#   for model_tweet in model_tweets:
+#     tweet = model_tweet.to_dict()
+#     tweet["user"] = model_tweet.user.to_safe_object()
+#     tweets.append(tweet)
+
+#   return jsonify(tweets)
+
+
+@gallery.route("/get/<id>", methods=["GET"])
+def get_user_gallery(id):
+
+  model_gallery = Gallery.query.filter(Gallery.user_id==id).all()
+  galleryData = []
+  for model_gallery in model_gallery:
+    userGallery = model_gallery.to_dict()
+    userGallery["user_id"] = model_gallery.media
+    # userGallery["user"] = model_gallery.user.to_safe_object()
+    galleryData.append(userGallery)
+
+  # return "got some!!!!!!!!"
+  # return jsonify(model_gallery)
+  return jsonify(galleryData)

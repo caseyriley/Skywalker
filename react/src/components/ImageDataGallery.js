@@ -31,7 +31,7 @@ const [imageModalState, setImageModalState] = useState(false);
    
       {props.openCloseState ? 
         <div id={"image-modal-c"}
-          // onClick={() => props.setOpenCloseState(false)} 
+          onClick={() => props.setOpenCloseState(false)} 
          >
         <div id={"image-modal-c__scroll"}>
           <img id={"image-modal-c__image"} className={`${props.modalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.modalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />

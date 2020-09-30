@@ -18,12 +18,6 @@ const Star = (props) => {
     }
 
     fetch(`${API_URL}/api/gallery/post`, options)
-      // .then(res => res.text())
-      // .then(data => {
-      //   document.getElementsByName("tweet-textarea")[0].innerHTML = ""
-      //   console.log(data)
-      // })
-      // .catch(e => console.log('error posting your tweet', e))
 
   }
 
