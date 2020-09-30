@@ -268,7 +268,7 @@ const MainPage = () => {
 
   // ---------------------------------------------------------
   // ------------------User-Gallery---------------------------
-  
+  const [userGalleryImageSizeState, setUserGalleryImageSizeState] = useState(3);
   // ---------------------------------------------------------
 
     return (
@@ -281,6 +281,7 @@ const MainPage = () => {
 
           <div id={"main-c__bottom-nav-top"} >
             <SearchSwitch
+              setUserGalleryImageSizeState={setUserGalleryImageSizeState} userGalleryImageSizeState={userGalleryImageSizeState}
               mp3Result={mp3Result} closeBottomNav={closeBottomNav} updateAudioSearchValue={updateAudioSearchValue} audioSearchValue={audioSearchValue} audioQuery={audioQuery} handleAudioSearch={handleAudioSearch} allAudioResults={allAudioResults}
               modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery} potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
           </div>
@@ -295,6 +296,7 @@ const MainPage = () => {
           <div id={"main-c__scroll"}>
           </div>
         <ImageSwitch
+          userGalleryImageSizeState={userGalleryImageSizeState} 
           setMp3Info={setMp3Info} mp3Query={mp3Query} setMp3query={setMp3query} mp3Result={mp3Result} audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAudioSearchElementRef={lastAudioSearchElementRef} allAudioResults={allAudioResults}  
           error={error} potdError={potdError} potdNextDay={potdNextDay} potdPrevDay={potdPrevDay} modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
       </div>
