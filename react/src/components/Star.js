@@ -33,18 +33,15 @@ const Star = (props) => {
       checkForHeart()
   }, [props.openCloseState])
   
+  
   const postFunction = async () => {
-
     const galleryData = { media: decodeURI(props.imageModalState.hrf), title: props.imageModalState.title, description: props.imageModalState.description, user_id: 1 }
-
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(galleryData),
     }
-
     fetch(`${API_URL}/api/gallery/post`, options)
-
   }
 
   return (
@@ -52,7 +49,7 @@ const Star = (props) => {
       { inDatabaseState === "True" ?
         <Favorite />
       : 
-        <div className={"folder-love-c"} onClick={postFunction}>
+        <div className={"folder-love-c"} onClick={() => {postFunction(); setInDatabaseState("True")}}>
           <img className={"folder-love"} src={folderLove} alt={""} />
         </div>
       } 
