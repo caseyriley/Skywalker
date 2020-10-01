@@ -120,3 +120,15 @@ def get_user_gallery(id):
   # return "got some!!!!!!!!"
   # return jsonify(model_gallery)
   return jsonify(galleryData)
+
+
+@gallery.route("/check/<id>", methods=["GET"])
+def get_user_heartState(id): 
+  hrf = request.args.get('hrf')
+  model_gallery = Gallery.query.filter(Gallery.user_id==id).all()
+  heart_state = "False"
+  for heart in model_gallery:
+      string_heart = heart.to_dict()
+      if string_heart["media"] == hrf:
+        heart_state = "True"
+  return jsonify(heart_state)

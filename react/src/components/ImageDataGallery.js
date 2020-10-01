@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import FacebookImage from '../images/FacebookImage.png';
 import TwitterCircular from '../images/TwitterCircular.png';
 import Star from './Star';
+import Favorite from './Favorite';
+
 
 
 const ImageDataGallery = (props) => {
@@ -31,15 +33,16 @@ const [imageModalState, setImageModalState] = useState(false);
    
       {props.openCloseState ? 
         <div id={"image-modal-c"}
-          onClick={() => props.setOpenCloseState(false)} 
+          // onClick={() => props.setOpenCloseState(false)} 
          >
         <div id={"image-modal-c__scroll"}>
-          <img id={"image-modal-c__image"} className={`${props.modalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.modalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />
+            <img id={"image-modal-c__image"} className={`${props.modalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.modalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} onClick={() => props.setOpenCloseState(false)} />
           <div className={`image-modal-c__description-c`}>
-            <h1>{imageModalState.title}</h1>
-            <p>{imageModalState.description}</p>
+            <h1 onClick={() => props.setOpenCloseState(false)} >{imageModalState.title}</h1>
+            <p onClick={() => props.setOpenCloseState(false)} >{imageModalState.description}</p>
             <div className={"social-media-links"} >
-                <Star imageModalState={imageModalState}/>
+                <Star openCloseState={props.openCloseState} user={props.user} imageModalState={imageModalState}/>
+                {/* <Favorite/> */}
               {/* ---------------FB--------------- */}
                 <div className="fb-share-button" 
                   data-layout="button" 
