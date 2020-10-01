@@ -9,6 +9,7 @@ import EPICSearch from './EPICsearch';
 import POTDimageSizeSelect from './POTDimageSizeSelect';
 import ImageSizeSelect from './ImageSizeSelect';
 import AudioSearch from './AudioSearch';
+import UserModalSizeSelect from './UserModalSizeSelect';
 import UserGallerySizeSelect from './UserGallerySizeSelect';
 
 
@@ -51,9 +52,8 @@ const SearchSwitch = (props) => {
               </>
               )
           case "mars-weather":
-            return <UserGallerySizeSelect setUserGalleryImageSizeState={props.setUserGalleryImageSizeState} userGalleryImageSizeState={props.userGalleryImageSizeState} />
-            //setUserGalleryImageSizeState={props.setUserGalleryImageSizeState}
-            // <NASAInfiniteScroll  closeBottomNav={props.closeBottomNav} updateSearchValue={props.updateSearchValue} searchValue={props.searchValue} query={props.query} handleSearch={props.handleSearch} setResults={props.setResults} results={props.results} />
+            return <UserGallerySizeSelect  userGalleryImageSizeState={props.userGalleryImageSizeState} setUserGalleryImageSizeState={props.setUserGalleryImageSizeState} userModalopenCloseState={props.userModalopenCloseState} setUserModalImageSizeState={props.setUserModalImageSizeState} userModalImageSizeState={props.userModalImageSizeState}  />
+            
         }
       })()}
     </>

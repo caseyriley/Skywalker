@@ -10,7 +10,7 @@ const UserGallery = (props) => {
  
 
   function setModalStateFalse() {
-    setGalleryOpenCloseState(false)
+    props.setUserModalopenCloseState(false)
   }
 
   function setupModalInfo(e) {
@@ -26,17 +26,13 @@ const UserGallery = (props) => {
     console.log("imageModalState====>", imageModalState);
   }
   // -----------------------------------------
-  const [galleryOpenCloseState, setGalleryOpenCloseState] = useState(false)
   const [userGalleryState, setUserGalleryState] = useState(false);
 
   const id = 1;
 
   useEffect(() => {
     const getUserGallery = async () => {
-      // if (props.reply.id === undefined) return 
-
       const response = await fetch(`${API_URL}/api/gallery/get/${id}`, {
-
         method: "GET",
         mode: "cors",
         headers: {
@@ -47,7 +43,6 @@ const UserGallery = (props) => {
         console.log("getUserGallery response failed")
       } else {
         const json = await response.json()
-        // .then(()=>console.log("userJson", json) )
         setUserGalleryState(json)
         console.log("userJson", json)
       }
@@ -62,12 +57,12 @@ const UserGallery = (props) => {
       <div id="fb-root"></div>
       <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="EJjP46dz"></script>
 
-      {galleryOpenCloseState ?
+      {props.userModalopenCloseState ?
         <div id={"image-modal-c"}
-          onClick={() => setGalleryOpenCloseState(false)}
+          onClick={() => props.setUserModalopenCloseState(false)}
         >
           <div id={"image-modal-c__scroll"}>
-            <img id={"image-modal-c__image"} className={`${props.userGalleryImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.userGalleryImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />
+            <img id={"image-modal-c__image"} className={`${props.userModalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.userModalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />
             <div className={`image-modal-c__description-c`}>
               <h1>{imageModalState.title}</h1>
               <p>{imageModalState.description}</p>
@@ -98,9 +93,9 @@ const UserGallery = (props) => {
       <ul className={"main-c__image-ul"}>
         {userGalleryState !== false ? userGalleryState.map((galleryItem, index) => {
             return (
-              <div onClick={e => { setupModalInfo(e); setGalleryOpenCloseState(true) }} key={`${galleryItem.media} ${Math.floor(Math.random() * Math.floor(1000))}`}>
+              <div onClick={e => { setupModalInfo(e); props.setUserModalopenCloseState(true); props.closeBottomNav()}} key={`${galleryItem.media} ${Math.floor(Math.random() * Math.floor(1000))}`}>
                 <img
-                  className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={galleryItem.media} alt="" loading="lazy" >
+                  className={`search-array-image ${props.userGalleryImageSizeState === 1 ? "sml-image" : "a"} ${props.userGalleryImageSizeState === 2 ? "med-image" : ""} ${props.userGalleryImageSizeState === 3 ? "lrg-image" : ""} ${props.userGalleryImageSizeState === 4 ? "full-image" : "b"}`} src={galleryItem.media} alt="" loading="lazy" >
                 </img>
                 <p className={"search-array-image__data__descirption"} loading="lazy">{galleryItem.title}</p>
                 <p className={"search-array-image__data__descirption"} loading="lazy">{galleryItem.description}</p>

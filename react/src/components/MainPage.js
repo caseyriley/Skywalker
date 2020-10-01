@@ -263,7 +263,10 @@ const MainPage = () => {
 
   // ---------------------------------------------------------
   // ------------------User-Gallery---------------------------
-  const [userGalleryImageSizeState, setUserGalleryImageSizeState] = useState(3);
+  const [userModalImageSizeState, setUserModalImageSizeState] = useState(3);
+  const [userGalleryImageSizeState, setUserGalleryImageSizeState] = useState(2);
+  const [userModalopenCloseState, setUserModalopenCloseState] = useState(false);
+  // const [userImageSizeState, setUserImageSizeState] = useState(2);
 
   const [user, setUser] = useState({})
   // const [targetUser, setTargetUser] = useState(1);
@@ -299,7 +302,7 @@ const MainPage = () => {
 
           <div id={"main-c__bottom-nav-top"} >
             <SearchSwitch
-              setUserGalleryImageSizeState={setUserGalleryImageSizeState} userGalleryImageSizeState={userGalleryImageSizeState}
+              setUserModalImageSizeState={setUserModalImageSizeState} userModalImageSizeState={userModalImageSizeState} userGalleryImageSizeState={userGalleryImageSizeState} setUserGalleryImageSizeState={setUserGalleryImageSizeState} userModalopenCloseState={userModalopenCloseState} 
               mp3Result={mp3Result} closeBottomNav={closeBottomNav} updateAudioSearchValue={updateAudioSearchValue} audioSearchValue={audioSearchValue} audioQuery={audioQuery} handleAudioSearch={handleAudioSearch} allAudioResults={allAudioResults}
               modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery} potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
           </div>
@@ -314,7 +317,7 @@ const MainPage = () => {
           <div id={"main-c__scroll"}>
           </div>
         <ImageSwitch
-          user={user} userGalleryImageSizeState={userGalleryImageSizeState} 
+          user={user} userGalleryImageSizeState={userGalleryImageSizeState} userModalopenCloseState={userModalopenCloseState} setUserModalopenCloseState={setUserModalopenCloseState} userModalImageSizeState={userModalImageSizeState} closeBottomNav={closeBottomNav}
           setMp3Info={setMp3Info} mp3Query={mp3Query} setMp3query={setMp3query} mp3Result={mp3Result} audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAudioSearchElementRef={lastAudioSearchElementRef} allAudioResults={allAudioResults}  
           error={error} potdError={potdError} potdNextDay={potdNextDay} potdPrevDay={potdPrevDay} modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
       </div>

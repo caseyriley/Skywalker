@@ -7,7 +7,6 @@ import './styles/imageDataGallery.css';
 import './styles/potdImage.css';
 import './styles/imageSizeSelect.css'
 import './styles/searchMenu.css';
-// import './styles/searchFilter.css';
 import './styles/filterStartDate.css';
 import './styles/filterEndDate.css';
 import './styles/login.css';
@@ -18,6 +17,7 @@ import './styles/potdImageSizeSelect.css';
 import './styles/potdNextAndPrev.css';
 import './styles/soundGallery.css';
 import './styles/musicPlayer.css';
+import './styles/userGallery.css';
 import './styles/mScreen1040.css';
 import './styles/mScreen850.css';
 import './styles/mScreenH700.css';
