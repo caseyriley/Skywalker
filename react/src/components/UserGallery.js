@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { API_URL } from '../config';
 import FacebookImage from '../images/FacebookImage.png';
 import TwitterCircular from '../images/TwitterCircular.png';
+import Star from './Star';
 
 const token = window.localStorage.getItem('auth_token');
 
@@ -67,6 +68,9 @@ const UserGallery = (props) => {
               <h1>{imageModalState.title}</h1>
               <p>{imageModalState.description}</p>
               <div className={"social-media-links"} >
+                <Star userModalopenCloseState={props.userModalopenCloseState} 
+                // user={props.user} 
+                imageModalState={imageModalState} />
                 {/* ---------------FB--------------- */}
                 <div class="fb-share-button"
                   data-layout="button"

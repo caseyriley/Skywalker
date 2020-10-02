@@ -9,6 +9,7 @@ import ImageSearchText from './ImageSearchText';
 import POTDnextAndPrev from './POTDnextAndPrev';
 import POTDSearchText from './POTDsearchText';
 import SearchMenu from './SearchMenu';
+import UserGalleryText from './UserGalleryText';
 
 const BottomNavControls = (props) => {
   return (
@@ -51,7 +52,13 @@ const BottomNavControls = (props) => {
               </>
             )
           case "mars-weather":
-            return <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
+
+            return (
+              <>
+                <UserGalleryText/>
+                <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
+              </>
+            )
         }
       })()}
     </>

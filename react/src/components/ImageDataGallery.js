@@ -17,11 +17,11 @@ const [imageModalState, setImageModalState] = useState(false);
    function setupModalInfo(e){
      let title = e.target.nextSibling.innerHTML;
      let description = e.target.nextSibling.nextSibling.innerHTML; 
-     let hrf = e.target.src
-     
-     setImageModalState({ hrf: hrf
-      , description: description
-      , title: title 
+     let hrf = e.target.src;
+  
+     setImageModalState({ hrf: hrf, 
+      description: description, 
+      title: title, 
     })
      console.log("imageModalState====>", imageModalState);
    }

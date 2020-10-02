@@ -13,12 +13,10 @@ const Star = (props) => {
 
   useEffect(() => {
     const checkForHeart = async () => {
-
       const response = await fetch(`${API_URL}/api/gallery/check/${id}?hrf=${hrf}`, {
-
         method: "GET",
         mode: "cors",
-        params: { hrf: `${hrf}` },
+        params: { hrf: `${decodeURIComponent(hrf)}` },
         headers: {
           "Authorization": `Bearer ${token}`,
         },
@@ -31,7 +29,32 @@ const Star = (props) => {
       } 
     }
       checkForHeart()
-  }, [props.openCloseState])
+  }, [props.userModalopenCloseState])
+
+
+  const destroyHeart = async () => {
+    const response = await fetch(`${API_URL}/api/gallery/remove/`, {
+      method: ["DELETE"], 
+      mode: "cors",
+      // params: { hrf: `${decodeURIComponent(hrf)}` },
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        id: `${id}`,
+        hrf: `${decodeURIComponent(hrf)}`
+        // tweetId: `${props.props.id}`
+      }),
+    });
+    if (!response.ok) {
+      console.log("destroyLike response failure");
+      setInDatabaseState("False")
+    } else {
+      console.log("destroyLike response success");
+      setInDatabaseState("False")
+    }
+  }
   
   
   const postFunction = async () => {
@@ -47,7 +70,7 @@ const Star = (props) => {
   return (
     <>
       { inDatabaseState === "True" ?
-        <Favorite />
+        <Favorite destroyHeart={destroyHeart}/>
       : 
         <div className={"folder-love-c"} onClick={() => {postFunction(); setInDatabaseState("True")}}>
           <img className={"folder-love"} src={folderLove} alt={""} />

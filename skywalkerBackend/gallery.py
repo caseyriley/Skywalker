@@ -132,3 +132,21 @@ def get_user_heartState(id):
       if string_heart["media"] == hrf:
         heart_state = "True"
   return jsonify(heart_state)
+
+
+    # Delete a gallery item (unheart)
+@gallery.route("/remove/", methods=["GET", "POST", "DELETE"])
+@jwt_required
+def remove_gallery_item():
+  # hrf = request.args.get('hrf')
+  data = request.get_json()
+  
+  model_gallery = Gallery.query.filter(Gallery.user_id==data['id']).all()
+  for heart in model_gallery:
+      string_heart = heart.to_dict()
+      item = string_heart["media"]
+      if item == data["hrf"]:
+        print("item_deleted=========>",heart)
+        db.session.delete(heart)
+        db.session.commit()
+  return jsonify(message="was not able to destroy gallery item"), 500

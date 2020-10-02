@@ -1,7 +1,7 @@
 import React, {useRef, useEffect} from 'react';
 import lottie from 'lottie-web';
 
-const Favorite = () => {
+const Favorite = (props) => {
   const container = useRef(null);
   useEffect(() => {
     lottie.loadAnimation({
@@ -14,7 +14,7 @@ const Favorite = () => {
   }, [])
   return (
     
-      <div className="rotating-heart" ref={container}></div>
+    <div onClick={props.destroyHeart} className="rotating-heart" ref={container}></div>
     
   )
 }
