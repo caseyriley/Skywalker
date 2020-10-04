@@ -314,18 +314,46 @@ const MainPage = () => {
     useEffect(() => {
       function fade() {
 
+        // setTimeout(() => {
+          // setOpacityState(!opacityState) //fade image to reveal image 2
+          // setTimeout(() => {
+            // setCurrentImageState(currentImageState + 2); //change 1st image
+            // setTimeout(() => {
+              // setOpacityState(!opacityState) //reveal new image
+              // setTimeout(() => {
+                // setNextImageState(nextImageState + 2); //change second image
+                // setTimeoutState(timeoutState + 1)
+              // }, 1000);
+          //  }, 1000);
+          // }, 1000);
+        //  
+        // }, 1500);
+
         setTimeout(() => {
-          setOpacityState(!opacityState)
-        }, 3000);
+          setOpacityState(!opacityState) //fade image to reveal image 2
+          setTimeout(() => {
+            setCurrentImageState(currentImageState + 2); //change 1st image
+            setTimeout(() => {
+              setOpacityState(!opacityState) //reveal new image
+              setTimeout(() => {
+                setNextImageState(nextImageState + 2); //change second image 
+                setTimeoutState(timeoutState + 1) 
+              }, 1000);
+            }, 1000);
+          }, 1000);
+
+        }, 1000); 
       }
       fade();
+      
     }, [timeoutState]);
   // ---------------------------------------------------------
 
     return (
-      
+      <>
+        <CarouselDisplay carouselToggle={carouselToggle} userGalleryArray={userGalleryArray} timeoutState={timeoutState} setTimeoutState={setTimeoutState} nextImageState={nextImageState} setNextImageState={setNextImageState} currentImageState={currentImageState} setCurrentImageState={setCurrentImageState} carouselToggleState={carouselToggleState} opacityState={opacityState} setOpacityState={setOpacityState} />
       <div id={"main-c"}>
-        <CarouselDisplay carouselToggle={carouselToggle} userGalleryArray={userGalleryArray} timeoutState={timeoutState} setTimeoutState={setTimeoutState} nextImageState={nextImageState} setNextImageState={setNextImageState} currentImageState={currentImageState} setCurrentImageState={setCurrentImageState} carouselToggleState={carouselToggleState}  opacityState={opacityState} setOpacityState={setOpacityState}/>
+        {/* <CarouselDisplay carouselToggle={carouselToggle} userGalleryArray={userGalleryArray} timeoutState={timeoutState} setTimeoutState={setTimeoutState} nextImageState={nextImageState} setNextImageState={setNextImageState} currentImageState={currentImageState} setCurrentImageState={setCurrentImageState} carouselToggleState={carouselToggleState}  opacityState={opacityState} setOpacityState={setOpacityState}/> */}
         <div className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed"}`}   >
           <div className={`main-c__bottom-nav-switch ${bottomNavState ? "flipped" : ""}`} onClick={openCloseBottomNav}>
             {bottomNavState ? <ChevronSkywalker /> : <ChevronSkywalkerInverse />}
@@ -353,6 +381,7 @@ const MainPage = () => {
           setMp3Info={setMp3Info} mp3Query={mp3Query} setMp3query={setMp3query} mp3Result={mp3Result} audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAudioSearchElementRef={lastAudioSearchElementRef} allAudioResults={allAudioResults}  
           error={error} potdError={potdError} potdNextDay={potdNextDay} potdPrevDay={potdPrevDay} modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
       </div>
+      </>
       
     )
 

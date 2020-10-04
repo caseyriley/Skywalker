@@ -40,12 +40,12 @@ const CarouselDisplay = (props) => {
         <>
           <div className={"carousel-img-c"} onClick={props.carouselToggle}>
 
-            <div className={`carousel-background ${props.opacityState ? "opacity-zero" : "opacity-100"}`}>
-              <img className={`carousel-img-1 ${props.opacityState ? "opacity-zero" : "opacity-100"}`} src={props.userGalleryArray[props.currentImageState].media} alt={""}  />
+            <div className={`carousel-background`}>
+              <img className={`carousel-img-1`} src={props.userGalleryArray[props.nextImageState].media} alt={""}  />
             </div>
 
-            <div className={`carousel-background`}>
-              <img className={`carousel-img-2`} src={props.userGalleryArray[props.nextImageState].media} alt={""}/>
+            <div className={`carousel-background  ${props.opacityState ? "opacity-zero" : "opacity-100"}` }>
+              <img className={`carousel-img-2`} src={props.userGalleryArray[props.currentImageState].media} alt={""}/>
             </div>
 
           </div>
