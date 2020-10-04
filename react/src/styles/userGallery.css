@@ -28,7 +28,7 @@
   filter: hue-rotate(150deg) brightness(115%);
   transform: rotate(30deg);
 }
-.carousel-img-c{
+#carousel-img-c{
   position: fixed;
   top: 0px;
   left: 0px;

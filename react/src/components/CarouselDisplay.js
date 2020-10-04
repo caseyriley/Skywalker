@@ -15,30 +15,42 @@ const CarouselDisplay = (props) => {
   // const [currentImageState, setCurrentImageState] = useState(0);
   // const [nextImageState, setNextImageState] = useState(1);
   // const [timeoutState, setTimeoutState] = useState(1);
+  const [carouselNextState, setCarouselNextState] = useState(77);
+  useEffect(()=> {
+    if (props.carouselToggleState){
+      let count = props.userGalleryArray.length;
+      const carouselElement = document.getElementById("carousel-img-c")
+      let child = document.querySelector(`#carousel-img-c div:nth-child(${count})`)
+      console.log(child)
+      setInterval(() => {
+        child.classList.add("opacity-zero")
+        count --;
+        setCarouselNextState(carouselNextState + 2)
+      }, 3000);
+    }
+    
 
-  // useEffect(() => {
-  //   function fade() {
-  //     setTimeout(() => {
-  //       let nextOpacityState = !opacityState;
-  //       setOpacityState(nextOpacityState)
-  //       // setTimeout(() => {
-  //       //   setCurrentImageState(currentImageState + 1);
-  //       //   setTimeout(() => {
-  //       //     setNextImageState(nextImageState + 1);
-  //       //     setTimeoutState(timeoutState + 1)
-  //       //   }, 1500);
-  //       // }, 1500);
-  //       setTimeoutState(timeoutState + 1)
-  //     }, 3000);
-  //   }
-  //   fade();
-  // }, [timeoutState]);
+  }, [props.carouselToggleState])
+
+
 
   return (
     <>
       {props.carouselToggleState ?
         <>
-          <div className={"carousel-img-c"} onClick={props.carouselToggle}>
+          <div id={"carousel-img-c"} onClick={props.carouselToggle}>
+          {props.userGalleryArray.map((galleryItem, index) => {
+            return (
+              
+              <div className={`carousel-background`} key={`${galleryItem.media} ${Math.floor(Math.random() * Math.floor(1000))}`}>
+                <img className={`carousel-img-1`} src={galleryItem.media} alt={""} />
+              </div>
+            )
+          }) 
+            
+          }
+          </div>
+          {/* <div className={"carousel-img-c"} onClick={props.carouselToggle}>
 
             <div className={`carousel-background`}>
               <img className={`carousel-img-1`} src={props.userGalleryArray[props.nextImageState].media} alt={""}  />
@@ -48,7 +60,7 @@ const CarouselDisplay = (props) => {
               <img className={`carousel-img-2`} src={props.userGalleryArray[props.currentImageState].media} alt={""}/>
             </div>
 
-          </div>
+          </div> */}
         </>
         :
         <>

@@ -297,7 +297,7 @@ const MainPage = () => {
   // ---------------------------------------------------------
   //-----------------Carousel---------------------------------
 
-    let userGalleryArray = userGalleryState ? userGalleryState : [];
+  let userGalleryArray = userGalleryState ? userGalleryState : [];
 
     const [opacityState, setOpacityState] = useState(false);
 
@@ -311,42 +311,36 @@ const MainPage = () => {
     const [nextImageState, setNextImageState] = useState(1);
     const [timeoutState, setTimeoutState] = useState(1);
 
-    useEffect(() => {
-      function fade() {
-
-        // setTimeout(() => {
-          // setOpacityState(!opacityState) //fade image to reveal image 2
-          // setTimeout(() => {
-            // setCurrentImageState(currentImageState + 2); //change 1st image
-            // setTimeout(() => {
-              // setOpacityState(!opacityState) //reveal new image
-              // setTimeout(() => {
-                // setNextImageState(nextImageState + 2); //change second image
-                // setTimeoutState(timeoutState + 1)
-              // }, 1000);
-          //  }, 1000);
-          // }, 1000);
-        //  
-        // }, 1500);
-
-        setTimeout(() => {
-          setOpacityState(!opacityState) //fade image to reveal image 2
-          setTimeout(() => {
-            setCurrentImageState(currentImageState + 2); //change 1st image
-            setTimeout(() => {
-              setOpacityState(!opacityState) //reveal new image
-              setTimeout(() => {
-                setNextImageState(nextImageState + 2); //change second image 
-                setTimeoutState(timeoutState + 1) 
-              }, 1000);
-            }, 1000);
-          }, 1000);
-
-        }, 1000); 
-      }
-      fade();
+    function nextPic(){
       
-    }, [timeoutState]);
+        for (let i = 0; i < userGalleryArray.length; i++) {
+          setCurrentImageState(i)
+          setNextImageState(i + 1)
+          setTimeout(() => {
+            setOpacityState(!opacityState);
+          }, 1500);
+        }
+    }
+
+    // useEffect(() => {
+    //   function fade() {
+    //     setTimeout(() => {
+    //       setOpacityState(!opacityState) //fade image to reveal image 2
+    //       setTimeout(() => {
+    //         setCurrentImageState(currentImageState + 2); //change 1st image
+    //         setTimeout(() => {
+    //           setOpacityState(!opacityState) //reveal new image
+    //           setTimeout(() => {
+    //             setNextImageState(nextImageState + 2); //change second image 
+    //             setTimeoutState(timeoutState + 1) 
+    //           }, 1000);
+    //         }, 1000);
+    //       }, 1000);
+
+    //     }, 1000); 
+    //   }
+    //   fade(); 
+    // }, [timeoutState]);
   // ---------------------------------------------------------
 
     return (
