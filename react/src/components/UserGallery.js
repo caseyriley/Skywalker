@@ -27,7 +27,7 @@ const UserGallery = (props) => {
     console.log("imageModalState====>", imageModalState);
   }
   // -----------------------------------------
-  const [userGalleryState, setUserGalleryState] = useState(false);
+  // const [userGalleryState, setUserGalleryState] = useState(false);
 
   const id = 1;
 
@@ -44,7 +44,7 @@ const UserGallery = (props) => {
         console.log("getUserGallery response failed")
       } else {
         const json = await response.json()
-        setUserGalleryState(json)
+        props.setUserGalleryState(json)
         console.log("userJson", json)
       }
     }
@@ -95,7 +95,7 @@ const UserGallery = (props) => {
         : <div></div>
       }
       <ul className={"main-c__image-ul"}>
-        {userGalleryState !== false ? userGalleryState.map((galleryItem, index) => {
+        {props.userGalleryState !== false ? props.userGalleryState.map((galleryItem, index) => {
             return (
               <div onClick={e => { setupModalInfo(e); props.setUserModalopenCloseState(true); props.closeBottomNav()}} key={`${galleryItem.media} ${Math.floor(Math.random() * Math.floor(1000))}`}>
                 <img

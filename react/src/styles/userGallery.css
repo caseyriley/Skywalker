@@ -11,3 +11,67 @@
         0px 4px 6px 0px rgba(125, 125, 125, 0.7);
 
 }
+.carousel-c{
+  position: absolute;
+  right: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel{
+  width: 200px;
+  filter: sepia(100%) hue-rotate(150deg) brightness(285%);
+}
+.carousel-saturn{
+  position: absolute;
+  width: 60px;
+  filter: hue-rotate(150deg) brightness(115%);
+  transform: rotate(30deg);
+}
+.carousel-img-c{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  
+}
+.carousel-background{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: black; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: opacity;
+  transition-duration: 1.5s;
+  transition-delay: 1.5s;
+  opacity: 1; 
+}
+.carousel-img-1{
+  height: 100vh;
+   transition-property: opacity;
+  transition-duration: 1.5s;
+  transition-delay: 1.5s;
+  opacity: 1;
+  z-index: 5;
+
+}
+.carousel-img-2{
+  height: 100vh;
+  /* background-color: black; */
+  opacity: 1;
+
+}
+.opacity-zero{
+  opacity: .0;
+}
+.opacity-100{
+  opacity: 1;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Carousel from './Carousel';
 import AudioInfo from './AudioInfo';
 import AudioSearchText from './AudioSearchText';
 import EpicEnhancedToggle from './EpicEnhancedToggle';
@@ -56,6 +57,9 @@ const BottomNavControls = (props) => {
             return (
               <>
                 <UserGalleryText/>
+                <Carousel carouselToggle={props.carouselToggle} 
+                // userGalleryState={props.userGalleryState} 
+                />
                 <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
               </>
             )

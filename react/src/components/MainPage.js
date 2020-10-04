@@ -12,6 +12,9 @@ import BottomNavControls from './BottomNavControls';
 import LogoutButton from './LogoutButton';
 import lottie from 'lottie-web';
 import useAudioSearchFunction from './useAudioSearchFunction';
+import carousel from '../images/Carousel.svg';
+import saturn from '../images/saturnIllustration.png';
+import CarouselDisplay from './CarouselDisplay';
 
 const MainPage = () => {
   
@@ -266,6 +269,7 @@ const MainPage = () => {
   const [userModalImageSizeState, setUserModalImageSizeState] = useState(3);
   const [userGalleryImageSizeState, setUserGalleryImageSizeState] = useState(2);
   const [userModalopenCloseState, setUserModalopenCloseState] = useState(false);
+  const [userGalleryState, setUserGalleryState] = useState(false);
   // const [userImageSizeState, setUserImageSizeState] = useState(2);
 
   const [user, setUser] = useState({})
@@ -291,10 +295,37 @@ const MainPage = () => {
     // targetUser
   ])
   // ---------------------------------------------------------
+  //-----------------Carousel---------------------------------
+
+    let userGalleryArray = userGalleryState ? userGalleryState : [];
+
+    const [opacityState, setOpacityState] = useState(false);
+
+    const [carouselToggleState, setCarouselToggleState] = useState(false);
+    const carouselToggle = () => {
+      let next = !carouselToggleState;
+      setCarouselToggleState(next);
+    };
+
+    const [currentImageState, setCurrentImageState] = useState(0);
+    const [nextImageState, setNextImageState] = useState(1);
+    const [timeoutState, setTimeoutState] = useState(1);
+
+    useEffect(() => {
+      function fade() {
+
+        setTimeout(() => {
+          setOpacityState(!opacityState)
+        }, 3000);
+      }
+      fade();
+    }, [timeoutState]);
+  // ---------------------------------------------------------
 
     return (
       
       <div id={"main-c"}>
+        <CarouselDisplay carouselToggle={carouselToggle} userGalleryArray={userGalleryArray} timeoutState={timeoutState} setTimeoutState={setTimeoutState} nextImageState={nextImageState} setNextImageState={setNextImageState} currentImageState={currentImageState} setCurrentImageState={setCurrentImageState} carouselToggleState={carouselToggleState}  opacityState={opacityState} setOpacityState={setOpacityState}/>
         <div className={`main-c__bottom-nav ${bottomNavState ? "open" : "closed"}`}   >
           <div className={`main-c__bottom-nav-switch ${bottomNavState ? "flipped" : ""}`} onClick={openCloseBottomNav}>
             {bottomNavState ? <ChevronSkywalker /> : <ChevronSkywalkerInverse />}
@@ -308,7 +339,8 @@ const MainPage = () => {
           </div>
           <div id={"nav-scroll"}>
             <div id={"nav-scroll__inner"}>
-              <BottomNavControls mp3Info={mp3Info} potdPrevDay={potdPrevDay} potdNextDay={potdNextDay} setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState} searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState} />
+              
+              <BottomNavControls carouselToggle={carouselToggle} userGalleryState={userGalleryState} mp3Info={mp3Info} potdPrevDay={potdPrevDay} potdNextDay={potdNextDay} setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState} searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState} />
               <LogoutButton bottomNavState={bottomNavState} />
               <div className="dog" ref={container}></div>
             </div>
@@ -317,7 +349,7 @@ const MainPage = () => {
           <div id={"main-c__scroll"}>
           </div>
         <ImageSwitch
-          user={user} userGalleryImageSizeState={userGalleryImageSizeState} userModalopenCloseState={userModalopenCloseState} setUserModalopenCloseState={setUserModalopenCloseState} userModalImageSizeState={userModalImageSizeState} closeBottomNav={closeBottomNav}
+          user={user} userGalleryImageSizeState={userGalleryImageSizeState} userModalopenCloseState={userModalopenCloseState} setUserModalopenCloseState={setUserModalopenCloseState} userModalImageSizeState={userModalImageSizeState} closeBottomNav={closeBottomNav} userGalleryState={userGalleryState} setUserGalleryState={setUserGalleryState}
           setMp3Info={setMp3Info} mp3Query={mp3Query} setMp3query={setMp3query} mp3Result={mp3Result} audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAudioSearchElementRef={lastAudioSearchElementRef} allAudioResults={allAudioResults}  
           error={error} potdError={potdError} potdNextDay={potdNextDay} potdPrevDay={potdPrevDay} modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
       </div>

@@ -22,7 +22,7 @@ const ImageSwitch = (props) => {
           case "infiniteScroll":
             return <SoundGallery setMp3Info={props.setMp3Info} mp3Query={props.mp3Query} setMp3query={props.setMp3query} mp3Result={props.mp3Result} audioError={props.audioError} openCloseState={props.openCloseState} setOpenCloseState={props.setOpenCloseState} audioLoading={props.audioLoading} lastAudioSearchElementRef={props.lastAudioSearchElementRef} allAudioResults={props.allAudioResults}/> 
           case "mars-weather":
-            return <UserGallery userGalleryImageSizeState={props.userGalleryImageSizeState} userModalopenCloseState={props.userModalopenCloseState} setUserModalopenCloseState={props.setUserModalopenCloseState} userModalImageSizeState={props.userModalImageSizeState} closeBottomNav={props.closeBottomNav}
+            return <UserGallery userGalleryState={props.userGalleryState} setUserGalleryState={props.setUserGalleryState} userGalleryImageSizeState={props.userGalleryImageSizeState} userModalopenCloseState={props.userModalopenCloseState} setUserModalopenCloseState={props.setUserModalopenCloseState} userModalImageSizeState={props.userModalImageSizeState} closeBottomNav={props.closeBottomNav}
              /> 
         }
       })()}
