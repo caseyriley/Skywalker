@@ -10,7 +10,11 @@ const UserGalleryText = () => {
         <div id={"image-search-text"} onClick={() => setInfoState(!infoState)}>
           <p>This is your personal gallery.</p>
           <p>Add images by hearting them or delete images by unhearting them.</p>
-          <p>Please make use of the social media share links and tell your friends what you find interesting about your favorite images.</p>
+          <p>Once you have several images in your gallery try the carousel button 
+            with the blue saturn on it for a high resolution full screen rotation 
+            of your favorite NASA images.</p>
+          <p>Please make use of the social media share links and tell your friends 
+            what you find interesting about your favorite images.</p>
           <p></p>
         </div>
       }
