@@ -5,6 +5,7 @@ import Star from './Star';
 import Favorite from './Favorite';
 import facebookPlain from '../images/facebookPlain.png';
 import twitterPlain from '../images/twitterPlain.png';
+import Celestial from './Celestial';
 
 
 
@@ -68,6 +69,7 @@ const [imageModalState, setImageModalState] = useState(false);
     </div> 
     : <div></div>  }
     <ul className={"main-c__image-ul"}>
+        <Celestial/>
         {props.allResults && props.error !== true ? props.allResults.map((item, index) => {
           if (props.allResults.length === index + 1) {
             return (
