@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { API_URL } from '../config';
 import FacebookImage from '../images/FacebookImage.png';
 import TwitterCircular from '../images/TwitterCircular.png';
+import twitterPlain from '../images/twitterPlain.png';
 import Star from './Star';
+import facebookPlain from '../images/facebookPlain.png';
 
 const token = window.localStorage.getItem('auth_token');
 
@@ -77,7 +79,7 @@ const UserGallery = (props) => {
                   data-size="large"
                   lazy="true"
                 >
-                  <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${imageModalState.hrf}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
+                  <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${imageModalState.hrf}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={facebookPlain} alt={""} /></a>
                 </div>
                 {/* -------------------------------- */}
                 {/* -----------------Twitter------------- */}
@@ -85,7 +87,7 @@ const UserGallery = (props) => {
                   href={`https://twitter.com/intent/tweet?text=${imageModalState.hrf}`}
 
                   data-size="large">
-                  <img className="twitter-share-image" src={TwitterCircular} alt="" />
+                  <img className="twitter-share-image" src={twitterPlain} alt="" />
                 </a>
                 {/* ------------------------------------- */}
               </div>
