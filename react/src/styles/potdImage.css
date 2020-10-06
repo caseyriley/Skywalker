@@ -15,13 +15,16 @@
 }
 
 .potd-description__fade{
-  animation: fadeInPotd ease 5s;
+  animation: fadeInPotd ease 4s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
 @keyframes fadeInPotd {
   0% {
+    opacity: 0;
+  }
+  50% {
     opacity: 0;
   }
   100% {

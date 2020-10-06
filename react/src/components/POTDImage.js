@@ -25,7 +25,7 @@ const POTDImage = (props) => {
           <div className={"social-media-links"} >
             {/* ---------------FB--------------- */}
             {props.potdResult.hdurl ? 
-              <div class="fb-share-button" data-layout="button" data-size="large" lazy="true">
+              <div class="fb-share-button potd-description__fade" data-layout="button" data-size="large" lazy="true">
                 <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${props.potdResult.hdurl}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
               </div>
               : <div></div>
@@ -33,9 +33,8 @@ const POTDImage = (props) => {
             {/* -------------------------------- */}
             {/* -----------------Twitter------------- */}
             {props.potdResult.hdurl ? 
-              <a className="twitter-share-button"
+              <a className="twitter-share-button potd-description__fade"
                 href={`https://twitter.com/intent/tweet?text=${props.potdResult.hdurl}`}
-        
                 data-size="large">
                 <img className="twitter-share-image" src={TwitterCircular} alt=""/>
               </a> 
@@ -47,13 +46,13 @@ const POTDImage = (props) => {
       </div>
     </>
     :
-        <>
-          <Loading/>
-          <div className={"epic-img-c__date-not-available"}>
-            <h1>Date Not Available</h1>
-            <h1>Please Try Again</h1>
-          </div>
-        </>
+      <>
+        <Loading/>
+        <div className={"epic-img-c__date-not-available"}>
+          <h1>Date Not Available</h1>
+          <h1>Please Try Again</h1>
+        </div>
+      </>
     }
     </>
   )
