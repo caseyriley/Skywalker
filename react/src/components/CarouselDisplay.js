@@ -79,14 +79,14 @@ const CarouselDisplay = (props, items) => {
   }, [props.carouselToggle])
 
 
-  useEffect(()=>{
+  useEffect(() => {
     let stage = document.getElementById("carousel-img-c");
     let fadeComplete = function (e) { stage.appendChild(arr[0]); };
     let arr = document.getElementsByClassName("carousel-background");
     for (let i = 0; i < arr.length; i++) {
       arr[i].addEventListener("animationend", fadeComplete, false);
     }
-  })
+  }, [props.carouselToggle])
 
 
   return (
