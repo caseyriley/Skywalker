@@ -72,7 +72,7 @@ const Star = (props) => {
       { inDatabaseState === "True" ?
         <Favorite destroyHeart={destroyHeart}/>
       : 
-        <div className={"folder-love-c"} onClick={() => {postFunction(); setInDatabaseState("True")}}>
+        <div className={"folder-love-c potd-description__fade"} onClick={() => {postFunction(); setInDatabaseState("True")}}>
           <img className={"folder-love"} src={folderLove} alt={""} />
         </div>
       } 

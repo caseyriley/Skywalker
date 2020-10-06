@@ -47,7 +47,7 @@ const [imageModalState, setImageModalState] = useState(false);
                 <Star openCloseState={props.openCloseState} user={props.user} imageModalState={imageModalState}/>
                 {/* <Favorite/> */}
               {/* ---------------FB--------------- */}
-                <div className="fb-share-button" 
+                <div className="fb-share-button potd-description__fade" 
                   data-layout="button" 
                   data-size="large"
                   lazy="true"
@@ -56,7 +56,7 @@ const [imageModalState, setImageModalState] = useState(false);
                 </div>
               {/* -------------------------------- */}
               {/* -----------------Twitter------------- */}
-                <a className="twitter-share-button"
+                <a className="twitter-share-button potd-description__fade"
                   href={`https://twitter.com/intent/tweet?text=${imageModalState.hrf}`}
 
                   data-size="large">

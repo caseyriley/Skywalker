@@ -117,7 +117,7 @@
   font-weight: 400;
   line-height: 2;
   font-size: 20px;
-  animation: fadeInAnimation ease 5s;
+  animation: fadeInAnimation ease 2.5s;
   animation-iteration-count: 1; 
   animation-fill-mode: forwards;
   
@@ -128,7 +128,7 @@
   font-weight: 700;
   line-height: 2;
   /* font-size: 20px; */
-  animation: fadeInAnimation ease 5s;
+  animation: fadeInAnimation ease 2.5s;
   animation-iteration-count: 1; 
   animation-fill-mode: forwards;
   margin: auto;
@@ -138,6 +138,9 @@
     0% { 
         opacity: 0; 
     } 
+    50% {
+        opacity: 0;
+    }
     100% { 
         opacity: 1; 
      } 
