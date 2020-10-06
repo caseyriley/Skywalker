@@ -6,7 +6,7 @@ import Loading from './Loading';
 const EPICimage = (props) => {
   console.log("props EPIC", props.epicQuery)
   const API_KEY = "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz";
-  const slashQuery = props.epicQuery.replace("-", "/").replace("-", "/");
+  const slashQuery = props.epicQuery ? props.epicQuery.replace("-", "/").replace("-", "/") : "06/08/2020";
   let httpStart = `https://api.nasa.gov/EPIC/archive/${props.epicEnhancedState}/${slashQuery}`;
   let resultArray = props.epicResult.map(identifier => 
     // console.log(identifier.image))

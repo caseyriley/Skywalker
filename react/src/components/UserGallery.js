@@ -5,6 +5,7 @@ import TwitterCircular from '../images/TwitterCircular.png';
 import twitterPlain from '../images/twitterPlain.png';
 import Star from './Star';
 import facebookPlain from '../images/facebookPlain.png';
+import Celestial from './Celestial';
 
 const token = window.localStorage.getItem('auth_token');
 
@@ -65,7 +66,7 @@ const UserGallery = (props) => {
           onClick={() => props.setUserModalopenCloseState(false)}
         >
           <div id={"image-modal-c__scroll"}>
-            <img id={"image-modal-c__image"} className={`${props.userModalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.userModalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf.replace("thumb", "orig")} alt={""} />
+            <img id={"image-modal-c__image"} className={`${props.userModalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.userModalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf ? imageModalState.hrf.replace("thumb", "orig") : ""} alt={""} />
             <div className={`image-modal-c__description-c`}>
               <h1>{imageModalState.title}</h1>
               <p>{imageModalState.description}</p>
@@ -97,6 +98,7 @@ const UserGallery = (props) => {
         : <div></div>
       }
       <ul className={"main-c__image-ul"}>
+        <Celestial/>
         {props.userGalleryState !== false ? props.userGalleryState.map((galleryItem, index) => {
             return (
               <div onClick={e => { setupModalInfo(e); props.setUserModalopenCloseState(true); props.closeBottomNav()}} key={`${galleryItem.media} ${Math.floor(Math.random() * Math.floor(1000))}`}>

@@ -14,7 +14,7 @@ const UserGalleryText = () => {
             with the blue saturn on it for a high resolution full screen rotation 
             of your favorite NASA images.</p>
           <p>Please make use of the social media share links and tell your friends 
-            what you find interesting about your favorite images.</p>
+            what you find 💫</p>
           <p></p>
         </div>
       }
