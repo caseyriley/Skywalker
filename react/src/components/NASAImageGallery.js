@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from './Loading';
 
 const NASAImageGallery = (props) => {
   return (
@@ -12,8 +13,11 @@ const NASAImageGallery = (props) => {
           }
         }) : <h1 key={`${Math.floor(Math.random() * Math.floor(1000))}`}>Bad Data</h1>}
       </li>
-      <div className={"loading"}>{props.loading && 'loading.....'}</div>
-      <div>{props.error && 'Error'}</div>
+      <Loading/>
+      <div className={"epic-img-c__date-not-available"}> 
+        <h1>No Results Available</h1>
+        <h1>Please Try Again</h1>
+      </div>
     </ul>
   )
 }

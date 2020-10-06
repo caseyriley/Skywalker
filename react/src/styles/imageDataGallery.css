@@ -19,7 +19,7 @@
   /* flex-wrap: wrap; */
   margin: 3px;  
   justify-content: space-evenly;
-  background-color: thistle;
+  /* background-color: thistle; */
   
 }
 .search-array-image{
@@ -46,7 +46,24 @@
 .loading{
   color: white;
   margin: 10px 0px 20px 60px;
+  animation: pageLoadAnimation ease 2.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
+@keyframes pageLoadAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+  }
+}
+
 .search-array-image__data{
   height: auto;
   width: 80vw;

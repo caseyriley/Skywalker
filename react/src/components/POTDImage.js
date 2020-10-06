@@ -9,40 +9,40 @@ const POTDImage = (props) => {
   console.log("POTDprops", props)
   return (
     <>
-      
-      {/* --------------------------------------------- */}
       <img id={"chevron-right"} src={doubleChevron} alt={""} onClick={props.potdNextDay}></img>
       <img id={"chevron-left"} src={doubleChevron} alt={""} onClick={props.potdPrevDay} ></img>
       {props.potdError !== true ?
 
-    <>
+        <>
           <Celestial />
-      <div id={"potd-c"}>
-        <img className={`potd-img ${props.potdImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.potdImageSizeState === 4 ? "potd-full-image" : ""}`} src={props.potdResult.hdurl} alt={""}></img>
-        <div>
+          <div id={"potd-c"}>
+            <img className={`potd-img ${props.potdImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.potdImageSizeState === 4 ? "potd-full-image" : ""}`} src={props.potdResult.hdurl} alt={""}></img>
+          <div>
           <div className={"potd-description"}>
-              <h2>{props.potdResult.title}</h2>
-              <p>{props.potdResult.explanation}</p>
+              {props.potdResult.title ? <h2 className={"potd-description__fade"}>{props.potdResult.title}</h2> : <h2></h2>}
+              {props.potdResult.explanation ? <p className={"potd-description__fade"}>{props.potdResult.explanation}</p> : <p></p>}
           </div>
-            <div className={"social-media-links"} >
-              {/* ---------------FB--------------- */}
-              <div class="fb-share-button"
-                data-layout="button"
-                data-size="large"
-                lazy="true"
-              >
+          <div className={"social-media-links"} >
+            {/* ---------------FB--------------- */}
+            {props.potdResult.hdurl ? 
+              <div class="fb-share-button" data-layout="button" data-size="large" lazy="true">
                 <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${props.potdResult.hdurl}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
               </div>
-              {/* -------------------------------- */}
-              {/* -----------------Twitter------------- */}
+              : <div></div>
+            }
+            {/* -------------------------------- */}
+            {/* -----------------Twitter------------- */}
+            {props.potdResult.hdurl ? 
               <a className="twitter-share-button"
                 href={`https://twitter.com/intent/tweet?text=${props.potdResult.hdurl}`}
         
                 data-size="large">
                 <img className="twitter-share-image" src={TwitterCircular} alt=""/>
-              </a>
-              {/* ------------------------------------- */}
-            </div>
+              </a> 
+              : <div></div>
+            }
+            {/* ------------------------------------- */}
+          </div>
         </div>
       </div>
     </>

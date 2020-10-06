@@ -95,7 +95,7 @@ const [imageModalState, setImageModalState] = useState(false);
           }
         }) : 
         <h1>Bad Data</h1>}
-      {/* </li> */}
+    
       <div className={"loading"}>{props.loading && 'loading.....'}</div>
       <div>{props.error && 'Error'}</div>
     </ul>
