@@ -45,3 +45,8 @@ def react_root(path):
 @app.route('/api', methods=['GET'])
 def api():
     return jsonify(message='Successful API ping'), 200
+
+
+@app.route('/favicon.ico')
+def fav():
+    return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico')
