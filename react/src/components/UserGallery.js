@@ -63,13 +63,13 @@ const UserGallery = (props) => {
 
       {props.userModalopenCloseState ?
         <div id={"image-modal-c"}
-          onClick={() => props.setUserModalopenCloseState(false)}
+          // onClick={() => props.setUserModalopenCloseState(false)}
         >
           <div id={"image-modal-c__scroll"}>
-            <img id={"image-modal-c__image"} className={`${props.userModalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.userModalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf ? imageModalState.hrf.replace("thumb", "orig") : ""} alt={""} />
+            <img id={"image-modal-c__image"} onClick={() => props.setUserModalopenCloseState(false)} className={`${props.userModalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.userModalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf ? imageModalState.hrf.replace("thumb", "orig") : ""} alt={""} />
             <div className={`image-modal-c__description-c`}>
-              <h1>{imageModalState.title}</h1>
-              <p>{imageModalState.description}</p>
+              <h1 onClick={() => props.setUserModalopenCloseState(false)}>{imageModalState.title}</h1>
+              <p onClick={() => props.setUserModalopenCloseState(false)}>{imageModalState.description}</p>
               <div className={"social-media-links"} >
                 <Star userModalopenCloseState={props.userModalopenCloseState} 
                 // user={props.user} 
