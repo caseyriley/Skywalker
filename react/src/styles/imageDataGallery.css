@@ -159,21 +159,23 @@
   width: 100%;
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
+  margin: 0px 0px 40px 0px;
 }
 
 .folder-love-c{
-  position: absolute;
+  /* position: absolute; */
   top: -8px;
   left: 0px;
   height: 100px;
-  width: 200px;
+  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0px 0px 0px 50px;
 }
 .folder-love{
   height: 80px;
@@ -187,10 +189,11 @@
 }
 
 .rotating-heart{
-  position: absolute;
+  /* position: relative; */
+  width: 100px;
   top: -8px;
-  left: -200px;
-  margin: 0px 0px 0px 100px;
+  left: -40px;
+  margin: 0px 0px 0px 50px;
   height: 100px;
 }
 
