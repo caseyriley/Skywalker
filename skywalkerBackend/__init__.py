@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, jsonify, request
+from flask import Flask, render_template, redirect, jsonify, request, send_from_directory
 from flask_login import LoginManager
 from flask_jwt_extended import (
     JWTManager,
@@ -7,6 +7,8 @@ from flask_jwt_extended import (
     get_raw_jwt,
     verify_jwt_in_request)  # noqa
 from flask_cors import CORS
+import os
+
 
 
 from .config import Config
@@ -47,6 +49,24 @@ def api():
     return jsonify(message='Successful API ping'), 200
 
 
+# @app.route('/api/favicon.ico')
+# def fav():
+#     return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico')
+
+
+# @app.route('/favicon.ico')
+# def fav():
+#     return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico')
+
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                          'favicon.ico',mimetype='image/vnd.microsoft.icon')
+
+
 @app.route('/api/favicon.ico')
-def fav():
-    return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                          'favicon.ico',mimetype='image/vnd.microsoft.icon')
