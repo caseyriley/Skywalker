@@ -57,10 +57,8 @@
 /*----------log-out-button-------*/
 .logout-button{
   height: 40px;
-  /* width: 100px; */
   position: relative;
   top: 280px;
-  /* bottom: 25px; */
   left: calc(50% - 150px);
   margin-bottom: 100px;
 }
@@ -78,7 +76,7 @@
   left: calc(50% - 150px);
 }
 /* ------------------------------------------------------------- */
-/* =============image-search-text------------ */
+/* ------------image-search-text------------ */
 #image-search-text{
   top: -20px;
   left: -50px;

@@ -82,7 +82,7 @@ const MainPage = () => {
   }
 // ------------------------------------------------------
 //----------------POTD-Search---------------------------
-  const [potdQuery, setPotdQuery] = useState('2020-08-01');
+  const [potdQuery, setPotdQuery] = useState('2020-08-13');
   const [potdImageSizeState, setPotdImageSizeState] = useState(3)
 
   const {

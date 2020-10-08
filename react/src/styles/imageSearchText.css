@@ -26,7 +26,6 @@ text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 color: rgb(234, 223, 254); 
 }
 .info-button:hover{
-  top: 21px;
   box-shadow: 
     inset 0px 2px 4px -1px rgba(125, 125, 125, 0.6),
     inset 0px -2px 5px -0px rgba(125, 125, 125, 0.6),

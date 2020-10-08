@@ -209,13 +209,11 @@
   background-color: rgba(175, 223, 238, 0.9);
 }
 .logout-button:hover{
-  top: 136px;
   color: rgb(234, 223, 254); 
   box-shadow: 
         inset 0px 2px 4px -1px rgba(125, 125, 125, 0.6),
         inset 0px -2px 5px -0px rgba(125, 125, 125, 0.6),
         0px 1px 1px 0px rgba(125, 125, 125, 0.3);
-  margin: 0px 0px -3px 0px;
 }
 .none{
   opacity: 0;
