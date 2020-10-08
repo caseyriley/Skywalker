@@ -36,7 +36,6 @@ const Star = (props) => {
     const response = await fetch(`${API_URL}/api/gallery/remove/`, {
       method: ["DELETE"], 
       mode: "cors",
-      // params: { hrf: `${decodeURIComponent(hrf)}` },
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${token}`
@@ -44,7 +43,6 @@ const Star = (props) => {
       body: JSON.stringify({
         id: `${id}`,
         hrf: `${decodeURIComponent(hrf)}`
-        // tweetId: `${props.props.id}`
       }),
     });
     if (!response.ok) {

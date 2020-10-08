@@ -13,4 +13,3 @@ const SearchMenu = (props) => {
   )
 }
 export default SearchMenu;
-//"ininiteScroll"

@@ -5,7 +5,6 @@ export default function usePotdFunction(potdQuery) {
   const [loading, setLoading] = useState(true)
   const [potdError, setPotdError] = useState(false)
   const [potdResult, setPotdResult] = useState([]);
-  // const [hasMore, setHasMore] = useState(false)
 
   let API_KEY = "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"
   let date = `2020-08-08`
@@ -21,7 +20,6 @@ export default function usePotdFunction(potdQuery) {
     axios({
       method: 'GET',
       url: `https://api.nasa.gov/planetary/apod?date=${potdQuery}`,
-      // https://api.nasa.gov/planetary/apod?&api_key=DEMO_KEY
       params: {
         hd: true,
         api_key: "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"
@@ -30,7 +28,6 @@ export default function usePotdFunction(potdQuery) {
     })
       .then(res => {
         setPotdResult(res.data)
-        // setPotdResult(res.data.hdurl)
       })
       .then(res => console.log("potdResult---->", potdResult))
 

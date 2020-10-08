@@ -1,7 +1,7 @@
 import React from 'react';
 import doubleChevron from '../images/doubleChevron.png'
-import FacebookImage from '../images/FacebookImage.png';
-import TwitterCircular from '../images/TwitterCircular.png';
+import facebookPlain from '../images/facebookPlain.png';
+import twitterPlain from '../images/twitterPlain.png';
 import Celestial from './Celestial';
 import Loading from './Loading';
 
@@ -26,7 +26,7 @@ const POTDImage = (props) => {
             {/* ---------------FB--------------- */}
             {props.potdResult.hdurl ? 
               <div class="fb-share-button potd-description__fade" data-layout="button" data-size="large" lazy="true">
-                <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${props.potdResult.hdurl}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={FacebookImage} alt={""} /></a>
+                <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${props.potdResult.hdurl}`} class="fb-xfbml-parse-ignore"><img className={"facebook-image"} src={facebookPlain} alt={""} /></a>
               </div>
               : <div></div>
             }
@@ -36,7 +36,7 @@ const POTDImage = (props) => {
               <a className="twitter-share-button potd-description__fade"
                 href={`https://twitter.com/intent/tweet?text=${props.potdResult.hdurl}`}
                 data-size="large">
-                <img className="twitter-share-image" src={TwitterCircular} alt=""/>
+                <img className="twitter-share-image" src={twitterPlain} alt=""/>
               </a> 
               : <div></div>
             }

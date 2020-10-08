@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import LeftArrow from '../images/LeftArrow';
 import MagnifyingGlass from '../images/MagnifyingGlass';
 import RightArrow from '../images/RightArrow.png';
 
@@ -18,14 +17,12 @@ const EPICsearch = (props) => {
         min="1995-06-20" max="2030-01-01"
         onChange={e => updateEpicSearchValue(e)}
       >
-        {/* onChange={e=>props.handleEpicSearch(e)}> */}
       </input>
       <button className={"main-c__bottom-nav-top__Searchbar__button"} onClick={() => {
         props.setEpicQuery(epicSearchValue);
         props.closeBottomNav()
       }}>
         <img className={"right-arrow"} src={RightArrow} alt={""} />
-        {/* <LeftArrow /> */}
       </button>
     </div>
   )

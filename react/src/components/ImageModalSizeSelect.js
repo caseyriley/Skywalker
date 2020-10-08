@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ImageModalSizeSelect = (props) => {
+  
   return (
     <div id={"potd-image-size-select"}>
       <div className={`${props.modalImageSizeState === 1 ? "sml" : ""} ${props.modalImageSizeState === 2 ? "med" : ""} ${props.modalImageSizeState === 3 ? "potd-select-lrg" : ""} ${props.modalImageSizeState === 4 ? "potd-select-full" : "b"}`} id={`potd-image-size-switch__switch`}></div>

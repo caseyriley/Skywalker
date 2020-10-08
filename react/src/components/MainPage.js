@@ -12,8 +12,6 @@ import BottomNavControls from './BottomNavControls';
 import LogoutButton from './LogoutButton';
 import lottie from 'lottie-web';
 import useAudioSearchFunction from './useAudioSearchFunction';
-import carousel from '../images/Carousel.svg';
-import saturn from '../images/saturnIllustration.png';
 import CarouselDisplay from './CarouselDisplay';
 
 const MainPage = () => {
@@ -62,12 +60,10 @@ const MainPage = () => {
   const observer = useRef()
 
   const lastSearchElementRef = useCallback(node => {
-    // console.log(node)
     if (loading) return
     if (observer.current) observer.current.disconnect()
     observer.current = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting && hasMore) {
-        console.log('Visible')
         setPageNumber(prevPageNumber => prevPageNumber + 1)
       }
     })
@@ -232,7 +228,6 @@ const MainPage = () => {
   const audioObserver = useRef()
 
   const lastAudioSearchElementRef = useCallback(node => {
-    // console.log(node)
     if (audioLoading) return
     if (audioObserver.current) audioObserver.current.disconnect()
     audioObserver.current = new IntersectionObserver(entries => {
@@ -270,7 +265,6 @@ const MainPage = () => {
   const [userGalleryImageSizeState, setUserGalleryImageSizeState] = useState(2);
   const [userModalopenCloseState, setUserModalopenCloseState] = useState(false);
   const [userGalleryState, setUserGalleryState] = useState(false);
-  // const [userImageSizeState, setUserImageSizeState] = useState(2);
 
   const [user, setUser] = useState({})
   // const [targetUser, setTargetUser] = useState(1);

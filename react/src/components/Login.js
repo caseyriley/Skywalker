@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { API_URL } from "../config";
 import SignUp from "./SignUp";
-import Bird from '../images/Bird';
-import MagnifyingGlass from '../images/MagnifyingGlass';
-import People from '../images/People';
-import LoginBubble from '../images/LoginBubble';
 import GithubIcon from '../images/GithubIcon';
 import astronaut from '../images/astronaut.png';
 
@@ -95,11 +91,6 @@ const Login = () => {
                 <div className="login-main--container">
                         <img className={"astronaut"} src={astronaut} alt={""} ></img>
                     <div className={`login-show-hide ${!signUpModal ? "modal-showing" : "modal-hiding"}`}>
-                        {/* <input id={"startDateInput"} name={"startDateInput"} type={"text"}
-                            placeholder={"YYYY"}
-                            onChange={e => setFilterDateSearchState(e.target.value)}
-                            type="number" min="1920" max="2030" step="1" minLength="4" maxLength="4"
-                        > */}
                         <input className="login-input-1"  placeholder="Email" value={email} type="email" onChange={updateEmail} />
                         <input className="login-input-2" type="password" placeholder="Password" value={password} onChange={updatePassword} /> 
                         <div className="login-bar__button--container" onClick={handleSubmit}>

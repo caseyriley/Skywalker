@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios';
 
 export default function useEpicFunction(epicQuery, epicEnhancedState) {
   const [loading, setLoading] = useState(true)
@@ -21,20 +20,6 @@ export default function useEpicFunction(epicQuery, epicEnhancedState) {
     let cancel
 
     
-    // axios({
-    //   method: 'GET',
-    //   mode: "no-cors",
-    //   url: `https://epic.gsfc.nasa.gov/api/images.php`,
-    //   params: { api_key: "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"},
-    //   cancelToken: new axios.CancelToken(c => cancel = c)
-    // })
-    // .then(res=> console.log(res))
-
-    // fetch(`https://api.nasa.gov/EPIC/api/natural/date/2019-05-30?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
-    
-
-    
-    
     fetch(`https://api.nasa.gov/EPIC/api/${epicEnhancedState}/date/${epicQuery}?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
 
     )
@@ -44,10 +29,7 @@ export default function useEpicFunction(epicQuery, epicEnhancedState) {
       .then(data => setEpicResult(data))
       .catch(e => {
         console.log("error")
-        // if (axios.isCancel(e)) return
-        // setEpicError(true)
       })
-    // return () => cancel()
   }, [epicQuery])
 
   return { loading, epicError, epicResult}

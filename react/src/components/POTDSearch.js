@@ -20,11 +20,9 @@ const POTDSearch = (props) => {
 
       </input>
       <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"} onClick={() => { 
-        // props.setPotdQuery(props.potdSearchValue); 
         props.setPotdQuery(potdSearchValue); 
         props.closeBottomNav() 
         }}>
-        {/* <LeftArrow /> */}
         <img className={"right-arrow"} src={RightArrow} alt={""} />
       </button>
     </div>

@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
-// import NASAImage from './NASAImage';
-// import NASAImageSearch from './NASAImageSearch';
 import POTDSearch from './POTDSearch';
-import NASAInfiniteScroll from './NasaInfiniteScroll';
 import ImageDataSearch from './ImageDataSearch';
 import EPICSearch from './EPICsearch';
 import POTDimageSizeSelect from './POTDimageSizeSelect';
 import ImageSizeSelect from './ImageSizeSelect';
 import AudioSearch from './AudioSearch';
-import UserModalSizeSelect from './UserModalSizeSelect';
 import UserGallerySizeSelect from './UserGallerySizeSelect';
 
 

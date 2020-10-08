@@ -1,6 +1,5 @@
 import React from 'react';
 import ImageDataGallery from './ImageDataGallery';
-import NASAImageGallery from './NASAImageGallery';
 import POTDImage from './POTDImage';
 import EPICimage from './EPICimage';
 import SoundGallery from './SoundGallery';

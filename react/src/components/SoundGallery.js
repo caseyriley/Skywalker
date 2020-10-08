@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState} from 'react';
 import shuttle from '../images/shuttle.png'
-import Celestial from './Celestial';
+
 
 
 

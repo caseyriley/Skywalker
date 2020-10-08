@@ -32,7 +32,6 @@ const FilterEndDate = (props) => {
         </input>
         <button className={"main-c__bottom-nav-top__Searchbar__button"} type={"submit"} onClick={e => props.setEndDateFilterState(filterEndDateState), check}>
           <img className={"right-arrow"} src={RightArrow} alt={""} />
-          {/* <LeftArrow /> */}
         </button>
       </div>
       <CheckMark resetStartDate={resetStartDate} setSearchActiveState={setSearchActiveState} searchActiveState={searchActiveState} />

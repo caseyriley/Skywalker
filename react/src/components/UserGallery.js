@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { API_URL } from '../config';
-import FacebookImage from '../images/FacebookImage.png';
-import TwitterCircular from '../images/TwitterCircular.png';
 import twitterPlain from '../images/twitterPlain.png';
 import Star from './Star';
 import facebookPlain from '../images/facebookPlain.png';
@@ -27,10 +25,8 @@ const UserGallery = (props) => {
       , description: description
       , title: title
     })
-    console.log("imageModalState====>", imageModalState);
   }
   // -----------------------------------------
-  // const [userGalleryState, setUserGalleryState] = useState(false);
 
   const id = 1;
 
@@ -44,15 +40,12 @@ const UserGallery = (props) => {
         },
       })
       if (!response.ok) {
-        console.log("getUserGallery response failed")
       } else {
         const json = await response.json()
         props.setUserGalleryState(json)
-        console.log("userJson", json)
       }
     }
     getUserGallery()
-    // console.log("userGalleryState", userGalleryState)
   }, [])
   // ------------------------------------------
 
@@ -62,9 +55,7 @@ const UserGallery = (props) => {
       <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="EJjP46dz"></script>
 
       {props.userModalopenCloseState ?
-        <div id={"image-modal-c"}
-          // onClick={() => props.setUserModalopenCloseState(false)}
-        >
+        <div id={"image-modal-c"}>
           <div id={"image-modal-c__scroll"}>
             <img id={"image-modal-c__image"} onClick={() => props.setUserModalopenCloseState(false)} className={`${props.userModalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.userModalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf ? imageModalState.hrf.replace("thumb", "orig") : ""} alt={""} />
             <div className={`image-modal-c__description-c`}>
@@ -72,7 +63,6 @@ const UserGallery = (props) => {
               <p onClick={() => props.setUserModalopenCloseState(false)}>{imageModalState.description}</p>
               <div className={"social-media-links"} >
                 <Star userModalopenCloseState={props.userModalopenCloseState} 
-                // user={props.user} 
                 imageModalState={imageModalState} />
                 {/* ---------------FB--------------- */}
                 <div class="fb-share-button"

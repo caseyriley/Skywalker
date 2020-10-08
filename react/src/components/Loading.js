@@ -4,6 +4,7 @@ import lottie from 'lottie-web';
 const Loading = () => {
 
   const orbitContainer = useRef(null);
+  
   useEffect(() => {
     lottie.loadAnimation({
       container: orbitContainer.current,

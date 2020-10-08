@@ -18,7 +18,6 @@ export default function useMp3(mp3Query) {
     axios({
       method: 'GET',
       url: mp3Query,
-      // https://api.nasa.gov/planetary/apod?&api_key=DEMO_KEY
       params: {
         hd: true,
         api_key: "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz"
@@ -29,7 +28,6 @@ export default function useMp3(mp3Query) {
         setMp3Result(res.data)
       })
       .then(res => console.log("mp3Result---->", mp3Result))
-
       .catch(e => {
         if (axios.isCancel(e)) return
         setMp3Error(true)
