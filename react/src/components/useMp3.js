@@ -12,7 +12,6 @@ export default function useMp3(mp3Query) {
   }, [mp3Query])
 
   useEffect(() => {
-    console.log("about to get")
     setMp3Error(false)
     let cancel
     axios({
@@ -27,7 +26,6 @@ export default function useMp3(mp3Query) {
       .then(res => {
         setMp3Result(res.data)
       })
-      .then(res => console.log("mp3Result---->", mp3Result))
       .catch(e => {
         if (axios.isCancel(e)) return
         setMp3Error(true)

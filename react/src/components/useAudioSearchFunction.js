@@ -35,8 +35,6 @@ export default function useSearchFunction(audioQuery, audioPageNumber, audioStar
         setAudioHasMore(res.data.collection.links[0].prompt !== "NEXT")
         setAudioLoading(false)
       })
-      .then(() => console.log(allAudioResults))
-
       .catch(e => {
         if (axios.isCancel(e)) return
         setError(true)

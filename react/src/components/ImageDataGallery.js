@@ -19,7 +19,6 @@ const [imageModalState, setImageModalState] = useState(false);
       description: description, 
       title: title, 
     })
-     console.log("imageModalState====>", imageModalState);
    }
 
   return (

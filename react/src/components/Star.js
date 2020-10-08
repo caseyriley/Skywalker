@@ -22,7 +22,6 @@ const Star = (props) => {
         },
       })
       if (!response.ok) {
-        console.log("checkForHeart response failed")
       } else {
         const json = await response.json()
         setInDatabaseState(json)
@@ -46,10 +45,8 @@ const Star = (props) => {
       }),
     });
     if (!response.ok) {
-      console.log("destroyLike response failure");
       setInDatabaseState("False")
     } else {
-      console.log("destroyLike response success");
       setInDatabaseState("False")
     }
   }

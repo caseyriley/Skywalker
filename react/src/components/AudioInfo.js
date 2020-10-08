@@ -1,7 +1,6 @@
 import React from 'react';
 
 const AudioInfo = (props) => {
-  // console.log('mp3Info======>', props.mp3Info)
   return(
     <div className={"audio-info"}>
       <div className={"audio-info__scroll"}>

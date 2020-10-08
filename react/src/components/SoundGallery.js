@@ -6,7 +6,6 @@ import shuttle from '../images/shuttle.png'
 
 
 const SoundGallery = (props) => {
-  console.log('soundGalleryProps====>', props.allAudioResults)
 
 
   return (

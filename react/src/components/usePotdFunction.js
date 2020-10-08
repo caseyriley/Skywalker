@@ -13,7 +13,6 @@ export default function usePotdFunction(potdQuery) {
   }, [potdQuery])
 
   useEffect(() => {
-    console.log("about to get")
     setLoading(true)
     setPotdError(false)
     let cancel
@@ -29,8 +28,6 @@ export default function usePotdFunction(potdQuery) {
       .then(res => {
         setPotdResult(res.data)
       })
-      .then(res => console.log("potdResult---->", potdResult))
-
       .catch(e => {
         if (axios.isCancel(e)) return
         setPotdError(true)

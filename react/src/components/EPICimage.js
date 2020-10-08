@@ -3,7 +3,6 @@ import doubleChevron from '../images/doubleChevron.png';
 import Loading from './Loading';
 
 const EPICimage = (props) => {
-  console.log("props EPIC", props.epicQuery)
   const API_KEY = "DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz";
   const slashQuery = props.epicQuery ? props.epicQuery.replace("-", "/").replace("-", "/") : "06/08/2020";
   let httpStart = `https://api.nasa.gov/EPIC/archive/${props.epicEnhancedState}/${slashQuery}`;
@@ -14,7 +13,6 @@ const EPICimage = (props) => {
 
   function picRotateRight(){
     setPicNumState(picNumState + 1);
-    console.log(picNumState);
     if (picNumState > resultArray.length  -2){
       setPicNumState(0);
     }
@@ -28,7 +26,6 @@ const EPICimage = (props) => {
     }
     
   }
-  console.log(props.epicResult)
 
   return (
     <>

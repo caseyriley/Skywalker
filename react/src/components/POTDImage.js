@@ -6,7 +6,6 @@ import Celestial from './Celestial';
 import Loading from './Loading';
 
 const POTDImage = (props) => {
-  console.log("POTDprops", props)
   return (
     <>
       <img id={"chevron-right"} src={doubleChevron} alt={""} onClick={props.potdNextDay}></img>

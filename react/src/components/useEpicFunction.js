@@ -12,9 +12,6 @@ export default function useEpicFunction(epicQuery, epicEnhancedState) {
   }, [epicQuery])
 
   useEffect(() => {
-    console.log("about to get")
-    console.log(epicQuery)
-    console.log("epicEnhancedState",epicEnhancedState)
     setLoading(true)
     setEpicError(false)
     let cancel
@@ -23,9 +20,7 @@ export default function useEpicFunction(epicQuery, epicEnhancedState) {
     fetch(`https://api.nasa.gov/EPIC/api/${epicEnhancedState}/date/${epicQuery}?api_key=DZlJvpOuxIYWGgRha1mCvDtqDwngAsgkv09kyCKz`
 
     )
-    // .then(res => res.json)
       .then(res => res.json())
-      // .then(data => console.log(data))
       .then(data => setEpicResult(data))
       .catch(e => {
         console.log("error")

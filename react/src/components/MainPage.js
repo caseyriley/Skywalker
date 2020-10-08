@@ -232,7 +232,6 @@ const MainPage = () => {
     if (audioObserver.current) audioObserver.current.disconnect()
     audioObserver.current = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting && audioHasMore) {
-        console.log('Visible')
         setAuidoPageNumber(prevPageNumber => prevPageNumber + 1)
       }
     })
