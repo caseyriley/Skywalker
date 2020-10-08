@@ -268,25 +268,24 @@ const MainPage = () => {
   const [user, setUser] = useState({})
   // const [targetUser, setTargetUser] = useState(1);
 
-  useEffect(() => {
-    const getCurrentUser = async () => {
-      const token = window.localStorage.getItem('auth_token')
-      const response = await fetch(`${API_URL}/users/token`, {
-        method: "GET",
-        mode: "cors",
-        headers: { "Authorization": `Bearer ${token}` },
-      })
-      if (!response.ok) {
-        console.log("this will never happen. you can quote me")
-      } else {
-        const json = await response.json();
-        setUser(json);
-      }
-    }
-    getCurrentUser();
-  }, [
-    // targetUser
-  ])
+  // useEffect(() => {
+  //   const getCurrentUser = async () => {
+    //   const token = window.localStorage.getItem('auth_token')
+    //   const response = await fetch(`${API_URL}/users/token`, {
+    //     method: "GET",
+    //     mode: "cors",
+    //     headers: { "Authorization": `Bearer ${token}` },
+    //   })
+    //   if (!response.ok) {
+    //   } else {
+    //     const json = await response.json();
+    //     setUser(json);
+    //   }
+    // }
+  //   getCurrentUser();
+  // }, [
+  
+  // ])
   // ---------------------------------------------------------
   //-----------------Carousel---------------------------------
 
