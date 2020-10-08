@@ -28,7 +28,8 @@ const UserGallery = (props) => {
   }
   // -----------------------------------------
 
-  const id = 1;
+  const id = props.user.id;
+  console.log("user=============>", props.user.id)
 
   useEffect(() => {
     const getUserGallery = async () => {
@@ -62,7 +63,7 @@ const UserGallery = (props) => {
               <h1 onClick={() => props.setUserModalopenCloseState(false)}>{imageModalState.title}</h1>
               <p onClick={() => props.setUserModalopenCloseState(false)}>{imageModalState.description}</p>
               <div className={"social-media-links"} >
-                <Star userModalopenCloseState={props.userModalopenCloseState} 
+                <Star user={props.user} userModalopenCloseState={props.userModalopenCloseState} 
                 imageModalState={imageModalState} />
                 {/* ---------------FB--------------- */}
                 <div class="fb-share-button"

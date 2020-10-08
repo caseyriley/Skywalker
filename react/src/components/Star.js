@@ -7,8 +7,7 @@ const token = window.localStorage.getItem('auth_token');
 
 const Star = (props) => {
   const [inDatabaseState, setInDatabaseState] = useState(false);
-  // const id = props.user;
-  const id = 1;
+  const id = props.user.id;
   const hrf = props.imageModalState.hrf;
 
   useEffect(() => {
@@ -53,7 +52,7 @@ const Star = (props) => {
   
   
   const postFunction = async () => {
-    const galleryData = { media: decodeURI(props.imageModalState.hrf), title: props.imageModalState.title, description: props.imageModalState.description, user_id: 1 }
+    const galleryData = { media: decodeURI(props.imageModalState.hrf), title: props.imageModalState.title, description: props.imageModalState.description, user_id: id }
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

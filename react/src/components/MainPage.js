@@ -266,26 +266,28 @@ const MainPage = () => {
   const [userGalleryState, setUserGalleryState] = useState(false);
 
   const [user, setUser] = useState({})
-  // const [targetUser, setTargetUser] = useState(1);
+  const [targetUser, setTargetUser] = useState(1);
 
-  // useEffect(() => {
-  //   const getCurrentUser = async () => {
-    //   const token = window.localStorage.getItem('auth_token')
-    //   const response = await fetch(`${API_URL}/users/token`, {
-    //     method: "GET",
-    //     mode: "cors",
-    //     headers: { "Authorization": `Bearer ${token}` },
-    //   })
-    //   if (!response.ok) {
-    //   } else {
-    //     const json = await response.json();
-    //     setUser(json);
-    //   }
-    // }
-  //   getCurrentUser();
-  // }, [
-  
-  // ])
+  useEffect(() => {
+    const getCurrentUser = async () => {
+      const token = window.localStorage.getItem('auth_token')
+      const response = await fetch(`${API_URL}/api/users/token`, {
+        method: "GET",
+        mode: "cors",
+        headers: { "Authorization": `Bearer ${token}` },
+      })
+      if (!response.ok) {
+        console.log("this will never happen. you can quote me")
+      } else {
+        const json = await response.json();
+        setUser(json);
+        console.log("user set");
+      }
+    }
+    getCurrentUser();
+  }, [
+    // targetUser
+  ])
   // ---------------------------------------------------------
   //-----------------Carousel---------------------------------
 
@@ -313,26 +315,6 @@ const MainPage = () => {
           }, 1500);
         }
     }
-
-    // useEffect(() => {
-    //   function fade() {
-    //     setTimeout(() => {
-    //       setOpacityState(!opacityState) //fade image to reveal image 2
-    //       setTimeout(() => {
-    //         setCurrentImageState(currentImageState + 2); //change 1st image
-    //         setTimeout(() => {
-    //           setOpacityState(!opacityState) //reveal new image
-    //           setTimeout(() => {
-    //             setNextImageState(nextImageState + 2); //change second image 
-    //             setTimeoutState(timeoutState + 1) 
-    //           }, 1000);
-    //         }, 1000);
-    //       }, 1000);
-
-    //     }, 1000); 
-    //   }
-    //   fade(); 
-    // }, [timeoutState]);
   // ---------------------------------------------------------
 
     return (
