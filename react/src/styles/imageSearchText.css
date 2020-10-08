@@ -4,7 +4,6 @@
   top: 20px;
   left: 100px;
   height: 50px;
-  /* border: 1px solid black; */
   font-family: 'Roboto',sans-serif;
   font-size: 25px;
   color: #eeeeee;
@@ -19,14 +18,15 @@
 
 }
 .info-button span{
-color: #d9d9d9;
+color: #dfcefc;
 text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   
 }
 .info-button span:hover{
-color: rgb(195, 166, 241); 
+color: rgb(234, 223, 254); 
 }
 .info-button:hover{
+  top: 21px;
   box-shadow: 
     inset 0px 2px 4px -1px rgba(125, 125, 125, 0.6),
     inset 0px -2px 5px -0px rgba(125, 125, 125, 0.6),

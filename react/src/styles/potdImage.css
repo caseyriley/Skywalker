@@ -50,3 +50,16 @@
   height: auto;
   width: 100vw;
 }
+.fb-share-button-potd a{
+  position: absolute;
+  left: calc(50% - 150px);
+  top: 10px;
+  margin: 0px 0px 0px 0px;
+}
+.twitter-share-button-potd{
+  position: absolute;
+  left: calc(50% + 50px);
+  top: 10px;
+  height: 80px;
+  margin: 0px 0px 0px 0px;
+}

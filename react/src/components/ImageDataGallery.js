@@ -36,7 +36,6 @@ const [imageModalState, setImageModalState] = useState(false);
             <p onClick={() => props.setOpenCloseState(false)} >{imageModalState.description}</p>
             <div className={"social-media-links"} >
                 <Star openCloseState={props.openCloseState} user={props.user} imageModalState={imageModalState}/>
-                {/* <Favorite/> */}
               {/* ---------------FB--------------- */}
                 <div className="fb-share-button potd-description__fade" 
                   data-layout="button" 
