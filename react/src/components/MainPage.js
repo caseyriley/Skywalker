@@ -266,28 +266,7 @@ const MainPage = () => {
   const [userGalleryState, setUserGalleryState] = useState(false);
 
   const [user, setUser] = useState({})
-  const [targetUser, setTargetUser] = useState(1);
 
-  useEffect(() => {
-    const getCurrentUser = async () => {
-      const token = window.localStorage.getItem('auth_token')
-      const response = await fetch(`${API_URL}/api/users/token`, {
-        method: "GET",
-        mode: "cors",
-        headers: { "Authorization": `Bearer ${token}` },
-      })
-      if (!response.ok) {
-        console.log("this will never happen. you can quote me")
-      } else {
-        const json = await response.json();
-        setUser(json);
-        console.log("user set");
-      }
-    }
-    getCurrentUser();
-  }, [
-    // targetUser
-  ])
   // ---------------------------------------------------------
   //-----------------Carousel---------------------------------
 
@@ -345,7 +324,7 @@ const MainPage = () => {
           <div id={"main-c__scroll"}>
           </div>
         <ImageSwitch
-          user={user} userGalleryImageSizeState={userGalleryImageSizeState} userModalopenCloseState={userModalopenCloseState} setUserModalopenCloseState={setUserModalopenCloseState} userModalImageSizeState={userModalImageSizeState} closeBottomNav={closeBottomNav} userGalleryState={userGalleryState} setUserGalleryState={setUserGalleryState}
+          setUser={setUser} user={user} userGalleryImageSizeState={userGalleryImageSizeState} userModalopenCloseState={userModalopenCloseState} setUserModalopenCloseState={setUserModalopenCloseState} userModalImageSizeState={userModalImageSizeState} closeBottomNav={closeBottomNav} userGalleryState={userGalleryState} setUserGalleryState={setUserGalleryState}
           setMp3Info={setMp3Info} mp3Query={mp3Query} setMp3query={setMp3query} mp3Result={mp3Result} audioError={audioError} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} audioLoading={audioLoading} lastAudioSearchElementRef={lastAudioSearchElementRef} allAudioResults={allAudioResults}  
           error={error} potdError={potdError} potdNextDay={potdNextDay} potdPrevDay={potdPrevDay} modalImageSizeState={modalImageSizeState} openCloseState={openCloseState} setOpenCloseState={setOpenCloseState} epicEnhancedState={epicEnhancedState} epicQuery={epicQuery} epicResult={epicResult} searchMenuState={searchMenuState} setPotdImageSizeState={setPotdImageSizeState} potdImageSizeState={potdImageSizeState} potdResult={potdResult} error={error} loading={loading} lastSearchElementRef={lastSearchElementRef} allResults={allResults} results={results} imageSizeState={imageSizeState} />
       </div>

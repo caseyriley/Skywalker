@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { API_URL } from '../config.js'
 import Star from './Star';
 import facebookPlain from '../images/facebookPlain.png';
 import twitterPlain from '../images/twitterPlain.png';
@@ -7,6 +8,26 @@ import Celestial from './Celestial';
 
 
 const ImageDataGallery = (props) => {
+
+  useEffect(() => {
+    const getCurrentUser = async () => {
+      const token = window.localStorage.getItem('auth_token')
+      const response = await fetch(`${API_URL}/api/users/token`, {
+        method: "GET",
+        mode: "cors",
+        headers: { "Authorization": `Bearer ${token}` },
+      })
+      if (!response.ok) {
+        // console.log("this will never happen. you can quote me")
+      } else {
+        const json = await response.json();
+        props.setUser(json);
+      }
+    }
+    getCurrentUser();
+  }, [])
+
+
 const [imageModalState, setImageModalState] = useState(false);
   
 
@@ -65,7 +86,7 @@ const [imageModalState, setImageModalState] = useState(false);
             return (
               <>
               <li className={"main-c__image-li"}>
-              <div onClick={e => { setupModalInfo(e); props.setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
+                  <div onClick={e => { setupModalInfo(e); props.setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
                 <img ref={props.lastSearchElementRef} className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt={""} loading="lazy" key={`${item.links[0].href}${Math.floor(Math.random() * Math.floor(1000))}`}></img>
                 <p className={"search-array-image__data__descirption"} loading="lazy">{item.data[0].description}</p>
               </div>
@@ -74,7 +95,7 @@ const [imageModalState, setImageModalState] = useState(false);
             )
           } else {
             return (
-              <div onClick={e => { setupModalInfo(e); props.setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
+              <div onClick={e => {setupModalInfo(e); props.setOpenCloseState(true)}} key={`${item.links[0].href} ${Math.floor(Math.random() * Math.floor(1000))}`}>
                 <img 
                   className={`search-array-image ${props.imageSizeState === 1 ? "sml-image" : "a"} ${props.imageSizeState === 2 ? "med-image" : ""} ${props.imageSizeState === 3 ? "lrg-image" : ""} ${props.imageSizeState === 4 ? "full-image" : "b"}`} src={item.links[0].href} alt="" loading="lazy" >
                 </img>

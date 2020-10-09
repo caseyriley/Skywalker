@@ -8,28 +8,46 @@ import Celestial from './Celestial';
 const token = window.localStorage.getItem('auth_token');
 
 const UserGallery = (props) => {
+
+
+  // const [user, setUser] = useState({})
+  // const [nothingState, setNothingState] = useState();
+
+  // useEffect(() => {
+  //   const getCurrentUser = async () => {
+  //     const token = window.localStorage.getItem('auth_token')
+  //     const response = await fetch(`${API_URL}/api/users/token`, {
+  //       method: "GET",
+  //       mode: "cors",
+  //       headers: { "Authorization": `Bearer ${token}` },
+  //     })
+  //     if (!response.ok) {
+  //       console.log("this will never happen. you can quote me")
+  //     } else {
+  //       const json = await response.json();
+  //       setUser(json);
+  //       console.log("user set");
+  //     }
+  //   }
+  //   getCurrentUser();
+  // }, [])
+
+
   const [imageModalState, setImageModalState] = useState(false);
  
-
   function setModalStateFalse() {
     props.setUserModalopenCloseState(false)
   }
 
   function setupModalInfo(e) {
-    let title = e.target.nextSibling.innerHTML;
-    let description = e.target.nextSibling.nextSibling.innerHTML;
-    let hrf = e.target.src
-
-    setImageModalState({
-      hrf: hrf
-      , description: description
-      , title: title
-    })
+    const title = e.target.nextSibling.innerHTML;
+    const description = e.target.nextSibling.nextSibling.innerHTML;
+    const hrf = e.target.src
+    setImageModalState({hrf: hrf, description: description, title: title})
   }
   // -----------------------------------------
 
   const id = props.user.id;
-  console.log("user=============>", props.user.id)
 
   useEffect(() => {
     const getUserGallery = async () => {
@@ -48,6 +66,10 @@ const UserGallery = (props) => {
     }
     getUserGallery()
   }, [])
+
+
+
+
   // ------------------------------------------
 
   return (
@@ -58,10 +80,10 @@ const UserGallery = (props) => {
       {props.userModalopenCloseState ?
         <div id={"image-modal-c"}>
           <div id={"image-modal-c__scroll"}>
-            <img id={"image-modal-c__image"} onClick={() => props.setUserModalopenCloseState(false)} className={`${props.userModalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.userModalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf ? imageModalState.hrf.replace("thumb", "orig") : ""} alt={""} />
+            <img id={"image-modal-c__image"} onClick={setModalStateFalse} className={`${props.userModalImageSizeState === 3 ? "potd-lrg-image" : ""} ${props.userModalImageSizeState === 4 ? "potd-full-image" : ""}`} src={imageModalState.hrf ? imageModalState.hrf.replace("thumb", "orig") : ""} alt={""} />
             <div className={`image-modal-c__description-c`}>
-              <h1 onClick={() => props.setUserModalopenCloseState(false)}>{imageModalState.title}</h1>
-              <p onClick={() => props.setUserModalopenCloseState(false)}>{imageModalState.description}</p>
+              <h1 onClick={setModalStateFalse}>{imageModalState.title}</h1>
+              <p onClick={setModalStateFalse}>{imageModalState.description}</p>
               <div className={"social-media-links"} >
                 <Star user={props.user} userModalopenCloseState={props.userModalopenCloseState} 
                 imageModalState={imageModalState} />
