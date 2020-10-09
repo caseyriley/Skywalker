@@ -44,7 +44,8 @@
   width: 100vw;
 }
 .loading{
-  color: white;
+  /* color: white; */
+  color: rgb(255, 255, 255, 0.0);
   margin: 10px 0px 20px 60px;
   animation: pageLoadAnimation ease 2.5s;
   animation-iteration-count: 1;

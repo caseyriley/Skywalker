@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import carousel from '../images/Carousel.svg';
 import saturn from '../images/saturnIllustration.png';
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 const Carousel = (props) => {
+
+  const handle = useFullScreenHandle();
   
   return (
     <>

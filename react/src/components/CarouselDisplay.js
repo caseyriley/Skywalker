@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
+import fullScreenButton from '../images/fullScreenButton.png';
 
 
 
@@ -25,14 +27,19 @@ const CarouselDisplay = (props) => {
     }
   }, [props.carouselToggle])
 
+  const handle = useFullScreenHandle();
 
   return (
     <>
       {props.carouselToggleState ?
         <>
-          <div id={"carousel-img-c"} onClick={props.carouselToggle}>
-            {itemsState}
-          </div>
+          <img id={"fullScreenButton"} src={fullScreenButton} alt={""} onClick={handle.enter} />
+          <FullScreen handle={handle}>
+              <div id={"carousel-img-c"} onClick={props.carouselToggle}>
+                {itemsState}
+              </div>
+          </FullScreen>
+          
         </>
         :
         <>

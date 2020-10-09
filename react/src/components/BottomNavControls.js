@@ -57,9 +57,7 @@ const BottomNavControls = (props) => {
             return (
               <>
                 <UserGalleryText/>
-                <Carousel carouselToggle={props.carouselToggle} 
-                // userGalleryState={props.userGalleryState} 
-                />
+                <Carousel handle={props.handle} carouselToggle={props.carouselToggle}/>
                 <SearchMenu searchMenuState={props.searchMenuState} setSearchMenuState={props.setSearchMenuState} />
               </>
             )

@@ -7,7 +7,7 @@ import useSearchFunction from './useSearchFunction';
 import usePotdFunction from './usePotdFunction';
 import useEpicFunction from './useEpicFunction';
 import ImageSwitch from './ImageSwitch';
-import { API_URL } from '../config.js'
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import BottomNavControls from './BottomNavControls';
 import LogoutButton from './LogoutButton';
 import lottie from 'lottie-web';
@@ -272,28 +272,30 @@ const MainPage = () => {
 
   let userGalleryArray = userGalleryState ? userGalleryState : [];
 
-    const [opacityState, setOpacityState] = useState(false);
+  const [opacityState, setOpacityState] = useState(false);
 
-    const [carouselToggleState, setCarouselToggleState] = useState(false);
-    const carouselToggle = () => {
-      let next = !carouselToggleState;
-      setCarouselToggleState(next);
-    };
+  const handle = useFullScreenHandle();
 
-    const [currentImageState, setCurrentImageState] = useState(0);
-    const [nextImageState, setNextImageState] = useState(1);
-    const [timeoutState, setTimeoutState] = useState(1);
+  const [carouselToggleState, setCarouselToggleState] = useState(false);
+  const carouselToggle = () => {
+    let next = !carouselToggleState;
+    setCarouselToggleState(next);
+  };
 
-    function nextPic(){
-      
-        for (let i = 0; i < userGalleryArray.length; i++) {
-          setCurrentImageState(i)
-          setNextImageState(i + 1)
-          setTimeout(() => {
-            setOpacityState(!opacityState);
-          }, 1500);
-        }
-    }
+  const [currentImageState, setCurrentImageState] = useState(0);
+  const [nextImageState, setNextImageState] = useState(1);
+  const [timeoutState, setTimeoutState] = useState(1);
+
+  function nextPic(){
+    
+      for (let i = 0; i < userGalleryArray.length; i++) {
+        setCurrentImageState(i)
+        setNextImageState(i + 1)
+        setTimeout(() => {
+          setOpacityState(!opacityState);
+        }, 1500);
+      }
+  }
   // ---------------------------------------------------------
 
     return (
@@ -315,7 +317,7 @@ const MainPage = () => {
           <div id={"nav-scroll"}>
             <div id={"nav-scroll__inner"}>
               
-              <BottomNavControls carouselToggle={carouselToggle} userGalleryState={userGalleryState} mp3Info={mp3Info} potdPrevDay={potdPrevDay} potdNextDay={potdNextDay} setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState} searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState} />
+              <BottomNavControls handle={handle} carouselToggle={carouselToggle} userGalleryState={userGalleryState} mp3Info={mp3Info} potdPrevDay={potdPrevDay} potdNextDay={potdNextDay} setEpicQuery={setEpicQuery} epicEnhancedState={epicEnhancedState} toggleEnhancedState={toggleEnhancedState} searchMenuState={searchMenuState} setSearchMenuState={setSearchMenuState} setStartDateFilterState={setStartDateFilterState} setEndDateFilterState={setEndDateFilterState} />
               <LogoutButton bottomNavState={bottomNavState} />
               <div className="dog" ref={container}></div>
             </div>

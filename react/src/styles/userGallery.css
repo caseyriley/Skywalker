@@ -115,3 +115,13 @@
     to   { opacity: 0.0; }
   }
 
+  #fullScreenButton{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 30px;
+    filter: invert(50%);
+    z-index: 21;
+    background: rgb(0, 0, 0, 0) !important;
+  }
+
