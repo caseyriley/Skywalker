@@ -13,7 +13,7 @@ const ImageSwitch = (props) => {
       {(() => {
         switch (props.searchMenuState ? props.searchMenuState : "imageSearch") {
           case "imageSearch":
-            return <ImageDataGallery setUser={props.setUser} user={props.user} modalImageSizeState={props.modalImageSizeState} openCloseState={props.openCloseState} setOpenCloseState={props.setOpenCloseState} error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} /> 
+            return <ImageDataGallery setUser={props.setUser} user={props.user} modalImageSizeState={props.modalImageSizeState} openCloseState={props.openCloseState} setOpenCloseState={props.setOpenCloseState} error={props.error} loading={props.loading} lastSearchElementRef={props.lastSearchElementRef} allResults={props.allResults} imageSizeState={props.imageSizeState} results={props.results} closeBottomNav={props.closeBottomNav} /> 
           case "picOfTheDay":
             return <POTDImage potdError={props.potdError} potdNextDay={props.potdNextDay} potdPrevDay={props.potdPrevDay} setPotdImageSizeState={props.setPotdImageSizeState} potdImageSizeState={props.potdImageSizeState} potdResult={props.potdResult} results={props.results} /> 
           case "epic":

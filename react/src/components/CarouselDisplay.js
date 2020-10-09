@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import useScript from './useScript';
 
 
 
-const CarouselDisplay = (props, items) => {
+const CarouselDisplay = (props) => {
 
 
   const [itemsState, setItemsState] = useState([]);
@@ -19,7 +18,7 @@ const CarouselDisplay = (props, items) => {
 
   useEffect(() => {
     let stage = document.getElementById("carousel-img-c");
-    let fadeComplete = function (e) { stage.appendChild(arr[0]); };
+    let fadeComplete = function () { stage.appendChild(arr[0]); };
     let arr = document.getElementsByClassName("carousel-background");
     for (let i = 0; i < arr.length; i++) {
       arr[i].addEventListener("animationend", fadeComplete, false);

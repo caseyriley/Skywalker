@@ -17,7 +17,7 @@ import CarouselDisplay from './CarouselDisplay';
 const MainPage = () => {
   
 
-//-------------------Bottom-Nav-Sate
+//-------------------Bottom-Nav-Sate------------------------------
   const [bottomNavState, setBottomNavState] = useState(true);
   const openCloseBottomNav = () => {
     let nextState = !bottomNavState;
@@ -310,7 +310,7 @@ const MainPage = () => {
             <SearchSwitch
               setUserModalImageSizeState={setUserModalImageSizeState} userModalImageSizeState={userModalImageSizeState} userGalleryImageSizeState={userGalleryImageSizeState} setUserGalleryImageSizeState={setUserGalleryImageSizeState} userModalopenCloseState={userModalopenCloseState} 
               mp3Result={mp3Result} closeBottomNav={closeBottomNav} updateAudioSearchValue={updateAudioSearchValue} audioSearchValue={audioSearchValue} audioQuery={audioQuery} handleAudioSearch={handleAudioSearch} allAudioResults={allAudioResults}
-              modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery} potdQuery={potdQuery} closeBottomNav={closeBottomNav} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
+              modalImageSizeState={modalImageSizeState} setModalImageSizeState={setModalImageSizeState} openCloseState={openCloseState} imageSizeState={imageSizeState} setImageSizeState={setImageSizeState} potdImageSizeState={potdImageSizeState} setPotdImageSizeState={setPotdImageSizeState} epicQuery={epicQuery} setEpicQuery={setEpicQuery} setPotdQuery={setPotdQuery} potdQuery={potdQuery} searchValue={searchValue} updateSearchValue={updateSearchValue} query={query} handleSearch={handleSearch} searchMenuState={searchMenuState} setResults={setResults} results={results} />
           </div>
           <div id={"nav-scroll"}>
             <div id={"nav-scroll__inner"}>
