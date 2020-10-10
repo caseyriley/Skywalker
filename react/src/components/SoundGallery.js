@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState} from 'react';
+import React from 'react';
 import shuttle from '../images/shuttle.png'
 
 
@@ -7,7 +7,7 @@ import shuttle from '../images/shuttle.png'
 
 const SoundGallery = (props) => {
 
-
+  
   return (
     <>
       <div className={"parallax-background"}> </div>
@@ -16,7 +16,7 @@ const SoundGallery = (props) => {
             if (props.allAudioResults.length === index + 1) {
               return (
                 <>
-                  <li className={"sound-button"} onClick={() => (props.setMp3query(item.href), props.setMp3Info(item))} key={`${item.data[0].title} ${Math.floor(Math.random() * Math.floor(1000))}`} >
+                  <li className={"sound-button"} onClick={() => (props.setMp3query(`https${item.href.slice(6)}`), props.setMp3Info(item))} key={`${item.data[0].title} ${Math.floor(Math.random() * Math.floor(1000))}`} >
                     <h3 ref={props.lastAudioSearchElementRef} className={"sound-description"} >{`${item.data[0].title}`}</h3>
                     <img className={"shuttle"} src={shuttle} alt={""} />
                   </li>
