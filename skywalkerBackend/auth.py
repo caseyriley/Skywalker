@@ -24,7 +24,6 @@ def verify_password(password, hashed_password):
 @auth.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
-    
     try:
         email = data['email']
         password = data['password']
@@ -54,7 +53,6 @@ def login():
 @auth.route('/signup', methods=['POST'])
 def signup():
     data = request.get_json()
-    print("data", data)
 
     try:
         username = data['username']

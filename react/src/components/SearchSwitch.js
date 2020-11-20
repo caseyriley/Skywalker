@@ -1,4 +1,5 @@
 import React from 'react';
+import S3FileUpload from 'react-s3';
 import ReactAudioPlayer from 'react-audio-player';
 import POTDSearch from './POTDSearch';
 import ImageDataSearch from './ImageDataSearch';
