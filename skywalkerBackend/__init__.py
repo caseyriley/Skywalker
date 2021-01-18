@@ -12,6 +12,8 @@ from flask_cors import CORS
 
 
 
+
+
 from .config import Config
 from .models import db
 from .users import user
@@ -43,6 +45,7 @@ jwt = JWTManager(app)
 @app.route('/<path>')
 def react_root(path):
     return app.send_static_file('index.html')
+
 
 
 @app.route('/api', methods=['GET'])
