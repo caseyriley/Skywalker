@@ -18,8 +18,8 @@
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
     <li><a href="#built-with">Built With</a></li></li>
-    <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#installation">Installation</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#page-navigation">Page Navigation</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -60,16 +60,15 @@ To start using Skywalker either login as a demo user or sing up as a new user.
 <br />
 <br />
 <img src="https://i.gyazo.com/6777233f2b503f509678c825f8ed865a.gif" alt="" width="748"/>
-
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
+<br />
+<br />
+### Page Navigation
+<br />
+<br />
+Use the navigation menu in the bottom right to select from 5 different pages.
+<br />
+<br />
+<img src="https://i.gyazo.com/16247bca2b6cd47ca42f76f249613a9d.gif" alt="Image from Gyazo" width="866"/>
 ### Installation
 
 1. Clone the repo
