@@ -20,12 +20,12 @@
     <li><a href="#built-with">Built With</a></li></li>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#page-navigation">Page Navigation</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#image-search">Image Search</a></li>
+    <li><a href="#image-search-info-and-options">Image Search Info and Options</a></li>
+    <li><a href="#bottom-navigation-bar-and-about-section">Bottom Navigation Bar and About Section</a></li>
+    <li><a href="#pic-of-the-day">Pic Of The Day</a></li>
+    <li><a href="#pics-of-earth">Pics Of Earth</a></li>
+    <li><a href="#audio-search">Audio Search</a></li>
   </ol>
 </details>
 
@@ -62,6 +62,7 @@ To start using Skywalker either login as a demo user or sing up as a new user.
 <img src="https://i.gyazo.com/6777233f2b503f509678c825f8ed865a.gif" alt="" width="748"/>
 <br />
 <br />
+
 ### Page Navigation
 <br />
 <br />
@@ -69,61 +70,99 @@ Use the navigation menu in the bottom right to select from 5 different pages.
 <br />
 <br />
 <img src="https://i.gyazo.com/16247bca2b6cd47ca42f76f249613a9d.gif" alt="Image from Gyazo" width="866"/>
-### Installation
+<br />
+<br />
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/caseyriley/skywalker.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-
-
-
+### Image Search
+<br />
+<br />
+NASA's database of images can be searched by keyword. Optionally the image search 
+can be filtered by start date and end date. The results are displayed in a infinitely
+scolling feed. The desired image size can be selected as well.
+<br />
+<br />
+<img src="https://i.gyazo.com/3fe6d9661afffd12d681378e73f1d2cb.gif" alt="" width="848"/>
+<br />
+<br />
+  
 <!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+## Image Search Info and Options
+<br />
+<br />
+Click on any image to see NASA's associated data. Select the file with the heart
+on it to add the image to the user gallery. Select a social media link to share 
+the image on social media.
+<br />
+<br />
+<img src="https://i.gyazo.com/c1d4f2260174f36f3180cd54a043ecd2.gif" alt="" width="852"/>
+<br />
+<br />
 
 
 <!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/caseyriley/skywalker/issues) for a list of proposed features (and known issues).
-
+## Bottom Navigation Bar and About Section
+<br />
+<br />
+Clicking on the triangle in the center of the bottom screen nagivation bars top 
+section opens and closes the options for each page of Skywalker. Selecting the 
+purple About This Page button will display instructions for each page.
+<br />
+<br />
+<img src="https://i.gyazo.com/26ce16e76ca828581a57014c0b4c7ec4.gif" alt="" width="852"/>
+<br />
+<br />
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## Pic Of The Day 
+<br />
+<br />
+On the Pic Of The Day page enter any date and press the submit arrow to see NASA's
+choice picture for that date. This special selection of images is super popular 
+and contains many results you will not find anywhere else. Scroll down below any
+image to read about it. The left and right arrows next to the pic of the day and 
+in the bottom navigation bar can be used to quicly move one day back or forward.
+<br />
+<br />
+<img src="https://i.gyazo.com/967b7a7fcd952c75d206f7b79ad1564a.gif" alt="Image from Gyazo" width="850"/>
+<br />
+<br />
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 
 
 <!-- LICENSE -->
-## License
+## Pics Of Earth
+<br />
+<br />
+Searching by date on the Pics Of Earth page results in a 360 degree image of earth
+on that date. This is earth as seen from the Earth Polychromatic Imaging Camera (EPIC).
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Uniquely positioned at the Earth-Sun Lagrange point, EPIC provides full disc imagery of the Earth and captures unique perspectives of certain astronomical events such as lunar transits using a 2048x2048 pixel CCD (Charge Coupled Device) detector coupled to a 30-cm aperture Cassegrain telescope.
 
+Switching to enhanced images yeilds the same images edited with a custom algorithm designed to reproduce the true splendor of earth.
 
+Enhanced images are not as plentiful as natural images so you may have to search another date.
+<br />
+<br />
+<img src="https://i.gyazo.com/f1d9ddb2d96598de54642fe1dc0fe249.gif" alt="" width="848"/>
+<br />
+<br />
 
 <!-- CONTACT -->
-## Contact
+## Audio Search
+<br />
+<br />
+Searching NASA's audio library by keyword is easy. Selecting any audio sample starts 
+playback. Play, pause and volume controls are available as well
+as the option to download.
+<br />
+<br />
+<img src="https://i.gyazo.com/2f6f64ef37426ebcc2e2d93c5324ad6d.gif" alt="Image from Gyazo" width="852"/>
+<br />
+<br />
 
-Casey Riley - innerforest7@gmail.com
-
-Project Link: [https://github.com/caseyriley/skywalker](https://github.com/caseyriley/skywalker)
 
 
 
