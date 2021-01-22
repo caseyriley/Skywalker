@@ -31,17 +31,6 @@
 </details>
 
 
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`caseyriley`, `skywalker`, `twitter_handle`, `innerforest7@gmail.com`, `Skywalker`, `A fun and educational use of Nasa's API's`
-
-
 ### Built With
 
 * ReactJS
