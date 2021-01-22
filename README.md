@@ -112,7 +112,8 @@ image to read about it. The left and right arrows next to the pic of the day and
 in the bottom navigation bar can be used to quicly move one day back or forward.
 <br />
 <br />
-<img src="https://i.gyazo.com/18e4b37ad1981bcd0b261e4f01ab97a3.gif" alt="" width="882"/>
+<!-- <img src="https://i.gyazo.com/18e4b37ad1981bcd0b261e4f01ab97a3.gif" alt="" width="882"/> -->
+<img src="https://i.gyazo.com/0fb00036bded5be930328eab37d1cbfe.gif" alt="" width="850"/>
 <br />
 <br />
 
