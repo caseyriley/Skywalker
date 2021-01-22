@@ -46,7 +46,7 @@
 ## Getting Started
 <br />
 <br />
-To start using Skywalker either login as a demo user or sing up as a new user.
+To start using Skywalker either login as a demo user or sign up as a new user.
 <br />
 <br />
 <img src="https://i.gyazo.com/6777233f2b503f509678c825f8ed865a.gif" alt="" width="748"/>
@@ -56,7 +56,7 @@ To start using Skywalker either login as a demo user or sing up as a new user.
 ### Page Navigation
 <br />
 <br />
-Use the navigation menu in the bottom right to select from 5 different pages.
+Use the navigation menu in the bottom right to select from five different pages.
 <br />
 <br />
 <img src="https://i.gyazo.com/16247bca2b6cd47ca42f76f249613a9d.gif" alt="Image from Gyazo" width="866"/>
@@ -93,9 +93,7 @@ the image on social media.
 ## Bottom Navigation Bar and About Section
 <br />
 <br />
-Clicking on the triangle in the center of the bottom screen nagivation bars top 
-section opens and closes the options for each page of Skywalker. Selecting the 
-purple About This Page button will display instructions for each page.
+Clicking on the triangle in the center/top of the bottom nagivation bar opens and closes the options for each page of Skywalker. Selecting the purple About This Page button will display instructions for each page.
 <br />
 <br />
 <img src="https://i.gyazo.com/26ce16e76ca828581a57014c0b4c7ec4.gif" alt="" width="852"/>
@@ -114,7 +112,7 @@ image to read about it. The left and right arrows next to the pic of the day and
 in the bottom navigation bar can be used to quicly move one day back or forward.
 <br />
 <br />
-<img src="https://i.gyazo.com/967b7a7fcd952c75d206f7b79ad1564a.gif" alt="Image from Gyazo" width="850"/>
+<img src="https://i.gyazo.com/0fb00036bded5be930328eab37d1cbfe.gif" alt="" width="850"/>
 <br />
 <br />
 
