@@ -7,7 +7,7 @@
   </a>
 
   <p align="center">
-    A fun and educational use of Nasa's API's
+    A fun way to explore NASA's massive database
   </p>
 </p>
 
