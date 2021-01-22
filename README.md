@@ -161,7 +161,8 @@ image carousel of the User Gallery. Once in the gallery select the sqaure in the
 bottom right corner of the window to enter full screen mode.
 <br />
 <br />
-<img src="https://i.gyazo.com/683865921d8d833b6d5d51170ca0395f.gif" alt="Image from Gyazo" width="994"/>
+<!-- <img src="https://i.gyazo.com/683865921d8d833b6d5d51170ca0395f.gif" alt="Image from Gyazo" width="994"/> -->
+<img src="https://i.gyazo.com/683865921d8d833b6d5d51170ca0395f.gif" alt="" width="994"/>
 <br />
 <br />
 Have fun exploring NASA's database <span role="img" aria-label="rocket ship">🚀</span>
