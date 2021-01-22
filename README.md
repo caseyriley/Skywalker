@@ -26,7 +26,7 @@
     <li><a href="#pic-of-the-day">Pic Of The Day</a></li>
     <li><a href="#pics-of-earth">Pics Of Earth</a></li>
     <li><a href="#audio-search">Audio Search</a></li>
-    <li><a href="#user gallery">User Gallery</a></li>
+    <li><a href="#user-gallery">User Gallery</a></li>
   </ol>
 </details>
 
@@ -176,8 +176,21 @@ bottom right corner of the window to enter full screen mode.
 <img src="https://i.gyazo.com/683865921d8d833b6d5d51170ca0395f.gif" alt="Image from Gyazo" width="994"/>
 <br />
 <br />
-
-
+Have fun exploring NASA's database <span role="img" aria-label="rocket ship">🚀</span>
+<br />
+<h2>Casey Riley</h2>
+<a href="mailto:innerforest7@gmail.com">
+    <img src="https://img.icons8.com/doodle/48/000000/new-post.png" height="30"/>
+</a>
+<a href="https://github.com/caseyriley">
+    <img src="react/src/images/github2.png" height="30" />
+</a>
+<a href="https://www.linkedin.com/in/casey-riley-3396231a1/">
+    <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" height="30" />
+</a>
+<a href="https://angel.co/u/casey-riley-1" >
+    <img src="https://img.icons8.com/color/48/000000/angelist.png" height="30"/>
+</a>
 
 
 
