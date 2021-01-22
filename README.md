@@ -26,6 +26,7 @@
     <li><a href="#pic-of-the-day">Pic Of The Day</a></li>
     <li><a href="#pics-of-earth">Pics Of Earth</a></li>
     <li><a href="#audio-search">Audio Search</a></li>
+    <li><a href="#user gallery">User Gallery</a></li>
   </ol>
 </details>
 
@@ -160,6 +161,19 @@ as the option to download.
 <br />
 <br />
 <img src="https://i.gyazo.com/2f6f64ef37426ebcc2e2d93c5324ad6d.gif" alt="Image from Gyazo" width="852"/>
+<br />
+<br />
+
+## User Gallery
+<br />
+<br />
+On the User Gallery page all your favorited images are displayed similar to the 
+Image Search page. Clicking on the blue button displaying Saturn will reveal a 
+image carousel of the User Gallery. Once in the gallery select the sqaure in the
+bottom right corner of the window to enter full screen mode.
+<br />
+<br />
+<img src="https://i.gyazo.com/683865921d8d833b6d5d51170ca0395f.gif" alt="Image from Gyazo" width="994"/>
 <br />
 <br />
 
